@@ -8,6 +8,24 @@ ref : https://stackoverflow.com/questions/6910378/how-can-i-stop-redis-server
     $ brew services restart redis
 ```
 
+## reids 실행, in window
+
+ref <br/>
+: https://github.com/microsoftarchive/redis/releases/tag/win-3.2.100 <br/>
+: https://itnhappy.tistory.com/328 <br/>
+: http://redisgate.kr/redis/introduction/win_start.php <br/>
+
+```powershell
+    (Powershell 을 관리자모드로 실행시킨다.)
+
+    1) 실행
+    $ cd C:\Program Files\Redis
+    $ redis-server.exe redis.windows.conf
+
+    2) 중지
+    $ net stop redis
+```
+
 ## redis 실행, docker 이미지
 
 ref <br/>
