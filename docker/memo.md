@@ -360,3 +360,200 @@ docker가 설치된 'host machine'의 'desktop docker'의 우측 상단의 [ ⚙
 ---
 
 ### 10. docker-compose (예비)
+
+ref : https://docs.docker.com/compose/install/
+
+linux의 경우 docker compose를 별도로 설치해줘야 한다.
+
+```
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+```
+
+#### 10.1 docker-compose 실례
+
+ref : https://engineer-mole.tistory.com/221
+
+동작 확인을 실행할 예제 환경에 대해서 
+
+```
+    (Working dir)
+    +- docker-compose.yml
+    +- app-server/
+        +- Dockerfile
+        +- src/
+            +- app.js
+```
+
+```js
+    app-sever/src/app.js
+    ================================================================
+    var redis = require('redis');
+    var redis_client = redis.createClient(6379, "noderedis");
+    var listen_port = 10080;
+
+    require('http').createServer(function (request, response) {
+        redis_client.incr('counter', function(error, reply) {
+            response.writeHead(200, {'Content-Type': 'text/plain'});
+            response.end("You accessed here " + reply + " times.\n");
+        });
+    }).listen(listen_port, '0.0.0.0');
+    console.log("Server is running on port " + listen_port + ".");
+```
+
+```Dockerfile
+    app-sever/Dockerfile
+    ================================================================
+    FROM node:5
+    RUN npm -g install redis
+    ENV NODE_PATH /usr/local/lib/node_modules
+
+    ENTRYPOINT ["node", "app.js"]
+```
+
+```Dockerfile
+    docker-compose.yml
+    ================================================================
+    nodeapp:                    # ? 임의로 네이밍 지정할수 있음? 컨테이너의 이름으로 되는듯
+        build: "./app-server"
+        container_name: "nodeapp"
+        working_dir: "/usr/src/app"
+        ports:
+         - "10080:10080"
+        volumes:
+         - "$PWD/app-server/src:/usr/src/app"
+        links:                  # ? 정확히 무슨 역할 
+         - "noderedis"
+    noderedis:
+        image: "redis:3"
+        container_name: "noderedis"
+```
+
+ Dockerfile에 "ENTRYPOINT"를 쓰지 않은 경우에는 docker-compose.yml에 아래와 같이 기재하는 방법으로 대응할 수 있다.
+
+ ```
+    nodeapp:
+        ......
+        command: node app.js
+ ```
+
+ 모두 작성 후, docker-compose.yml 파일이 있는 디렉토리에서 다음 실행
+
+ ```bash
+    $ docker-compose up
+ ```
+
+
+ 실행 후 도커 이미지와 컨테이너 상황
+
+ ```
+    $ docker images
+    REPOSITORY                           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    dockercomposeexamplesimple_nodeapp   latest              7d39370b4309        23 hours ago        643.5 MB
+    redis                                3                   0c4334bed751        4 days ago          151.3 MB
+    node                                 5                   285fd945c0b6        2 weeks ago         642.7 MB
+    debian                               jessie              23cb15b0fcec        4 weeks ago         125.1 MB
+
+    $ docker ps -a
+    CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                                NAMES
+    e48a2014b88d        dockercomposeexamplesimple_nodeapp   "node app.js"            4 minutes ago       Up 4 minutes        0.0.0.0:10080->10080/tcp   nodeapp
+    b8b47ca9a285        redis:3                              "/entrypoint.sh redis"   23 hours ago        Up 4 minutes        6379/tcp                             noderedis
+ ```
+
+docker-compose.yml 의 각 요소에 대한 설명
+ ```dockerfile
+    nodeapp:                            # <- 서비스명
+        image: "tsutomu/nodeapp"          # <- 사용하는Docker이미지명(이후에 빌드한다)
+        container_name: "nodeapp"         # <- 컨테이너명. 지정하지 않은 경우에 Docker compose로 임의로 결정된다.
+        working_dir: "/usr/src/app"       # <- 컨테이너 내의 워킹 디렉토리. docker run커맨드의 -w/--workdir에 상당한다.
+        ports:                            # <- Expose할 포트. docker run커맨드의 -p/--publish에 상응한다.
+         - "10080:10080"
+        volumes:                          # <- Bind mount하는 디렉토리. volume. docker run커맨드의 -v/--volume에 상당한다.
+         - "$PWD/app-server/src:/usr/src/app"
+        links:                            # <- 다른 컨테이너와 접속할 때의 컨테이너명. docker run 커맨드의 -link에 해당한다.
+         - "noderedis"
+    noderedis:
+        image: "redis:3"                  # <- 이미지ID와 tag
+        container_name: "noderedis"
+  
+ ```
+
+
+
+#### 10.2 docker-compose 관련 커맨드
+
+ref : https://darrengwon.tistory.com/793
+
+ ```bash
+    $ docker-compose up
+    
+    $ docker-compose up -d # background 실행 옵션 -d (detached) 
+    
+    $ docker-compose down # 실행중인 컨테이너 종료
+    
+    $ docker-compose up --force-recreate #도커 컨테이너 새로 만들기
+
+    
+    # 도커 이미지 빌드 후 compose up
+    # -build 플래그 여부의 차이는,
+    # --build가 붙으면 캐싱된 이미지를 체크하지 않고 무조건 빌드를 하고 시작하라는 의미입니다.
+    $ docker-compose up --build 
+
+    $ docker-compose start # 정지한 컨테이너를 재개
+    $ docker-compose start mysql # mysql 컨테이너만 재개
+
+    $ docker-compose restart # 이미 실행 중인 컨테이너 다시 시작
+    $ docker-compose restart redis # 이미 실행중인 redis 재시작
+
+    $ docker-compose stop # gracefully stop함.
+    $ docker-compose stop wordpress
+
+    $ docker-compose down # stop 뿐만 아니라 컨테이너 삭제까지
+
+    $ docker-compose logs
+    $ docker-compose logs -f # 로그 watching
+
+    $ docker-compose ps # 컨테이너 목록
+
+    $ docker-compose exec [컨테이너] [명령어]
+    $ docker-compose exec wordpress bash # wordpress에서 bash 명령어 실행
+
+    $ docker-compose build # build 부분에 정의된 대로 빌드
+    $ docker-compose build wordpress # wordpess 컨테이너만 빌드
+
+    $ docker-compose run [service] [command] # 이미 docker-compose 가동 중인 것과 별개로 하나 더 올릴 때
+    $ docker-compose run nginx bash
+ 
+ ```
+
+#### 10.2 docker-compose 관련 문법
+
+ref : https://darrengwon.tistory.com/793
+
+* environment
+
+여기서, dockerfile의 환경변수와 docker-compose.yml의 환경변수가 중복되어서 올라가면 어떻게 되느냐?는 의문이 생깁니다.
+
+우선순위는 다음과 같습니다. 즉, docker.compose.yml이 덮어쓰게 됩니다.
+
+1. docker-compose [run / exec] -e key:value
+2. docker-compose.yml의 environment
+3. Dockerfile의 ENV
+
+* link (legacy)
+
+docker cli 사용할 때 --link와 동일하다. {연결할 컨테이너 이름}:{해당 컨테이너에서 참고할 이름}
+
+그러나 기본적으로 docker-compose 내부에선 모든 컨터네이너가 소통할 수 있기 때문에 사용되지 않음.
+
+```dockerfile
+    services:
+        nginx:
+            image: nginx
+            ports:
+             - 8080:80
+            volumes:
+             - ./:/usr/share/nginx/html
+            link:
+             - mysql:db
+```
