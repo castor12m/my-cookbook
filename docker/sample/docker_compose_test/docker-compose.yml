@@ -1,0 +1,42 @@
+version: '3'
+
+name: ztest_group
+
+networks:
+  default:
+    name: ztest-network
+
+services:
+  test_a:
+    image: temp/test_a:0.1
+    container_name: test_a
+    build:
+      context: ./test_a
+    command: "ping -D -i 10 0.0.0.0"
+    ports:
+      - "6000:6000"
+    volumes:
+      - ./test_a/temp_d:/temp_data:rw
+      # - libcsp_output_volume:/src/build
+      # - testhost_volume:/src/host
+  
+  test_b:
+    image: temp/test_b:0.1
+    container_name: test_b
+    build:
+      context: ./test_b
+    volumes:
+      - libcsp_include_volume:/home/test:rw
+    # command: "ping -D -i 10 0.0.0.0"
+
+
+# https://velog.io/@lijahong/0%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-Docker-%EA%B3%B5%EB%B6%80-Docker-Compose-Network-Volume-%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0
+volumes:
+  libcsp_output_volume:
+    external: false
+    name: "libcsp_output_volume"
+  libcsp_include_volume:
+    external: false
+    name: "libcsp_include_volume"
+  # testhost_volume:
+  #   external: true  # 기존에 만들어 둔 testvolume 을 사용한다
