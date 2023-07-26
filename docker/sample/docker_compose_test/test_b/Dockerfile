@@ -18,4 +18,4 @@ COPY ./test.sh .
 
 #ENTRYPOINT [ "/bin/bash", "-c" ]
 
-CMD [ "/bin/bash", "-c", "./test.sh" ]
+CMD [ "bash", "./test.sh" ]

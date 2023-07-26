@@ -25,7 +25,11 @@ services:
     container_name: test_b
     build:
       context: ./test_b
+    # command: "ping -D -i 10 0.0.0.0"
+    privileged: true
+    user: root
     volumes:
+      - ./test_a/temp_d:/home/data:rw
       - libcsp_include_volume:/home/test:rw
     # command: "ping -D -i 10 0.0.0.0"
 
