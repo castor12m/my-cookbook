@@ -188,3 +188,20 @@ flask + redis 조합
              - redis
             restart: always
 ```
+
+### 예제 4.
+
+container 계속 실행 시키는 트릭
+
+```
+  (dockcer-compose)
+  ...
+    command: "ping -D -i 10 0.0.0.0"
+  ...
+  
+```
+```
+  (Dockerfile)
+  ...
+  ENTRYPOINT ["tail", "-f", "/dev/null"]
+```
