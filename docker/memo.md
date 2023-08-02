@@ -218,6 +218,71 @@ ref : https://whitehairhan.tistory.com/77
     $ docker run --it  .... -p 8022:22 ...
 ```
 
+### 6.1 client 에서 rsa 생성 후, private key 복사
+
+```
+    $ ssh-keygen -t rsa -f uitos_fsw_rsa -N ''
+    $ cp uitos_fsw_rsa ~/.ssh
+```
+
+### 6.2 client ssh config 에 private key 등록
+
+```
+    (~/.ssh/config)
+
+    Host docker_8024
+      HostName 0.0.0.0
+      Port 8024
+      User root
+      IdentityFile /Users/castor/.ssh/uitos_fsw_rsa  << 추가
+
+```
+
+### 6.3 컨테이너 재생성시 known_host 에 기록된 핑거프린트 삭제
+
+```
+    // sed 관련 테스트
+    (https://sed.js.org/)
+    $ sed -i '' '/^\[0.0.0.0\]:8024/d' ~/.ssh/known_hosts
+```
+
+
+### 6.4 터미널로 ssh 접속하려는 경우 rsa key를 같이 하는 방법
+
+```
+    (https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/)
+    $ ssh -i ~/.ssh/uitos_fsw_rsa root@0.0.0.0 -p 8024
+```
+
+### 6.5 git credentials
+
+```bash
+    git setting
+    (https://stackoverflow.com/questions/68905174/recursively-clone-submodules-from-github-using-an-access-token)
+
+    RUN git config --system credential.helper store
+    RUN echo "https://{git_id}:{git_token}@github.com"
+    # ex) https://castor103:****************************@github.com
+    
+    (직접 입력 대신 파일로 하도록 수정)
+    RUN cat /home/share/pubkey/git_user_credential.txt > ~/.git-credentials
+
+```
+
+### 6.6 dockerfile ssh settings
+
+```dockerfile
+    # ssh setting
+    COPY ./share /home/share/pubkey
+    RUN mkdir /var/run/sshd
+    RUN mkdir /root/.ssh
+    RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+    RUN sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+    RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+    RUN cat /home/share/pubkey/*.pub >> ~/.ssh/authorized_keys
+    #RUN echo 'root:1234' | chpasswd
+```
+
 ### 7. 실행중인 컨테이너에 포트 바인딩 혹은 볼륨 추가
 
 ref <br/>
@@ -238,7 +303,6 @@ docker run에 -p 옵션을 추가하여 실행
     # (이런식으로 프로토콜 지정도 가능)
     $ .... -p 8088:8088/tcp ... 
 ```
-
 
 ### 8 Docker Volumes
 

@@ -29,12 +29,12 @@
 
 ```bash
     (libcsp)
-    $ git clone https://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@github.com/NST-FSW/libcsp libcsp-nst
+    $ git clone https://************************@github.com/NST-FSW/libcsp libcsp-nst
     $ ./waf configure --install-csp --with-os=posix --enable-can-socketcan --enable-if-zmqhub --enable-shlib
     $ ./waf build
 
     (fsw)
-    $ git clone https://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@github.com/NST-FSW/Observer_FSW
+    $ git clone https://************************@github.com/NST-FSW/Observer_FSW
     $ cd Observer_FSW
 
     # 서브모듈 가져올때 github cli로 로그인 안되어 있으면 fail남 주의ß

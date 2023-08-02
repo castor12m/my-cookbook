@@ -34,9 +34,9 @@ Dockerfile 에 다음 내용 복붙
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
     # get STB source from git repository & change git submodule branch
-    RUN git clone https://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@github.com/Naraspace-Technology/STB.git \
+    RUN git clone https://****************************@github.com/Naraspace-Technology/STB.git \
     && cd STB \
-    && sed -i 's/github.com/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@github.com/g' ./.gitmodules \
+    && sed -i 's/github.com/****************************@github.com/g' ./.gitmodules \
     && git submodule update --init --recursive \
     && cd SDS && git checkout castor && cd .. \
     && cd 42 && git checkout Develop && cd .. \
