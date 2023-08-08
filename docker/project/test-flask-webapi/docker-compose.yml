@@ -2,7 +2,7 @@ version: '3'
 name: nara_sample_test
 services:
   webapi:
-    image: naraspace/sample_webapi:0.1
+    image: naraspace/flask_webapi:0.1
     container_name: webapi
     build:
       context: ./flask
