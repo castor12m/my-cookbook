@@ -24,3 +24,5 @@ EXPOSE 5900
 #CMD ["python", "app.py"]
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+#uvicorn main:app --reload
