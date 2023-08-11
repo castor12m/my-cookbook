@@ -14,8 +14,32 @@
 
 ```
     (~/.bash_profile)
-    
+   
 ```
+
+### 1.3 zsh 테마 설정을 위한 oh my zsh 설치
+
+https://bobr2.tistory.com/entry/%EB%A7%A5%EB%B6%81-Oh-My-Zsh-%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95
+
+https://ohmyz.sh/
+
+!! 주의 설치하게 되면 기존에 ~/.zshrc 가 새로운 설정으로 덮어짐
+
+```console
+   $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+글꼴 설치 (안하면 맥기본 터미널시 폰트 깨짐)
+
+### 1.3.1 네이버 배포 D2Coding 글꼴 설치법
+
+1. https://github.com/naver/d2codingfont/releases 에서 최신 버전 압축 파일 다운
+
+2. 압축 해제
+
+3. D2CoddingAll 폴더의 D2Codding-Verx.x-xxxxxx-all.ttc 파일 열기 클릭
+
+4. 모음 설치
 
 
 ### 2. python 링크 
