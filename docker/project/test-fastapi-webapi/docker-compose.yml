@@ -1,11 +1,17 @@
 version: '3'
 name: nara_sample_test
+networks:
+  default:
+    name: uitos-network
+
 services:
   webapi:
     image: naraspace/fastapi_webapi:0.1
     container_name: webapi
     build:
       context: ./fastapi
+    privileged: true
+    user: root
     ports:
       - "5900:5900"
     volumes:

@@ -11,6 +11,11 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY ./src/requirements.txt /app/
 
+RUN python -m venv /home/venv
+RUN echo alias "'ldv=source /home/venv/bin/activate'" >> /root/.bashrc
+RUN echo alias "'ddv=deactivate'" >> /root/.bashrc
+RUN . /home/venv/bin/activate
+
 # Install the required dependencies
 RUN pip install -r requirements.txt
 
@@ -20,9 +25,10 @@ COPY . /app/
 # Expose the required ports
 EXPOSE 5900
 
+SHELL ["/bin/bash", "-c", "source /home/venv/bin/activate"]
+
 # Start the Flask app
 #CMD ["python", "app.py"]
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
-
 #uvicorn main:app --reload
