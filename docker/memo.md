@@ -21,6 +21,29 @@ cask 옵션을 주게 되면 Docker Desktop on Mac을 설치하게 되고 docker
     $ brew install --cask docker
 ```
 
+### 1.3 도커설치하기 - ubuntu
+
+https://docs.docker.com/engine/install/ubuntu/
+
+```bash
+    $ apt-get update
+    $ sudo apt-get update
+    $ sudo apt-get install ca-certificates curl gnupg
+    $ sudo install -m 0755 -d /etc/apt/keyrings
+    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    $ sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    
+    $ echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    $ sudo apt-get update
+    $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    $ sudo apt-get install docker-compose
+    $ sudo chmod 666 /var/run/docker.sock
+    
+    (check)
+    $ docker run -it ubuntu bash
+```
+
 ---
 
 ### 2. Install Check

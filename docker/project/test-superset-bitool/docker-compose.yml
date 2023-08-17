@@ -1,0 +1,21 @@
+version: '3.7'
+name: nara_sample_test
+networks:
+  default:
+    name: uitos-network
+
+services:
+  superset:
+    image: naraspace/superset:0.1
+    container_name: superset
+    env_file: 
+      - ./supersat/a.env
+    build:
+      context: ./superset
+    privileged: true
+    user: root
+    ports:
+      - "8080:8088"
+    volumes:
+      - ./fastapi/src:/app
+  
