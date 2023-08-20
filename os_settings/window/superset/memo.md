@@ -122,6 +122,12 @@ https://zambbon.tistory.com/entry/AttributeError-sqlparse
     $ set SUPERSET_CONFIG_PATH='config/superset_config.py'
 ```
 
+그래도 secret_key 인식안되서 superset 코드에 박아버림...
+
+```bash
+    # /venv/Lib/site-packagees/superset/config.py
+    SECRET_KEY = 'G4WAt45EeAjAEA6oPw78WKvx9JjGEkKUNZ/bj/***************/edzp'
+```
 
 ##### FLASK_APP 관련 에러
 
