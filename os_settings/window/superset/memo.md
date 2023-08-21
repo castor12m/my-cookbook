@@ -139,7 +139,6 @@ https://github.com/apache/superset/issues/23861
 
 #### ModuleNotFoundError: No module named 'marshmallow-enum'
 
-
 ```bash
     $ pip install marshmallow-enum
 ```
