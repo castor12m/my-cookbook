@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=BgZHbCDFODk
     $ apt update
 
     $ apt install qemu-kvm              # the emulator it self
+    $ apt install qemu-system-arm
 
     $ apt install libvirt-daemon-system # runs virtualization in background
     $ apt install libvirt-clients
@@ -106,3 +107,82 @@ https://github.com/wanyoungj/qemu_zynqmp.git
     EXPOSE 1440
  
 ```
+
+### QEMU Zynq-7000
+
+https://embed-me.com/qemu-how-to-emulate-your-zynq-7000/
+
+```
+    $ git clone -b xilinx-v2020.1 https://github.com/Xilinx/qemu.git
+```
+
+### ! ERROR: "cc" either does not exist or does not work
+
+https://stackoverflow.com/questions/53302328/qbox-configuration-error-unable-to-find-cc
+
+```
+    $ sudo apt-get install gcc
+```
+
+# ERROR: User requested feature sdl configure was not able to find it. Install SDL2-devel
+
+https://askubuntu.com/questions/1401615/unable-to-install-sdl2
+
+```
+    $ sudo apt-get install libsdl2-dev
+```
+
+# ERROR: pixman >= 0.21.8 not present. Please install the pixman devel package.
+
+https://stackoverflow.com/questions/37887693/qemu-not-installing-in-ubuntu
+
+```
+    $ sudo apt-get install libpixman-1-dev
+```
+
+### boot Petalinux
+
+https://github.com/k0nze/qemu_zynq_linux_setup/blob/master/README.md
+
+https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842316/Linux+Prebuilt+Images
+ 
+https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/577634350/Linux+Release+Archives
+
+```bash
+    $ https://gitlab.com/qemu-project/qemu.git
+
+    (https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842326/Zynq+2016.4+Release)
+    # 위 링크에서 파일 다운로드
+
+    $ tar xf ./2016.4-zc702-release.tar.xz 
+    >>>
+    zc702 $ ls -al
+    BOOT.bin
+    devicetree.dtb
+    fsbl-zc702-zynq7.elf
+    u-boot.elf
+    uImage
+    uramdisk.image.gz
+
+    $ cd qemu/build/aarch64-softmmu
+    $ qemu-system-aarch64 -M xilinx-zynq-a9 -serial /dev/null -serial mon:stdio -display none -kernel ../../../zc702/uImage -dtb ../../../zc702/devicetree.dtb --initrd ../../../zc702/uramdisk.image.gz
+    >>> 실행됨..
+
+    zc702-zynq7 logins : root
+    root@zc702-zynq7:~# cat /proc/cpuinfo 
+    processor       : 0
+    model name      : ARMv7 Processor rev 0 (v7l)
+    BogoMIPS        : 166.66
+    Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpd32 
+    CPU implementer : 0x41
+    CPU architecture: 7
+    CPU variant     : 0x3
+    CPU part        : 0xc09
+    CPU revision    : 0
+
+    Hardware        : Xilinx Zynq Platform
+    Revision        : 0000
+    Serial          : 0000000000000000
+
+
+ ```
