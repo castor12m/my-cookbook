@@ -189,3 +189,65 @@ eabi = embedded abi
 
 ```
 
+##### 3.4 make file 만들기
+
+```makefile
+    (/Makefile)
+    ARCH = armv7-a
+    MCPU = cortex-a8
+
+    CC = arm-none-eabi-gcc
+    AS = arm-none-eabi-as
+    LD = arm-none-eabi-ld
+    OC = arm-none-eabi-objcopy
+
+    LINKER_SCRIPT = ./navilos.ld
+
+    ASM_SRCS = $(wildcard boot/*.S)
+    ASM_OBJS = $(patsubst boot/%.S, build/%.o, $(ASM_SRCS))
+
+    navilos = build/navilos.axf
+    navilos_bin = build/navilos.bin
+
+    .PHONY: all clean run debug gdb
+
+    all: $(navilos)
+
+    clean:
+        @rm -fr build
+
+    run: $(navilos)
+        qemu-system-arm -M realview-pb-a8 -kernel $(navilos)
+
+    debug: $(navilos)
+        qemu-system-arm -M realview-pb-a8 -kernel $(navilos) -S -gdb tcp::1234,ipv4
+
+    gdb:
+        gdb-multiarch $(navilos)
+	    # arm-none-eabi-gdb
+
+    $(navilos): $(ASM_OBJS) $(LINKER_SCRIPT)
+        $(LD) -n -T $(LINKER_SCRIPT) -o $(navilos) $(ASM_OBJS)
+        $(OC) -O binary $(navilos) $(navilos_bin)
+
+    build/%.o: boot/%.S
+        mkdir -p $(shell dirname $@)
+        $(AS) -march=$(ARCH) -mcpu=$(MCPU) -g -o $@ $<
+```
+
+```bash
+
+    $ make all
+    >>>
+    # clean 된 상태에서는 이렇게 로그 뜨면서 빌드 됨
+    mkdir -p build
+    arm-none-eabi-as -march=armv7-a -mcpu=cortex-a8 -g -o build/Entry.o boot/Entry.S
+    boot/Entry.S: Assembler messages:
+    boot/Entry.S: Warning: end of file not at end of a line; newline inserted
+    arm-none-eabi-ld -n -T ./navilos.ld -o build/navilos.axf  build/Entry.o
+    arm-none-eabi-objcopy -O binary build/navilos.axf build/navilos.bin
+
+    # 한번 빌드가 제대로 되었다면 이렇게 로그 뜨면서 빌드가 안됨
+    make: Nothing to be done for 'all'.
+
+```

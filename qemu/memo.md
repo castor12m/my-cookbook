@@ -186,3 +186,34 @@ https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/577634350/Linux+Release+Ar
 
 
  ```
+
+### 여러가지 시도
+
+```bash
+    $ qemu-system-arm -M ? | grep ARM926
+
+    integratorcp         ARM Integrator/CP (ARM926EJ-S)
+    musicpal             Marvell 88w8618 / MusicPal (ARM926EJ-S)
+    palmetto-bmc         OpenPOWER Palmetto BMC (ARM926EJ-S)
+    realview-eb          ARM RealView Emulation Baseboard (ARM926EJ-S) 1
+    versatileab          ARM Versatile/AB (ARM926EJ-S)
+    versatilepb          ARM Versatile/PB (ARM926EJ-S)
+
+    $ qemu-system-arm -M versatilepb -kernel zImage -dtb obc-obs1.dtb -drive file=obc_disk.img,format=raw -append "root=/dev/ram0 console=ttyS0"
+
+    $ qemu-system-arm -M  realview-eb -serial /dev/null -serial mon:stdio -kernel zImage -dtb obc-obs1.dtb -drive file=obc_disk.img,format=raw -append "root=/dev/ram0 console=ttyS0"
+    >>>
+    ...무반응
+
+    # https://www.opensourceforu.com/2014/10/how-to-cross-compile-the-linux-kernel-with-device-tree-support/
+    $ export PATH=/opt/qemu-arm/bin:$PATH
+qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio \
+-kernel /mnt/sdcard/zImage \
+-dtb /mnt/sdcard/vexpress-v2p-ca9.dtb \
+-initrd /mnt/sdcard/rootfs.img -append root=/dev/ram0 console=ttyAMA0
+
+    #https://lukaszgemborowski.github.io/articles/minimalistic-linux-system-on-qemu-arm.html
+    $ qemu-system-arm -M versatilepb -kernel ./zImage -dtb obc-obs1.dtb  -serial stdio -append "serial=ttyAMA0"
+
+    $ qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio -kernel zImage -dtb obc-hyvrid.dtb -initrd rootfs.ubi -drive file=obc_disk.img,format=raw
+```
