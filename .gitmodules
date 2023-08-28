@@ -1,0 +1,3 @@
+[submodule "__secret_recipe"]
+	path = __secret_recipe
+	url = https://github.com/castor12m/my_secret_recipe.git

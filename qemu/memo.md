@@ -201,7 +201,7 @@ https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/577634350/Linux+Release+Ar
 
     $ qemu-system-arm -M versatilepb -kernel zImage -dtb obc-obs1.dtb -drive file=obc_disk.img,format=raw -append "root=/dev/ram0 console=ttyS0"
 
-    $ qemu-system-arm -M  realview-eb -serial /dev/null -serial mon:stdio -kernel zImage -dtb obc-obs1.dtb -drive file=obc_disk.img,format=raw -append "root=/dev/ram0 console=ttyS0"
+    $ qemu-system-arm -M realview-eb -serial /dev/null -serial mon:stdio -kernel zImage -dtb obc-obs1.dtb -drive file=obc_disk.img,format=raw -append "root=/dev/ram0 console=ttyS0"
     >>>
     ...무반응
 
