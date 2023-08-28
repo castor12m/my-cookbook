@@ -217,3 +217,10 @@ qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio \
 
     $ qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio -kernel zImage -dtb obc-hyvrid.dtb -initrd rootfs.ubi -drive file=obc_disk.img,format=raw
 ```
+
+```
+    (https://www.qemu.org/download/)
+    $ wget https://download.qemu.org/qemu-8.1.0.tar.xz
+    $ ./configure --target-list=arm-softmmu --enable-fdt --disable-kvm --disable-xen
+    $ tar xvJf qemu-8.1.0.tar.xz
+```
