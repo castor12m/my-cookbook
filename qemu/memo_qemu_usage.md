@@ -78,3 +78,76 @@ https://huroint.tistory.com/17
     xilinx-zynq-a9       Xilinx Zynq Platform Baseboard for Cortex-A9
     z2                   Zipit Z2 (PXA27x)
 ```
+
+### 포트포워딩? 가능?
+
+https://k1rha.tistory.com/entry/qemu-for-window-%EC%97%90%EC%84%9C-%ED%8F%AC%ED%8A%B8%ED%8F%AC%EC%9B%8C%EB%94%A9-%ED%95%98%EC%97%AC-%EB%82%B4%EB%B6%80%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0-How-to-networking-in-qemu
+
+```bash
+    $ ... -redir tcp:8080::80 -redir tcp:22222::22 
+```
+
+### QEMU 에서 빠져 나오기
+
+https://www.hackerschool.org/HardwareHacking/%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%ED%95%B4%ED%82%B9%20-%20ARM%20exploitation.pdf
+
+**추천! 위 사이트 내용 좋음
+
+ctrl + a + x
+
+ctrl + a 먼저 눌렀다가 뗀후 이어서 x
+
+### 관련 내용중 qemu-system-arm 옵션 참고용으로 적음 . 리눅스 커널 빌드 테스트 
+
+https://hyeyoo.com/148
+
+**추천! 위 사이트 내용 좋음
+
+``` bash
+    # 커널 소스 다운
+    $ wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.5.tar.xz
+    $ tar -xvf linux-5.15.5.tar.xz
+    $ cd linux-5.15.5
+
+    # 우선 기본 설절인 defconfig 로 빌드
+    $ make defconfig
+    $ make -j6
+
+    # 사이즈 확인
+    $ size vmlinux
+    >>>
+    text	           data	    bss	     dec	    hex filename
+    19994945	6728404	2216168	28939517	1b994fd	vmlinux
+    # defconfig로 빌드하면 약 27MiB 정도의 바이너리가 생긴다. vmlinux는 커널을 정적으로 링크한 바이너리 파일로, 압축되지 않은 상태이므로 실제 메모리에 올라왔을 때와 크기가 거의 비슷하다.
+
+    # ...
+
+    # 커널로만 부팅
+    $ qemu-system-arm -M versatilepb -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/versatile-pb.dtb -append "serial=ttyAMA0" -nographic
+
+    # ...
+
+    # initramfs와 함께 부팅
+    $ qemu-system-arm -M versatilepb -kernel arch/arm/boot/zImage -dtb arch/arm/boot/dts/versatile-pb.dtb -append "root=/dev/mem" -nographic -m 6750K -initrd rootfs.cpio.gz
+```
+
+### 펌웨어 분석?
+
+https://devdori.tistory.com/45
+
+```bash
+    $ sudo apt-get install binwalk
+
+    # 대상 펌웨어 아키텍쳐 식별
+    $ binwalk -A {대상 파일}
+    ex) $ binwalk -A t24xxxxxxx_.bin
+
+    # 대상 펌웨어 파일 시스템 추출
+    $ binwalk -e {대상 파일}
+
+    # ...
+
+    # ssh를 위한 22번 및 cgi(common gateway interface)를 위한 80 포트를 포트 포워딩
+    $ qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -hda debian_wheezy_armel_standard.qcow2 -append "root=/dev/sda1" -redir tcp:2080::80 -redir tcp:2022::22
+
+```
