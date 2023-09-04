@@ -12,13 +12,11 @@ https://www.youtube.com/watch?v=BgZHbCDFODk
 
     $ apt update
 
-    $ apt install qemu-kvm              # the emulator it self
-    $ apt install qemu-system-arm
-
-    $ apt install libvirt-daemon-system # runs virtualization in background
-    $ apt install libvirt-clients
-    $ apt install bridge-utils # important networking dependencies >> 설치시 $ brctl show 명령 사용 가능
-   
+    $ apt install -y qemu-kvm              # the emulator it self
+    $ apt install -y qemu-system-arm
+    $ apt install -y libvirt-daemon-system # runs virtualization in background
+    $ apt install -y libvirt-clients
+    $ apt install -y bridge-utils # important networking dependencies >> 설치시 $ brctl show 명령 사용 가능
 
     $ adduser $USER kvm
 
@@ -404,4 +402,25 @@ qemu-system-arm -M vexpress-a9 -m 1024 -serial stdio \
     CONFIG_DEBUG_UART_PL010=y
     CONFIG_DEBUG_UART_BASE=0x9000000
     CONFIG_DEBUG_UART_CLOCK=0
+```
+
+### 용어.
+
+https://ko.wikipedia.org/wiki/SCSI
+
+SCSI (Small Computer System Interface)
+
+스커지/스카시 (scuzzy->본단어의 뜻 지저분한?), 컴퓨터에 주변기기를 연결할 때 직렬방식으로 연결하기 위한 표준.
+
+
+### qemu 마운트
+
+```bash
+    (마운트)
+    $ sudo mount -t ext2 -o rw,loop {mount_커널이미지?} {mount_할_포스트디렉토리}
+    $ sudo mount -t ext2 -o rw,loop output/images/rootfs.ext2 /home/embeddedcraft/try
+
+    (마운트해제)
+    $ sudo unmount try
+
 ```
