@@ -274,11 +274,19 @@ ref : https://whitehairhan.tistory.com/77
 ```
     (~/.ssh/config)
 
+    (linux 계열 host pc)
     Host docker_8024
       HostName 0.0.0.0
       Port 8024
       User root
       IdentityFile /Users/castor/.ssh/uitos_fsw_rsa  << 추가
+
+    (window host pc)
+    Host docker_8024
+      HostName localhost
+      Port 8024
+      User root
+      IdentityFile C:\Userscastor.ssh\uitos_fsw_rsa  << 추가
 
 ```
 
