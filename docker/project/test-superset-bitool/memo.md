@@ -13,75 +13,42 @@
 https://passwd.tistory.com/entry/Superset-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%8B%A4%ED%96%89
 
 
-```
-apt -y update
-apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip libsasl2-dev libldap2-dev
-
-python3 -m venv venv
-. ./venv/bin/activate
-
-#apt-get install -y sqlite libsqlite-dev
-#mkdir /db
-#/usr/bin/sqlite /db/test.db
-apt-get install -y libsqlite-dev
-
-echo 'export FLASK_APP=superset' >> ~/.bashrc
-echo 'export PYTHONPATH="${PYTHONPATH}:/src/config"' >> ~/.bashrc
-. ~/.bashrc
-
-mkdir ./config
-echo 'ROW_LIMIT = 5000' >> ./config/superset_config.py
-echo SECRET_KEY = \'Po4kCDDZnHK9cfhytBrke8Bti99L8A9Rj7BPRhV/fnHwM/iQJUkctrhL\' >> ./config/superset_config.py
-#echo SQLALCHEMY_DATABASE_URI = \'sqlite:////db/superset.db\' >> ./config/superset_config.py
-echo SQLALCHEMY_DATABASE_URI = \'sqlite:////sqlite_db/superset.db\' >> ./config/superset_config.py
-echo 'WTF_CSRF_ENABLED = True' >> ./config/superset_config.py
-echo 'WTF_CSRF_EXEMPT_LIST = []' >> ./config/superset_config.py
-echo 'WTF_CSRF_TIME_LIMIT = 60 * 60 * 24 * 365' >> ./config/superset_config.py
-echo MAPBOX_API_KEY = \'\' >> ./config/superset_config.py
-
-#pip install wtforms==2.3.3
-pip install psycopg2-binary
-pip install pysqlite
-pip install sqlparse==0.4.3
-pip install marshmallow-enum
-pip install --upgrade setuptools pip
-pip install apache-superset
-
-superset db upgrade
-```
- postgresql-devel
 ```bash
-    $ apt -y update
-    $ apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip libsasl2-dev libldap2-dev
+    apt -y update
+    apt install -y build-essential libssl-dev libffi-dev python3-dev python3-pip libsasl2-dev libldap2-dev
 
-    $ python3 -m venv venv
-    $ . ./venv/bin/activate
+    python3 -m venv venv
+    . ./venv/bin/activate
 
-    $ apt-get install -y sqlite libsqlite-dev
-    $ mkdir /db
-    $ /usr/bin/sqlite /db/test.db
-    
-    $ echo 'export FLASK_APP=superset' >> ~/.bashrc
-    $ echo 'export PYTHONPATH="${PYTHONPATH}:/src/config"' >> ~/.bashrc
-    $ . ~/.bashrc
+    #apt-get install -y sqlite libsqlite-dev
+    #mkdir /db
+    #/usr/bin/sqlite /db/test.db
+    apt-get install -y libsqlite-dev
 
-    $ mkdir ./config
-    $ echo 'ROW_LIMIT = 5000' >> ./config/superset_config.py
-    $ echo SECRET_KEY = \'Po4kCDDZnHK9cfhytBrke8Bti99L8A9Rj7BPRhV/fnHwM/iQJUkctrhL\' >> ./config/superset_config.py
-    $ echo SQLALCHEMY_DATABASE_URI = \'sqlite:////db/superset.db\' >> ./config/superset_config.py
-    $ echo 'WTF_CSRF_ENABLED = True' >> ./config/superset_config.py
-    $ echo 'WTF_CSRF_EXEMPT_LIST = []' >> ./config/superset_config.py
-    $ echo 'WTF_CSRF_TIME_LIMIT = 60 * 60 * 24 * 365' >> ./config/superset_config.py
-    $ echo MAPBOX_API_KEY = \'\' >> ./config/superset_config.py
+    echo 'export FLASK_APP=superset' >> ~/.bashrc
+    echo 'export PYTHONPATH="${PYTHONPATH}:/src/config"' >> ~/.bashrc
+    export FLASK_APP=superset
+    export PYTHONPATH="${PYTHONPATH}:/src/config"
 
-    #$ pip install wtforms==2.3.3
-    $ pip install psycopg2-binary
-    $ pip install pysqlite
-    $ pip install sqlparse==0.4.3
-    $ pip install marshmallow-enum
-    $ pip install --upgrade setuptools pip
-    $ pip install apache-superset
+    . ~/.bashrc
 
+    mkdir ./config
+    echo 'ROW_LIMIT = 5000' >> ./config/superset_config.py
+    echo SECRET_KEY = \'Po4kCDDZnHK9cfhytBrke8Bti99L8A9Rj7BPRhV/fnHwM/iQJUkctrhL\' >> ./config/superset_config.py
+    #echo SQLALCHEMY_DATABASE_URI = \'sqlite:////db/superset.db\' >> ./config/superset_config.py
+    echo SQLALCHEMY_DATABASE_URI = \'sqlite:////sqlite_db/superset.db\' >> ./config/superset_config.py
+    echo 'WTF_CSRF_ENABLED = True' >> ./config/superset_config.py
+    echo 'WTF_CSRF_EXEMPT_LIST = []' >> ./config/superset_config.py
+    echo 'WTF_CSRF_TIME_LIMIT = 60 * 60 * 24 * 365' >> ./config/superset_config.py
+    echo MAPBOX_API_KEY = \'\' >> ./config/superset_config.py
+
+    #pip install wtforms==2.3.3
+    pip install psycopg2-binary
+    pip install pysqlite
+    pip install sqlparse==0.4.3
+    pip install marshmallow-enum
+    pip install --upgrade setuptools pip
+    pip install apache-superset
 
     $ superset --help
     결과 >>>
@@ -96,7 +63,6 @@ superset db upgrade
 
     $ superset db upgrade
 
-
     # 직접해야함..
     $ superset fab create-admin
 
@@ -105,11 +71,11 @@ superset db upgrade
 
     $ superset init
 
-    # $ superset run -p 8088 --with-threads --reload --debugger
+    # $ superset run -p 8089 --with-threads --reload --debugger
     # or
 
     # 도커에서 할려면 이거 사용
-    $ superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debugger
+    $ superset run -h 0.0.0.0 -p 8089 --with-threads --reload --debugger
 ```
 
 
@@ -255,4 +221,15 @@ https://stackoverflow.com/questions/33711818/embed-sqlite-database-to-docker-con
     RUN mkdir /db
     RUN /usr/bin/sqlite3 /db/test.db
     CMD /bin/bash
+```
+
+##### DB 연결시
+
+```
+    hostip          : postgresql
+    port            : 5432
+    databasename    : superset
+    username        : postgres
+    passwd          : postgres
+
 ```

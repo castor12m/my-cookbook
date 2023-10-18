@@ -10,5 +10,4 @@ RUN pip install sqlalchemy-redshift
 
 USER superset
 
-
 VOLUME /app/superset

@@ -1,0 +1,17 @@
+FROM naraspace/base:0.1 AS base
+WORKDIR /src
+
+ENV SUPERSET_SECRET_KEY 1234
+COPY . .
+
+RUN bash ./script/install.sh
+# RUN pip install mysqlclient
+
+# RUN pip install sqlalchemy-redshift
+
+# USER superset
+
+# VOLUME /app/superset
+
+#ENTRYPOINT [ "tail", "-f", "/dev/null" ]
+ENTRYPOINT [ "bash", "./script/run.sh" ]

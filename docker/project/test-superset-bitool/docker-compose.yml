@@ -2,20 +2,35 @@ version: '3.7'
 name: nara_sample_test
 networks:
   default:
-    name: uitos-network
+    name: mini-sds-network
 
 services:
+  postgresql:
+    #image: naraspace/postgresql:0.1
+    image: postgres:14
+    container_name: postgresql
+    env_file: 
+      - ./postgresql/a.env
+    privileged: true
+    user: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data/postgres14:/var/lib/postgresql/data
+    
   superset:
     image: naraspace/superset:0.1
     container_name: superset
     env_file: 
-      - ./supersat/a.env
+      - ./superset/a.env
     build:
-      context: ./superset
+      #context: ./superset
+      context: ./superset_on_mac
     privileged: true
     user: root
     ports:
-      - "8080:8088"
+      - "8089:8089"
     volumes:
-      - ./fastapi/src:/app
+      - ./superset_on_mac/script:/src/script
+      - ./db_data/sqlite:/sqlite_db 
   

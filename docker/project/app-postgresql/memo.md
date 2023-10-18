@@ -57,14 +57,18 @@ https://rianshin.tistory.com/68
     # 비밀번호 변경
     postgres=# \password postgres
 
+    # 주이!! 명령어 입력할때, create 전에 한칸띄우기 해야 명령어됨......?
+    # 아닐 때도 있네,, 이전에 입력된 문자열 버퍼가 뭐 남나?
+    # 아니면 세미콜론 같이 붙여서
+    # ex)  create database superset;
+    # ...
+    # 성공하면 다음과 같이 됨
+    #   $ postgres=#  create database superset;
+    #   >>> CREATE DATABASE
     postgres=# create database superset
 
     # 테이블 만들기
     postgres=# create table testa (key char(16) primary key, val1 integer, val2 integer);
-
-    # 테이블 지우기 
-    postgres=# drop table testa;
-
     # 행 추가
     insert into testa values('key00A', 90, 100);
     insert into testa values('key00B', 80, 90);
@@ -72,6 +76,19 @@ https://rianshin.tistory.com/68
     insert into testa values('key00D', 75, 90);
     insert into testa values('key00E', 60, 90);
     insert into testa values('key00F', 85, 75);
+
+    postgres=# create table testb (key SERIAL primary key, subsystem char(16), time_count integer, val integer);
+    insert into testb(subsystem, time, val) values('AOCS', 0, 23.7);
+    insert into testb(subsystem, time, val) values('PDHS', 0, 28.5);
+    
+    insert into testb(subsystem, time, val) values('AOCS', 2, 22.1);
+    insert into testb(subsystem, time, val) values('AOCS', 3, 21.5);
+    insert into testb(subsystem, time, val) values('PDHS', 1, 28.0);
+    insert into testb(subsystem, time, val) values('PDHS', 2, 27.8);
+    insert into testb(subsystem, time, val) values('PDHS', 3, 27.4);
+
+    # 테이블 지우기 
+    postgres=# drop table testa;
 
     # 테이블 조회
     \dt
