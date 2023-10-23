@@ -153,3 +153,43 @@ volume에 있는 .so 파일 옮겨 놓을려고 했는데 여러가지 삽질을
     or 
     $ docker-compose up -d --build redis mediator zmqproxy stb testhelper fsw
 ```
+
+
+### docker-compose 분리해서 실행하는 방법
+
+ref : https://www.daleseo.com/docker-compose/
+
+```console
+    $ docker-compose up -f {file_name} up
+    ex)
+    $ docker-compose up -f docker-compose-db.yml up -d
+```
+
+그렇다면 다른 docker-compose 파일에 들어있는걸 depends_on 해도 됨? --> 안됨...
+
+ex)
+```yml
+    (docker-compose.yml)
+    ...
+    service:
+        postgresql:
+            ...
+```
+
+```yml
+    (docker-compose.yml)
+    ...
+    service:
+        supserset:
+            ...
+            depends_on:
+                - "postgresql"
+```
+
+이렇게 하고 걸면 다음과 같이 에러 뜸
+
+```
+    service "superset" depends on undefined service postgresql: invalid compose project
+```
+
+그렇다면 같은 도커 네트워크로 묶고 서브시명을 호스트네임으로 사용하는 경우는 가능? --> 가능
