@@ -143,7 +143,7 @@ index_sBandTxCnt=142;
 index_sBandRxCnt=143;
 index_sBandBootCnt=144;
 
-hk_header = [
+hk1_header = [
 'hkTimeUTC', 
 'timeUtc', 
 'selSBband', 

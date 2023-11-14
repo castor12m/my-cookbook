@@ -4,7 +4,7 @@
 #close all
 clear;
 clc;
-loadHK1Index();
+loadHK2Index();
 
 ################################################################
 # setting
@@ -13,39 +13,39 @@ loadHK1Index();
 #   folder='.';
 #   folder='./hk';
 
-folder='./hk';
+folder='./hk2';
 value_lineChar='-';
+plot_mode=2;
+
+plot_c_index = [];
+
+if plot_mode==0
+
 plot_c_index = [
-    index_obcTemp,
-    #index_spStationTempXp,
-    #index_spStationTempXn,
-    #index_spStationTempYn,
-    #index_spStationTempYp,
-    #index_spUpTopTempXp,
-    #index_spUpTopTempXn,
-    #index_spUpTopTempYn,
-    #index_spUpBotTempXp,
-    #index_spUpBotTempXn,
-    #index_spUpBotTempYn,
-    index_adcPdhsCaseTemp,
-    index_adcEwc27CaseTemp,
-    index_dockTemp1,
-    #index_dockTemp2,
-    index_pduTemp,
-    index_acuTemp1,
-    #index_acuTemp2,
-    #index_acuTemp3,
-    index_battery1Temp1,
-    #index_battery1Temp2,
-    #index_battery1Temp3,
-    #index_battery1Temp4,
-    index_battery2Temp1,
-    #index_battery2Temp2,
-    #index_battery2Temp3,
-    #index_battery2Temp4,
-    index_sBandBoardTemp
-    #index_sBandPaTemp
+index_torqDutyCycle1,
+index_torqDutyCycle2,
+index_torqDutyCycle3,
 ];
+
+elseif plot_mode==1
+
+plot_c_index = [
+index_torqDutyCycle1,
+index_torqDutyCycle2,
+index_torqDutyCycle3,
+];
+
+elseif plot_mode==2
+
+plot_c_index = [
+index_torqDutyCycle1,
+index_torqDutyCycle2,
+index_torqDutyCycle3,
+];
+
+end
+
+
 
 
 ################################################################
@@ -57,8 +57,8 @@ data = loadHKfile(folder);
 plot_header = {};
 
 for i=1:length(plot_c_index)
-    plot_header(i, :) = hk_header(plot_c_index(i), :);
-    #printf("plot_header %d :  %s\n", i, hk_header(plot_c_index(i), :));
+    plot_header(i, :) = hk2_header(plot_c_index(i), :);
+    #printf("plot_header %d :  %s\n", i, hk2_header(plot_c_index(i), :));
 end
 
 ################################################################
