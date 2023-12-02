@@ -486,6 +486,36 @@ linux의 경우 docker compose를 별도로 설치해줘야 한다.
     $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
+ref : https://siane.tistory.com/338
+
+최신 도커 컴포즈 설치
+
+```
+    #버전확인
+    docker-compose -v
+    Docker Compose version [설치된 버전]
+
+    #기존 설치 삭제
+    sudo apt remove docker-compose -y
+
+    #jq library 설치
+    sudo apt install jq -y
+
+    #최신 버전 설치
+    VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)
+    DESTINATION=/usr/bin/docker-compose
+    sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-$(uname -s)-$(uname -m) -o $DESTINATION
+    sudo chmod 755 $DESTINATION
+
+    #설치 버전 확인
+    docker-compose -v
+    Docker Compose version [최신버전]
+
+    해당글 확인 버전 (우분투 22.04 기준)
+
+    25 서버에서 설치 확인
+```
+
 #### 10.1 docker-compose 실례
 
 ref : https://engineer-mole.tistory.com/221
