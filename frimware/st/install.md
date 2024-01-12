@@ -159,9 +159,6 @@ main.c 파일명을 main.cpp 로 수정
 
 c++ 클래스 main.cpp 에 넣어서 확인
 
-```
-```
-
 빌드 확인
 
 ### 3.2.1. 에러발생 : main 함수가 undefined 되어있다고 뜰때,
