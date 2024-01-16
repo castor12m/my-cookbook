@@ -92,3 +92,12 @@ https://github.com/Microsoft/Windows-driver-samples
 https://learn.microsoft.com/ko-kr/windows-hardware/drivers/kernel/introduction-to-wdm
 
 https://learn.microsoft.com/ko-kr/windows-hardware/drivers/ddi/wdm/
+
+
+
+
+## ?. 도움될만한 하지만 아직 테스트 안해봄
+
+https://nroses-taek.tistory.com/276#google_vignette
+
+https://blog.naver.com/yhsyhs0602/222285200661
