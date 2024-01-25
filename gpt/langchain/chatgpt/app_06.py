@@ -18,7 +18,7 @@ from langchain.chains import LLMChain
 # $ export OPENAI_API_KEY="..."
 
 # 2) input key from file
-f = open("../../__secret_recipe/secret_key/openai_api_key.txt", 'r')
+f = open("../../../__secret_recipe/secret_key/openai_api_key.txt", 'r')
 input_key = f.readline()
 f.close()
 
@@ -48,4 +48,6 @@ chain = LLMChain(
     output_parser=CommaSeparatedListOutputParser()
 )
 
-chain.run("동물에 대해 공부하고 싶어")
+result = chain.run("동물에 대해 공부하고 싶어")
+
+print(result)

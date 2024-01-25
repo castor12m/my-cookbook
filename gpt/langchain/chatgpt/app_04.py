@@ -16,7 +16,7 @@ from langchain.prompts.chat import (
 # $ export OPENAI_API_KEY="..."
 
 # 2) input key from file
-f = open("../../__secret_recipe/secret_key/openai_api_key.txt", 'r')
+f = open("../../../__secret_recipe/secret_key/openai_api_key.txt", 'r')
 input_key = f.readline()
 f.close()
 
@@ -35,5 +35,7 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 
 llm = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 
-llm.format_messages(output_language="English",
+result = llm.format_messages(output_language="English",
                             text="잠이 안 올 때는 어떻게 하면 좋을지 대답해줘")
+
+print(result)
