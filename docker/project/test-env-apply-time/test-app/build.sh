@@ -1,0 +1,1 @@
+echo $SAT_MODE_INFO >> env_check_in_build.txt

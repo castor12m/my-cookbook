@@ -1,0 +1,13 @@
+FROM naraspace/base:0.1 AS build
+
+WORKDIR /src
+
+COPY . .
+
+ENV SAT_MODE_INFO=FIRE_SAT
+
+RUN bash build.sh
+
+FROM build AS final
+
+CMD ["python", "app.py"]

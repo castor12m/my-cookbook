@@ -1,0 +1,16 @@
+version: '3.7'
+
+networks:
+  default:
+    name: dtest
+
+services:
+  test-app:
+    image: naraspace/env-timing-test
+    container_name: env-timing-test
+    environment:
+      - SAT_MODE_INFO=${SAT_MODE_CONFIG}
+    build:
+      context: ./test-app
+      dockerfile: ./buildfile/Dockerfile.${SAT_MODE_CONFIG}
+
