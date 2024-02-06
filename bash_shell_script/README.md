@@ -5,3 +5,54 @@
 # NOTE SHELL
 
 <br/>
+
+
+
+## 1. 대소문자 관련
+
+https://scriptingosx.com/2019/12/upper-or-lower-casing-strings-in-bash-and-zsh/
+
+### 1.1. bash3 이상 버전
+
+```bash
+    name="John Doe"
+    # sh
+    echo $(echo "$name" |  tr '[:upper:]' '[:lower:]' )
+    john doe
+
+    # bash3
+    echo $(tr '[:upper:]' '[:lower:]' <<< "$name")
+    john doe
+```
+
+### 1.2. bash5 이상 버전
+
+```bash
+    name="John Doe"
+    echo ${name,,}
+    john doe
+    echo ${name^^}
+    JOHN DOE
+```
+
+### 1.3. Zsh
+
+In zsh you can use expansion modifiers:
+
+```bash
+    % name="John Doe"
+    % echo ${name:l}
+    john doe
+    % echo ${name:u}
+    JOHN DOE
+```
+
+You can also use expansion flags:
+
+```bash    
+    % name="John Doe"    
+    % echo ${(L)name}     
+    john doe
+    % echo ${(U)name}
+    JOHN DOE
+```
