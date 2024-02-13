@@ -1,4 +1,7 @@
 private_space/
+private-space/
 db_data/
+db-data/
 git_block/
+git-block/
 venv/
