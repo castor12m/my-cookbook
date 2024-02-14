@@ -228,6 +228,40 @@ https://www.jenkins.io/blog/2022/12/27/run-jenkins-agent-as-a-service/
 
 ```
 
+!!!!!!! 아니 xxxxxxxxx systemctl start 로 하니까 되네... 아놔..
+
+```bash
+    nst@naraspace-gs:/stb/workspace$ systemctl start jenkins-agent
+    ==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+    Authentication is required to start 'jenkins-agent.service'.
+    Authenticating as: nst,,, (nst)
+    Password: 
+    ==== AUTHENTICATION COMPLETE ===
+
+    nst@naraspace-gs:/stb/workspace$ systemctl status jenkins-agent
+    ● jenkins-agent.service - Jenkins Agent
+        Loaded: loaded (/etc/systemd/system/jenkins-agent.service; enabled; vendor preset: enabled)
+        Active: active (running) since Wed 2024-02-14 15:26:55 KST; 5s ago
+    Main PID: 4149896 (bash)
+        Tasks: 43 (limit: 38093)
+        Memory: 101.9M
+            CPU: 1.169s
+        CGroup: /system.slice/jenkins-agent.service
+                ├─4149896 /bin/bash /usr/local/jenkins-service/start-agent.sh
+                └─4149903 java -jar agent.jar -jnlpUrl http://naraspace-gs.local:8151/computer/testpc%2D25/jenkins-agent.>
+
+    2월 14 15:26:55 naraspace-gs bash[4149903]: Feb 14, 2024 3:26:55 PM hudson.remoting.jnlp.Main$CuiListener status
+    2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Connecting to naraspace-gs.local:50000
+    2월 14 15:26:55 naraspace-gs bash[4149903]: Feb 14, 2024 3:26:55 PM hudson.remoting.jnlp.Main$CuiListener status
+    2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Trying protocol: JNLP4-connect
+    2월 14 15:26:55 naraspace-gs bash[4149903]: Feb 14, 2024 3:26:55 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLa>
+    2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Waiting for ProtocolStack to start.
+    2월 14 15:26:55 naraspace-gs bash[4149903]: Feb 14, 2024 3:26:55 PM hudson.remoting.jnlp.Main$CuiListener status
+    2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Remote identity confirmed: ed:7a:2a:ed:cc:47:92:5b:85:4d:3c:ae:7a:b>
+    2월 14 15:26:55 naraspace-gs bash[4149903]: Feb 14, 2024 3:26:55 PM hudson.remoting.jnlp.Main$CuiListener status
+    2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Connected
+```
+
 
 ## A. 일단 메모
 
