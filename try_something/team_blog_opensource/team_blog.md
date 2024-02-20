@@ -102,4 +102,4 @@ https://github.com/BookStackApp/devops/blob/main/scripts/installation-ubuntu-22.
 
 aws에 해당 스크립트로 설치
 
-asw에서 80 이랑 443 포트 열어놓음
+aws에서 80 이랑 443 포트 열어놓음
