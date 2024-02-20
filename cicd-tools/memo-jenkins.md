@@ -307,3 +307,97 @@ https://2mukee.tistory.com/325
 
 https://seosh817.tistory.com/370
 
+
+## B. 젠킨스 파이프라인
+
+https://bob-full.tistory.com/10
+
+### Declarative
+
+```
+    pipeline {
+        agent none
+        stages{
+            stage('Parallel Test') {
+                parallel { 
+                    stage('Build-test-1') {
+                        steps{ build 'Build-test-1' }
+                    }
+                    stage('Build-test-2') {
+                        steps{ build 'Build-test-2' }
+                    }
+                    stage('Build-test-3') {
+                        steps{ build 'Build-test-3' }
+                    }
+                }
+            }
+            stage('Build-test-4') {
+                steps{
+                    build 'Build-test-4'
+                }
+            }
+        }
+    }
+```
+
+### Scripted
+
+```
+    node {
+    stage('Parallel-test') {
+        parallel 'Build-test-1' : {
+            build job : 'Build-test-1'
+        } , 'Build-test-2' : {
+            build job : 'Build-test-2'
+        } , 'Build-test-3' : {
+            build job : 'Build-test-3'
+        }
+    }
+    stage('Build-test-4') {
+        build job : 'Build-test-4'
+    }
+    }
+```
+
+### Declarative + Scripted Mix
+
+```
+    node {
+    stage('Parallel-test') {
+        parallel 'Build-test-1' : {
+            build job : 'Build-test-1'
+        } , 'Build-test-2' : {
+            build job : 'Build-test-2'
+        } , 'Build-test-3' : {
+            build job : 'Build-test-3'
+        }
+    }
+    }
+    pipeline {
+        agent none 
+        stages {
+            stage('Build-test-4') {
+                steps {
+                    build 'Build-test-4'
+                }
+            }
+        }
+    }
+```
+
+
+## C. 플러그인 추천
+
+https://creampuffy.tistory.com/202
+
+```bash
+    # 멀티브랜치 아이템이 깃헙 webhook을 받아 동작할 수 있게 해주는 도구
+    multibranch-scan-webhook-trigger
+
+    # 파이프라인 시각화 도구
+    blueocean
+
+    # 빌드 결과 슬랙 알림 도구
+    slack
+
+```
