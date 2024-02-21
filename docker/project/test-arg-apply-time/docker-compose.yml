@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+  default:
+    name: dtest
+
+services:
+  test-app:
+    image: naraspace/arg-timing-test
+    container_name: arg-timing-test
+    environment:
+      - SAT_MODE_INFO=${SAT_MODE_CONFIG}
+    build:
+      context: ./test-app
+      dockerfile: ./buildfile/Dockerfile.${SAT_MODE_CONFIG}
+      args:
+        some_variable_name: a_value
+        env_top_key: ${SAT_MODE_KEY}
+

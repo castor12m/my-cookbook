@@ -1,0 +1,25 @@
+FROM naraspace/base:0.1 AS build
+
+WORKDIR /src
+
+ARG some_variable_name=default_value1
+ARG env_top_key=default_top_key
+# or (아래와 같이 기본값 없이 아규먼트 선언만 해도 Docker-compose 파일 에서 입력한 값이 설정됨)
+#ARG some_variable_name
+#ARG env_top_key
+
+# or with a hard-coded default:
+#ARG some_variable_name=default_value
+
+RUN echo "Test some_variable_name: $some_variable_name"
+RUN echo "Test env_top_key: $env_top_key"
+
+COPY . .
+
+ENV SAT_MODE_INFO=OBS1B
+
+RUN bash build.sh
+
+FROM build AS final
+
+CMD ["python", "app.py"]
