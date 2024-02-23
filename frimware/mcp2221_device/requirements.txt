@@ -1,0 +1,13 @@
+Adafruit-Blinka==8.32.0
+adafruit-circuitpython-busdevice==5.2.6
+adafruit-circuitpython-lis3dh==5.2.2
+adafruit-circuitpython-requests==2.0.5
+adafruit-circuitpython-typing==1.10.2
+Adafruit-PlatformDetect==3.60.0
+Adafruit-PureIO==1.1.11
+EasyMCP2221==1.7.1
+hidapi==0.14.0
+pyftdi==0.55.0
+pyserial==3.5
+pyusb==1.2.1
+typing_extensions==4.9.0

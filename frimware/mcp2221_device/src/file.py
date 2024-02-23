@@ -1,0 +1,7 @@
+import time
+import board
+import neopixel
+import adafruit_lis3dh
+import usb_hid
+from adafruit_hid.consumer_control import ConsumerControl
+from adafruit_hid.consumer_control_code import ConsumerControlCode

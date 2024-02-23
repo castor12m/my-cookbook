@@ -1,3 +1,9 @@
+### FT201
+
+<br/>
+<center>
+<img src="./device_capture.png" width="50%" height="50%" title="px(픽셀) 크기 설정" alt="logo" border-radius="90px"></img>
+</center>
 
 
 ## 1. FT201 드라이버 macOS에 설치하기
@@ -36,7 +42,7 @@ https://ftdichip.com/drivers/d2xx-drivers/
     $ make
 ```
 
-## 1.4. 장비 연결 후, 인식했는지 확인
+## 1.4. 장비 연결 후, 인식했는지 확인 (2024/02/23 아래 성공)
 
 mac 프로그램으로 system information (시스템 정보) 검색해서 실행
 
@@ -59,10 +65,39 @@ mac 프로그램으로 system information (시스템 정보) 검색해서 실행
 
 ```
 
-```
+```bash
+    # ??
     sudo kextunload -b com.apple.driver.AppleUSBFTDI
 
-    sudo EEPROM/read/read
+    # 소스파일 Samples 내부에서 다음 시작
+    release/Samples $ make
+    release/Samples $ cp ../build/libftd2xx.1.4.24.dylib .
+    release/Samples $ sudo ln -sf libftd2xx.1.4.24.dylib libftd2xx.dylib
+
+    # 실행
+    release/Samples $ sudo EEPROM/read/read
+
+    >>>
+    Library version = 0x10424
+    Opening port 0
+    FT_Open succeeded.  Handle is 0x148809a00
+    FT_GetDeviceInfo succeeded.  Device is type 9.
+    FT_EE_Read succeeded.
+
+    Signature1 = 0
+    Signature2 = -1
+    Version = 0
+    VendorId = 0x0403
+    ProductId = 0x6015
+    Manufacturer = 
+    ManufacturerId = 
+    Description = 
+    SerialNumber = 
+    MaxPower = 90
+    PnP = 1
+    SelfPowered = 0
+    RemoteWakeup = 0
+    Returning 0
 ```
 
 
@@ -98,6 +133,28 @@ https://learn.sparkfun.com/ftdiDriversMac
 https://www.ftdichip.com/Support/Documents/InstallGuides/Mac_OS_X_Installation_Guide.pdf
 
 
+## 1.D 다른시도
+
+https://arduino.stackexchange.com/questions/91111/how-to-install-ftdi-serial-drivers-on-mac
+
+
+```
+    I have just managed to get the FTDI set up for my M1 mac using the Pro Mini. I think the issue is that newer macs automatically block the FTDI serial connection from being used as a com port. You need to install a program called D2XXHelper to prevent this behaviour.
+
+    I did the following, hopefully this will work for you too:
+
+    Install FTDI VCP Driver, found here: Scroll down to first table and find the latest Mac OS drivers. There are 2, the 2.4.4 version and the 1.5 version. I think you need to use the 1.5 version for the M1 but I’m not sure because I installed both before I did the next steps to get it working.
+    Install the D2XXHelper found here: Scroll down to first table and look in the comments column for the Mac OS row to find the download link.
+    After installing the D2XXHelper, you should get a security prompt saying system extension blocked. Follow this guide which shows how to provide permission for the system extension to be applied – this requires going into recovery mode and requires several computer restarts.
+    After following the steps in the guide, you should have enabled the D2XXHelper system extensions to be applied, in which case when you connect your Arduino to your computer via the FTDI connector, the Arduino IDE 2 should now recognise that a device has been connected via the FTDI virtual com port.
+    optional – to check that your FTDI is connected correctly to your Arduino, connect it up, Open a Terminal window and type “ls /dev/tty.*” and run this command. If the FTDI is connected properly then a usb serial device should show up in the results to this command.
+```
+
+https://ftdichip.com/drivers/d2xx-drivers/
+
+위 링크에서 D2xxHelper 받을때, 크롬에서는 제대로 다운로드 안되고 이상한 파일로 열림, 그럴떄 Safari 로 사이트 열어서 다운로드 시도!
+
+
 
 ## A. 1. 패키지 설치
 
@@ -121,3 +178,21 @@ https://koblents.com/Ches/Original-Work/171-Unloading-FTDI-drivers-on-a-Mac-for-
     $ brew install libusb
     $ brew install libftdi
 ```
+
+
+
+
+https://ftdichip.com/drivers/vcp-drivers/
+
+
+Mac OS X10.15 and macOS 11/12
+
+ARM
+
+1.5.0 (dmg)
+
+FTDIUSBSerialDextInstaller_1_5_0.dmg
+
+
+https://www.ftdichip.com/old2020/Support/Documents/AppNotes/AN_134_FTDI_Drivers_Installation_Guide_for_MAC_OSX.pdf
+
