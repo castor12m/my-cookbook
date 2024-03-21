@@ -44,7 +44,9 @@
 
 ```bash
     # 아이피가 제대로 할당되었는지 확인하자
-    ip a
+    $ ip addr
+        or
+    $ hostname -I
 ```
 
 

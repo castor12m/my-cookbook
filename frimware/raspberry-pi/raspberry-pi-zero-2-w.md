@@ -12,10 +12,11 @@ core 설치 할때 계정 아이디 없으면 설치 진행 막힘.
 ubuntu 22.04 64bit 로 선택해서 진행
 
 커스터마이징 정보
+예시
 ```
     localhostname = raspberrypizero
     id : pi0
-    passwd : ****
+    passwd : ********
     SSID : 연결할 WIFI SSID
     SSID PASSWORD : 연결할 WIFI 비번
 ```
@@ -73,6 +74,14 @@ https://raspberrypi.stackexchange.com/questions/98598/how-to-setup-the-raspberry
     $ sudo reboot
 ```
 
+https://dongle94.github.io/ubuntu/ubuntu-check-ip/
+
+```bash
+    # ip 확인
+    $ ip addr
+        or
+    $ hostname -I
+```
 
 ### 3. 필수 설치할꺼?
 
