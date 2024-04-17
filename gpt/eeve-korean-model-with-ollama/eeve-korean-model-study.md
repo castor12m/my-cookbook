@@ -4,6 +4,7 @@
 
 https://huggingface.co/heegyu/EEVE-Korean-Instruct-10.8B-v1.0-GGUF
 https://www.youtube.com/watch?v=VkcaigvTrug&t=1s
+https://github.com/teddylee777/langserve_ollama/blob/main/ollama-modelfile/EEVE-Korean-Instruct-10.8B-v1.0/Modelfile-V02
 
 Modelfile
 ```
@@ -19,7 +20,9 @@ TEMPLATE """{{- if .System }}
 
 SYSTEM """A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."""
 
-TEMPERATURE 0
+PARAMETER temperature 0
+PARAMETER num_predict 3000
+PARAMETER num_ctx 4096
 PARAMETER stop <s>
 PARAMETER stop </s>
 ```
