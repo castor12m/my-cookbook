@@ -512,7 +512,7 @@ ref : https://siane.tistory.com/338
 
 최신 도커 컴포즈 설치
 
-```
+```bash
     #버전확인
     docker-compose -v
     Docker Compose version [설치된 버전]
@@ -536,6 +536,21 @@ ref : https://siane.tistory.com/338
     해당글 확인 버전 (우분투 22.04 기준)
 
     25 서버에서 설치 확인
+```
+
+데비안? 
+
+https://stackoverflow.com/questions/49839028/how-to-upgrade-docker-compose-to-latest-version
+
+curl + grep 이용 설치법
+
+```bash 
+    VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*\d')
+    DESTINATION=/usr/local/bin/docker-compose
+    sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-$(uname -s)-$(uname -m) -o $DESTINATION
+    sudo chmod 755 $DESTINATION
+    ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
+    docker-compose --version
 ```
 
 #### 10.1 docker-compose 실례
