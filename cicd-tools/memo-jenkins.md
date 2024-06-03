@@ -185,6 +185,22 @@ https://lahuman.jabsiri.co.kr/341
     [Install]
     WantedBy=multi-user.target
     ================================================================
+
+
+    예시 1
+    ================================================================
+    [Unit]
+    Description=Jenkins Agent
+
+    [Service]
+    User=stbtest2
+    WorkingDirectory=/home/stbtest2
+    ExecStart=/bin/bash /usr/local/jenkins-service/start-agent.sh
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target
+    ================================================================
 ```
 
 ```bash
@@ -262,6 +278,61 @@ https://www.jenkins.io/blog/2022/12/27/run-jenkins-agent-as-a-service/
     2월 14 15:26:55 naraspace-gs bash[4149903]: INFO: Connected
 ```
 
+
+??? 2024.05.16 stbtest3 추가 및 기타 ip 수정에 따른 jenkins-agent 재설정
+
+
+일단 중요 수정 부분은
+1) sudo vi /usr/local/jenkins-service/start-agent.sh
+2) sudo vi /etc/systemd/system/jenkins-agent.service
+
+이 두 부분 수정 필수, 워킹디렉토리 바뀌면 jenkins 마스터 웹에서 해당 노드 설정도 수정 필수.
+
+service jenkins-agent status 확인했을때 계속 안됐었는데,
+service jenkins-agent restart 하니까 되네..
+
+```
+stbtest3@stbtest3:~$ service jenkins-agent status
+× jenkins-agent.service - Jenkins Agent
+     Loaded: loaded (/etc/systemd/system/jenkins-agent.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2024-05-16 17:16:31 KST; 8min ago
+   Main PID: 716932 (code=exited, status=200/CHDIR)
+        CPU: 1ms
+
+ 5월 16 17:16:31 stbtest3 systemd[1]: jenkins-agent.service: Scheduled restart job, restart counter is at 5.
+ 5월 16 17:16:31 stbtest3 systemd[1]: Stopped Jenkins Agent.
+ 5월 16 17:16:31 stbtest3 systemd[1]: jenkins-agent.service: Start request repeated too quickly.
+ 5월 16 17:16:31 stbtest3 systemd[1]: jenkins-agent.service: Failed with result 'exit-code'.
+ 5월 16 17:16:31 stbtest3 systemd[1]: Failed to start Jenkins Agent.
+stbtest3@stbtest3:~$ service jenkins-agent restart
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to restart 'jenkins-agent.service'.
+Authenticating as: stbtest3,,, (stbtest3)
+Password: 
+==== AUTHENTICATION COMPLETE ===
+stbtest3@stbtest3:~$ service jenkins-agent status
+● jenkins-agent.service - Jenkins Agent
+     Loaded: loaded (/etc/systemd/system/jenkins-agent.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2024-05-16 17:25:31 KST; 1s ago
+   Main PID: 719544 (bash)
+      Tasks: 51 (limit: 38133)
+     Memory: 329.3M
+        CPU: 2.839s
+     CGroup: /system.slice/jenkins-agent.service
+             ├─719544 /bin/bash /usr/local/jenkins-service/start-agent.sh
+             └─719548 java -jar agent.jar -jnlpUrl http://stbtest1.local:8151/computer/testpc%2D03/jenkins-agent.jnlp -secret 71>
+
+ 5월 16 17:25:31 stbtest3 bash[719548]: May 16, 2024 5:25:31 PM hudson.remoting.jnlp.Main$CuiListener status
+ 5월 16 17:25:31 stbtest3 bash[719548]: INFO: Connecting to stbtest1.local:50000
+ 5월 16 17:25:31 stbtest3 bash[719548]: May 16, 2024 5:25:31 PM hudson.remoting.jnlp.Main$CuiListener status
+ 5월 16 17:25:31 stbtest3 bash[719548]: INFO: Trying protocol: JNLP4-connect
+ 5월 16 17:25:32 stbtest3 bash[719548]: May 16, 2024 5:25:32 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+ 5월 16 17:25:32 stbtest3 bash[719548]: INFO: Waiting for ProtocolStack to start.
+ 5월 16 17:25:32 stbtest3 bash[719548]: May 16, 2024 5:25:32 PM hudson.remoting.jnlp.Main$CuiListener status
+ 5월 16 17:25:32 stbtest3 bash[719548]: INFO: Remote identity confirmed: ed:7a:2a:ed:cc:47:92:5b:85:4d:3c:ae:7a:ba:2f:bf
+ 5월 16 17:25:32 stbtest3 bash[719548]: May 16, 2024 5:25:32 PM hudson.remoting.jnlp.Main$CuiListener status
+ 5월 16 17:25:32 stbtest3 bash[719548]: INFO: Connected
+```
 
 ## A. 일단 메모
 
