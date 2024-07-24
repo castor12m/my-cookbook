@@ -10,6 +10,13 @@ https://stackoverflow.com/questions/33711818/embed-sqlite-database-to-docker-con
 
 
 ```sql
+    # 컨테이너 접속후
+    $ sqlite
+    >>>
+        SQLite version 2.8.17
+        Enter ".help" for instructions
+        sqlite> 
+
 (https://bskyvision.com/entry/sqlite3-%EA%B8%B0%EB%B3%B8-%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%B0%8F-create-read-update-delete-%ED%95%98%EB%8A%94-%EB%B2%95-%EC%A0%95%EB%A6%AC)
 
     # 데이터베이스 확인
