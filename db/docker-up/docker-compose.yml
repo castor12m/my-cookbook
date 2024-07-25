@@ -1,0 +1,30 @@
+services:
+  redis:
+    image: redis:7.2.4-alpine
+    container_name: redis
+    command: redis-server --requirepass foobared --port 6379
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./db_data/redis:/data
+
+  postgresql:
+    image: postgres:14
+    container_name: postgresql
+    env_file: 
+      - ./postgresql.env
+    privileged: true
+    restart: always
+    user: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data/postgres14:/var/lib/postgresql/data
+
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db_data/sqlite3/:/root/db/
