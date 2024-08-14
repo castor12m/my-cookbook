@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  kafka-0:
+    container_name: kafka-0
+    image: confluentinc/cp-kafka:7.5.3
+    platform: linux/amd64
+    ports:
+      - "${KAFKA_0_PORT}:9092"
+    volumes:
+      - ./git-block/${KAFKA_DIR}/kafka-0:/var/lib/kafka/data
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://:29092,EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:${KAFKA_0_PORT}
+      KAFKA_LISTENERS: INTERNAL://:29092,CONTROLLER://:29093,EXTERNAL://0.0.0.0:${KAFKA_0_PORT}
+      KAFKA_PROCESS_ROLES: 'broker,controller'
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka-0:29093
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
+      CLUSTER_ID: ${KAFKA_CLUSTER_ID:-MkU3OEVBNTcwNTJENDM2Qk}
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    platform: linux/amd64
+    container_name: kafka-ui
+    ports:
+      - "${KAFKA_UI_PORT}:8080"
+    restart: always
+    environment:
+      KAFKA_CLUSTERS_0_NAME: ${PROFILE:-local}
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-0:29092
+    depends_on:
+      - kafka-0
+      
