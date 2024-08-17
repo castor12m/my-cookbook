@@ -111,3 +111,87 @@ Kafka 브로커를 모니터링하거나 어드민으로 관리할 수 있는 �
 ```bash
     docker-compose up -d
 ```
+
+kafka-ui
+
+http://localhost:9780/
+
+
+## A. 기타사항
+
+### A.1 Kafka에서 Zookeeper를 제거하는 이유는?
+
+https://velog.io/@jaymin_e/Kafka-Zookeeper-%EC%97%86%EC%9D%B4-Kafka-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0
+
+https://brunch.co.kr/@peter5236/19
+
+#### A.1.1 기존 문제점 사항
+
+Kafka 스케일링으로 인해 Zookeeper의 성능적 병목 현상이 발생했습니다. 즉, Kafka에는 Zookeeper와 관련하여 제한 사항이 있습니다.
+
+Kafka Cluster는 제한된 수의 파티션만 제공합니다.(최대 200,000개)
+
+Kafka Broker가 Cluster에 참여하거나 제거될때 다수의 Reader 선택이 발생해야 하며 이로 인해 Zookeeper에 과부하가 걸리고 Cluster 속도가 일시적으로 느려질 수 있습니다.
+
+Kafka Cluster 설정은 어렵고 설정할 다른 구성 요소에 따라 다릅니다.
+
+Kafka Cluster 메타데이터가 때때로 Zookeeper와 동기화되지 않습니다.
+
+Zookeeper 보안은 Kafka 보안보다 뒤떨어져 있습니다.
+
+Zookeeper를 제거한다는 것은 Kafka Controller 선택을 수행하기 위해 여전히 쿼럼 역할을 해야 함을 의미하므로 Kafka Broker는 Raft 프로토콜 구현하여 새로운 Kafka 메타데이터 쿼럼 모드(Quorum mode)에 KRaft라는 이름을 부여합니다.
+
+
+#### A.1.2 Zookeeper 없는 방법 이점
+
+- 수백만 개의 파티션으로 확장할 수 있고 유지 관리 및 설정이 용이
+- 안정성 향상, 모니터링, 지원 및 관리가 쉬움
+- Kafka를 시작하는 단일 프로세스
+- 전체 시스템에 대한 단일 보안 모델
+- 더 빠른 컨트롤러 종료 및 복구 시간
+
+
+### A.2 kafka 컨테이너에서 명령어 결과 히스토리
+
+https://dev-records.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%9C%BC%EB%A1%9C-Kafka-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%98%88%EC%A0%9C
+
+```bash
+  sh-4.4$ kafka-topics --list 
+  Exception in thread "main" java.lang.IllegalArgumentException: --bootstrap-server must be specified
+          at kafka.admin.TopicCommand$TopicCommandOptions.checkArgs(TopicCommand.scala:608)
+          at kafka.admin.TopicCommand$.main(TopicCommand.scala:49)
+          at kafka.admin.TopicCommand.main(TopicCommand.scala)
+
+  sh-4.4$ kafka-topics --list --bootstrap-server localhost:9092
+  purchases
+  seven-si
+  topic1
+  topic2
+  topic3-purchases
+
+  sh-4.4$ kafka-topics --describe --topic topic1 --bootstrap-server localhost:9092
+  Topic: topic1   TopicId: 2ihiMLXBSa-wPlthRDZ3Rw PartitionCount: 1       ReplicationFactor: 1    Configs: 
+          Topic: topic1   Partition: 0    Leader: 1       Replicas: 1     Isr: 1
+  sh-4.4$ 
+```
+
+```bash
+  # 송신측 kafka 쉘 접속
+  sh-4.4$ kafka-console-producer --bootstrap-server localhost:9092 --topic test
+  >ok
+  >sorry
+
+  # 수신측 kafka 쉘 접속
+  sh-4.4$ kafka-console-consumer --bootstrap-server localhost:9092 --topic test --from-beginning
+  ok
+  sorry
+```
+
+```bash
+  sh-4.4$ kafka-consumer-groups --bootstrap-server localhost:9092 --describe --group test-group
+
+  Consumer group 'test-group' has no active members.
+
+  GROUP           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+  test-group      test            0          2               4               2               -               -               -
+```
