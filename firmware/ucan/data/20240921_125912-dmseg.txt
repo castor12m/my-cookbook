@@ -1,0 +1,2693 @@
+[    0.000000] Linux version 6.5.0-44-generic (buildd@lcy02-amd64-103) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #44~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 18 14:36:16 UTC 2 (Ubuntu 6.5.0-44.44~22.04.1-generic 6.5.13)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.5.0-44-generic root=/dev/mapper/vgubuntu-root ro quiet splash vt.handoff=7
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000009a7efff] usable
+[    0.000000] BIOS-e820: [mem 0x0000000009a7f000-0x0000000009ffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000000a000000-0x000000000a1fffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000a200000-0x000000000a23bfff] ACPI NVS
+[    0.000000] BIOS-e820: [mem 0x000000000a23c000-0x000000009404bfff] usable
+[    0.000000] BIOS-e820: [mem 0x000000009404c000-0x0000000096ba9fff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000096baa000-0x0000000096c14fff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x0000000096c15000-0x000000009740afff] ACPI NVS
+[    0.000000] BIOS-e820: [mem 0x000000009740b000-0x000000009affefff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000009afff000-0x000000009bffafff] usable
+[    0.000000] BIOS-e820: [mem 0x000000009bffb000-0x000000009bffdfff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000009bffe000-0x000000009bffffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000009c000000-0x000000009cffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000009d790000-0x000000009d7effff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000009d7f5000-0x000000009fffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000e0000000-0x00000000efffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fd000000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000075e2fffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000075f340000-0x00000008801fffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] e820: update [mem 0x90a78018-0x90a7c257] usable ==> usable
+[    0.000000] e820: update [mem 0x90a78018-0x90a7c257] usable ==> usable
+[    0.000000] extended physical RAM map:
+[    0.000000] reserve setup_data: [mem 0x0000000000000000-0x000000000009ffff] usable
+[    0.000000] reserve setup_data: [mem 0x00000000000a0000-0x00000000000fffff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000000100000-0x0000000009a7efff] usable
+[    0.000000] reserve setup_data: [mem 0x0000000009a7f000-0x0000000009ffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000000a000000-0x000000000a1fffff] usable
+[    0.000000] reserve setup_data: [mem 0x000000000a200000-0x000000000a23bfff] ACPI NVS
+[    0.000000] reserve setup_data: [mem 0x000000000a23c000-0x0000000090a78017] usable
+[    0.000000] reserve setup_data: [mem 0x0000000090a78018-0x0000000090a7c257] usable
+[    0.000000] reserve setup_data: [mem 0x0000000090a7c258-0x000000009404bfff] usable
+[    0.000000] reserve setup_data: [mem 0x000000009404c000-0x0000000096ba9fff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000096baa000-0x0000000096c14fff] ACPI data
+[    0.000000] reserve setup_data: [mem 0x0000000096c15000-0x000000009740afff] ACPI NVS
+[    0.000000] reserve setup_data: [mem 0x000000009740b000-0x000000009affefff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000009afff000-0x000000009bffafff] usable
+[    0.000000] reserve setup_data: [mem 0x000000009bffb000-0x000000009bffdfff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000009bffe000-0x000000009bffffff] usable
+[    0.000000] reserve setup_data: [mem 0x000000009c000000-0x000000009cffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000009d790000-0x000000009d7effff] reserved
+[    0.000000] reserve setup_data: [mem 0x000000009d7f5000-0x000000009fffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x00000000e0000000-0x00000000efffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x00000000fd000000-0x00000000ffffffff] reserved
+[    0.000000] reserve setup_data: [mem 0x0000000100000000-0x000000075e2fffff] usable
+[    0.000000] reserve setup_data: [mem 0x000000075f340000-0x00000008801fffff] reserved
+[    0.000000] efi: EFI v2.8 by American Megatrends
+[    0.000000] efi: ACPI=0x973f1000 ACPI 2.0=0x973f1014 TPMFinalLog=0x973c0000 SMBIOS=0x9ad75000 SMBIOS 3.0=0x9ad74000 MEMATTR=0x90a9a018 ESRT=0x92cfec18 MOKvar=0x9add3000 RNG=0x96bbf018 TPMEventLog=0x90a7d018 
+[    0.000000] random: crng init done
+[    0.000000] efi: Remove mem58: MMIO range=[0xe0000000-0xefffffff] (256MB) from e820 map
+[    0.000000] e820: remove [mem 0xe0000000-0xefffffff] reserved
+[    0.000000] efi: Remove mem59: MMIO range=[0xfd000000-0xfedfffff] (30MB) from e820 map
+[    0.000000] e820: remove [mem 0xfd000000-0xfedfffff] reserved
+[    0.000000] efi: Not removing mem60: MMIO range=[0xfee00000-0xfee00fff] (4KB) from e820 map
+[    0.000000] efi: Remove mem61: MMIO range=[0xfee01000-0xffffffff] (17MB) from e820 map
+[    0.000000] e820: remove [mem 0xfee01000-0xffffffff] reserved
+[    0.000000] efi: Remove mem63: MMIO range=[0x860000000-0x8801fffff] (514MB) from e820 map
+[    0.000000] e820: remove [mem 0x860000000-0x8801fffff] reserved
+[    0.000000] secureboot: Secure boot disabled
+[    0.000000] SMBIOS 3.5.0 present.
+[    0.000000] DMI: AZW SER8/SER8, BIOS SER8_P5C8V20 04/17/2024
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 3793.116 MHz processor
+[    0.000131] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000133] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000137] last_pfn = 0x75e300 max_arch_pfn = 0x400000000
+[    0.000142] MTRR map: 5 entries (3 fixed + 2 variable; max 20), built from 9 variable MTRRs
+[    0.000144] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.000507] e820: update [mem 0xa0000000-0xffffffff] usable ==> reserved
+[    0.000514] last_pfn = 0x9c000 max_arch_pfn = 0x400000000
+[    0.003032] esrt: Reserving ESRT space from 0x0000000092cfec18 to 0x0000000092cfec50.
+[    0.003037] e820: update [mem 0x92cfe000-0x92cfefff] usable ==> reserved
+[    0.003047] Using GB pages for direct mapping
+[    0.003204] secureboot: Secure boot disabled
+[    0.003204] RAMDISK: [mem 0x8bbea000-0x903e2fff]
+[    0.003208] ACPI: Early table checksum verification disabled
+[    0.003211] ACPI: RSDP 0x00000000973F1014 000024 (v02 ALASKA)
+[    0.003214] ACPI: XSDT 0x00000000973F0728 000114 (v01 ALASKA A M I    01072009 AMI  01000013)
+[    0.003218] ACPI: FACP 0x0000000096C0A000 000114 (v06 ALASKA A M I    01072009 AMI  00010013)
+[    0.003221] ACPI: DSDT 0x0000000096BFF000 00A3BE (v02 ALASKA A M I    01072009 INTL 20220331)
+[    0.003223] ACPI: FACS 0x0000000096DAD000 000040
+[    0.003224] ACPI: SSDT 0x0000000096C0C000 008416 (v02 AMD    AmdTable 00000002 MSFT 02000002)
+[    0.003225] ACPI: SSDT 0x0000000096C0B000 000221 (v02 ALASKA CPUSSDT  01072009 AMI  01072009)
+[    0.003227] ACPI: FIDT 0x0000000096BFE000 00009C (v01 ALASKA A M I    01072009 AMI  00010013)
+[    0.003228] ACPI: MCFG 0x0000000096BFD000 00003C (v01 ALASKA A M I    01072009 MSFT 00010013)
+[    0.003229] ACPI: HPET 0x0000000096BFC000 000038 (v01 ALASKA A M I    01072009 AMI  00000005)
+[    0.003231] ACPI: FPDT 0x0000000096BFB000 000044 (v01 ALASKA A M I    01072009 AMI  01000013)
+[    0.003232] ACPI: VFCT 0x0000000096BF6000 004284 (v01 ALASKA A M I    00000001 AMD  33504F47)
+[    0.003233] ACPI: TPM2 0x0000000096BF5000 00004C (v04 ALASKA A M I    00000001 AMI  00000000)
+[    0.003234] ACPI: SSDT 0x0000000096BEF000 00547E (v02 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003236] ACPI: CRAT 0x0000000096BEE000 000EE8 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003237] ACPI: CDIT 0x0000000096BED000 000029 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003238] ACPI: SSDT 0x0000000096BEB000 0015C8 (v02 AMD    CPMDFIG2 00000001 INTL 20220331)
+[    0.003239] ACPI: SSDT 0x0000000096BE8000 002A9E (v02 AMD    CDFAAIG2 00000001 INTL 20220331)
+[    0.003240] ACPI: SSDT 0x0000000096BE6000 00127F (v02 AMD    OEMACP   00000001 INTL 20220331)
+[    0.003242] ACPI: SSDT 0x0000000096BDC000 009833 (v02 AMD    CPMCMN   00000001 INTL 20220331)
+[    0.003243] ACPI: WSMT 0x0000000096BDB000 000028 (v01 ALASKA A M I    01072009 AMI  00010013)
+[    0.003244] ACPI: APIC 0x0000000096BDA000 0000E8 (v05 ALASKA A M I    01072009 AMI  00010013)
+[    0.003245] ACPI: IVRS 0x0000000096BD9000 000198 (v02 AMD    AmdTable 00000001 AMD  00000001)
+[    0.003247] ACPI: SSDT 0x0000000096BD8000 000956 (v02 AMD    CPMMSOSC 00000001 INTL 20220331)
+[    0.003248] ACPI: SSDT 0x0000000096BD7000 0007DD (v02 AMD    THERMAL0 00000001 INTL 20220331)
+[    0.003249] ACPI: SSDT 0x0000000096BD6000 000FF7 (v02 AMD    GPP_PME_ 00000001 INTL 20220331)
+[    0.003250] ACPI: SSDT 0x0000000096BCC000 0097E3 (v02 AMD    INTGPP03 00000001 INTL 20220331)
+[    0.003252] ACPI: SSDT 0x0000000096BC7000 004FEB (v02 AMD    INTGPP01 00000001 INTL 20220331)
+[    0.003253] ACPI: SSDT 0x0000000096BC6000 000D55 (v02 AMD    CPMGPIO0 00000001 INTL 20220331)
+[    0.003254] ACPI: SSDT 0x0000000096BC5000 00008D (v02 AMD    CPMMSLPI 00000001 INTL 20220331)
+[    0.003256] ACPI: SSDT 0x0000000096BC4000 000CE0 (v02 AMD    WwanSsdt 00000001 INTL 20220331)
+[    0.003257] ACPI: SSDT 0x0000000096BC3000 000747 (v02 AMD    NVME     00000001 INTL 20220331)
+[    0.003258] ACPI: SSDT 0x0000000096BC2000 000E45 (v02 AMD    GpMsSsdt 00000001 INTL 20220331)
+[    0.003259] ACPI: SSDT 0x0000000096BC0000 001794 (v02 AMD    UPEP     00000001 INTL 20220331)
+[    0.003260] ACPI: Reserving FACP table memory at [mem 0x96c0a000-0x96c0a113]
+[    0.003261] ACPI: Reserving DSDT table memory at [mem 0x96bff000-0x96c093bd]
+[    0.003261] ACPI: Reserving FACS table memory at [mem 0x96dad000-0x96dad03f]
+[    0.003262] ACPI: Reserving SSDT table memory at [mem 0x96c0c000-0x96c14415]
+[    0.003262] ACPI: Reserving SSDT table memory at [mem 0x96c0b000-0x96c0b220]
+[    0.003262] ACPI: Reserving FIDT table memory at [mem 0x96bfe000-0x96bfe09b]
+[    0.003263] ACPI: Reserving MCFG table memory at [mem 0x96bfd000-0x96bfd03b]
+[    0.003263] ACPI: Reserving HPET table memory at [mem 0x96bfc000-0x96bfc037]
+[    0.003263] ACPI: Reserving FPDT table memory at [mem 0x96bfb000-0x96bfb043]
+[    0.003264] ACPI: Reserving VFCT table memory at [mem 0x96bf6000-0x96bfa283]
+[    0.003264] ACPI: Reserving TPM2 table memory at [mem 0x96bf5000-0x96bf504b]
+[    0.003264] ACPI: Reserving SSDT table memory at [mem 0x96bef000-0x96bf447d]
+[    0.003265] ACPI: Reserving CRAT table memory at [mem 0x96bee000-0x96beeee7]
+[    0.003265] ACPI: Reserving CDIT table memory at [mem 0x96bed000-0x96bed028]
+[    0.003265] ACPI: Reserving SSDT table memory at [mem 0x96beb000-0x96bec5c7]
+[    0.003266] ACPI: Reserving SSDT table memory at [mem 0x96be8000-0x96beaa9d]
+[    0.003266] ACPI: Reserving SSDT table memory at [mem 0x96be6000-0x96be727e]
+[    0.003266] ACPI: Reserving SSDT table memory at [mem 0x96bdc000-0x96be5832]
+[    0.003267] ACPI: Reserving WSMT table memory at [mem 0x96bdb000-0x96bdb027]
+[    0.003267] ACPI: Reserving APIC table memory at [mem 0x96bda000-0x96bda0e7]
+[    0.003267] ACPI: Reserving IVRS table memory at [mem 0x96bd9000-0x96bd9197]
+[    0.003268] ACPI: Reserving SSDT table memory at [mem 0x96bd8000-0x96bd8955]
+[    0.003268] ACPI: Reserving SSDT table memory at [mem 0x96bd7000-0x96bd77dc]
+[    0.003268] ACPI: Reserving SSDT table memory at [mem 0x96bd6000-0x96bd6ff6]
+[    0.003269] ACPI: Reserving SSDT table memory at [mem 0x96bcc000-0x96bd57e2]
+[    0.003269] ACPI: Reserving SSDT table memory at [mem 0x96bc7000-0x96bcbfea]
+[    0.003269] ACPI: Reserving SSDT table memory at [mem 0x96bc6000-0x96bc6d54]
+[    0.003270] ACPI: Reserving SSDT table memory at [mem 0x96bc5000-0x96bc508c]
+[    0.003270] ACPI: Reserving SSDT table memory at [mem 0x96bc4000-0x96bc4cdf]
+[    0.003270] ACPI: Reserving SSDT table memory at [mem 0x96bc3000-0x96bc3746]
+[    0.003271] ACPI: Reserving SSDT table memory at [mem 0x96bc2000-0x96bc2e44]
+[    0.003271] ACPI: Reserving SSDT table memory at [mem 0x96bc0000-0x96bc1793]
+[    0.003359] No NUMA configuration found
+[    0.003359] Faking a node at [mem 0x0000000000000000-0x000000075e2fffff]
+[    0.003363] NODE_DATA(0) allocated [mem 0x75e2d5000-0x75e2fffff]
+[    0.003442] Zone ranges:
+[    0.003443]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.003444]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.003445]   Normal   [mem 0x0000000100000000-0x000000075e2fffff]
+[    0.003445]   Device   empty
+[    0.003446] Movable zone start for each node
+[    0.003446] Early memory node ranges
+[    0.003447]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[    0.003448]   node   0: [mem 0x0000000000100000-0x0000000009a7efff]
+[    0.003448]   node   0: [mem 0x000000000a000000-0x000000000a1fffff]
+[    0.003448]   node   0: [mem 0x000000000a23c000-0x000000009404bfff]
+[    0.003449]   node   0: [mem 0x000000009afff000-0x000000009bffafff]
+[    0.003449]   node   0: [mem 0x000000009bffe000-0x000000009bffffff]
+[    0.003450]   node   0: [mem 0x0000000100000000-0x000000075e2fffff]
+[    0.003451] Initmem setup node 0 [mem 0x0000000000001000-0x000000075e2fffff]
+[    0.003454] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.003462] On node 0, zone DMA: 96 pages in unavailable ranges
+[    0.003524] On node 0, zone DMA32: 1409 pages in unavailable ranges
+[    0.004701] On node 0, zone DMA32: 60 pages in unavailable ranges
+[    0.004788] On node 0, zone DMA32: 28595 pages in unavailable ranges
+[    0.004789] On node 0, zone DMA32: 3 pages in unavailable ranges
+[    0.021394] On node 0, zone Normal: 16384 pages in unavailable ranges
+[    0.021419] On node 0, zone Normal: 7424 pages in unavailable ranges
+[    0.021700] ACPI: PM-Timer IO Port: 0x808
+[    0.021706] ACPI: LAPIC_NMI (acpi_id[0xff] high edge lint[0x1])
+[    0.021719] IOAPIC[0]: apic_id 33, version 33, address 0xfec00000, GSI 0-23
+[    0.021724] IOAPIC[1]: apic_id 34, version 33, address 0xfec01000, GSI 24-55
+[    0.021725] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.021726] ACPI: INT_SRC_OVR (bus 0 bus_irq 1 global_irq 1 low edge)
+[    0.021726] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.021728] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.021729] ACPI: HPET id: 0x10228201 base: 0xfed00000
+[    0.021732] smpboot: Allowing 16 CPUs, 0 hotplug CPUs
+[    0.021743] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.021744] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[    0.021744] PM: hibernation: Registered nosave memory: [mem 0x09a7f000-0x09ffffff]
+[    0.021745] PM: hibernation: Registered nosave memory: [mem 0x0a200000-0x0a23bfff]
+[    0.021746] PM: hibernation: Registered nosave memory: [mem 0x90a78000-0x90a78fff]
+[    0.021746] PM: hibernation: Registered nosave memory: [mem 0x90a7c000-0x90a7cfff]
+[    0.021747] PM: hibernation: Registered nosave memory: [mem 0x92cfe000-0x92cfefff]
+[    0.021748] PM: hibernation: Registered nosave memory: [mem 0x9404c000-0x96ba9fff]
+[    0.021748] PM: hibernation: Registered nosave memory: [mem 0x96baa000-0x96c14fff]
+[    0.021748] PM: hibernation: Registered nosave memory: [mem 0x96c15000-0x9740afff]
+[    0.021749] PM: hibernation: Registered nosave memory: [mem 0x9740b000-0x9affefff]
+[    0.021749] PM: hibernation: Registered nosave memory: [mem 0x9bffb000-0x9bffdfff]
+[    0.021750] PM: hibernation: Registered nosave memory: [mem 0x9c000000-0x9cffffff]
+[    0.021750] PM: hibernation: Registered nosave memory: [mem 0x9d000000-0x9d78ffff]
+[    0.021751] PM: hibernation: Registered nosave memory: [mem 0x9d790000-0x9d7effff]
+[    0.021751] PM: hibernation: Registered nosave memory: [mem 0x9d7f0000-0x9d7f4fff]
+[    0.021751] PM: hibernation: Registered nosave memory: [mem 0x9d7f5000-0x9fffffff]
+[    0.021751] PM: hibernation: Registered nosave memory: [mem 0xa0000000-0xfedfffff]
+[    0.021752] PM: hibernation: Registered nosave memory: [mem 0xfee00000-0xfee00fff]
+[    0.021752] PM: hibernation: Registered nosave memory: [mem 0xfee01000-0xffffffff]
+[    0.021753] [mem 0xa0000000-0xfedfffff] available for PCI devices
+[    0.021754] Booting paravirtualized kernel on bare hardware
+[    0.021756] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.021761] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:16 nr_cpu_ids:16 nr_node_ids:1
+[    0.021993] percpu: Embedded 63 pages/cpu s221184 r8192 d28672 u262144
+[    0.021996] pcpu-alloc: s221184 r8192 d28672 u262144 alloc=1*2097152
+[    0.021998] pcpu-alloc: [0] 00 01 02 03 04 05 06 07 [0] 08 09 10 11 12 13 14 15 
+[    0.022012] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.5.0-44-generic root=/dev/mapper/vgubuntu-root ro quiet splash vt.handoff=7
+[    0.022080] Unknown kernel command line parameters "splash BOOT_IMAGE=/boot/vmlinuz-6.5.0-44-generic", will be passed to user space.
+[    0.023361] Dentry cache hash table entries: 4194304 (order: 13, 33554432 bytes, linear)
+[    0.023913] Inode-cache hash table entries: 2097152 (order: 12, 16777216 bytes, linear)
+[    0.023975] Fallback order for Node 0: 0 
+[    0.023979] Built 1 zonelists, mobility grouping on.  Total pages: 7172054
+[    0.023980] Policy zone: Normal
+[    0.023986] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.024030] software IO TLB: area num 16.
+[    0.050764] Memory: 28358992K/29144240K available (20480K kernel code, 4269K rwdata, 13200K rodata, 4824K init, 17360K bss, 784988K reserved, 0K cma-reserved)
+[    0.050897] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+[    0.050916] ftrace: allocating 55314 entries in 217 pages
+[    0.058590] ftrace: allocated 217 pages with 5 groups
+[    0.059149] Dynamic Preempt: voluntary
+[    0.059175] rcu: Preemptible hierarchical RCU implementation.
+[    0.059175] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=16.
+[    0.059176] 	Trampoline variant of Tasks RCU enabled.
+[    0.059176] 	Rude variant of Tasks RCU enabled.
+[    0.059177] 	Tracing variant of Tasks RCU enabled.
+[    0.059177] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.059177] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=16
+[    0.060516] NR_IRQS: 524544, nr_irqs: 1096, preallocated irqs: 16
+[    0.060706] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.060823] Console: colour dummy device 80x25
+[    0.060825] printk: console [tty0] enabled
+[    0.060850] ACPI: Core revision 20230331
+[    0.060990] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 133484873504 ns
+[    0.061010] APIC: Switch to symmetric I/O mode setup
+[    0.061526] AMD-Vi: ivrs, add hid:AMDI0020, uid:\_SB.FUR0, rdevid:160
+[    0.061527] AMD-Vi: ivrs, add hid:AMDI0020, uid:\_SB.FUR1, rdevid:160
+[    0.061528] AMD-Vi: ivrs, add hid:AMDI0020, uid:\_SB.FUR2, rdevid:160
+[    0.061528] AMD-Vi: ivrs, add hid:AMDI0020, uid:\_SB.FUR3, rdevid:160
+[    0.061529] AMD-Vi: Using global IVHD EFR:0x246577efa2054ada, EFR2:0x0
+[    0.062068] x2apic: IRQ remapping doesn't support X2APIC mode
+[    0.062072] Switched APIC routing to physical flat.
+[    0.062851] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.081012] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x6d59e2f6502, max_idle_ns: 881591090229 ns
+[    0.081018] Calibrating delay loop (skipped), value calculated using timer frequency.. 7586.23 BogoMIPS (lpj=15172464)
+[    0.081035] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[    0.081345] LVT offset 1 assigned for vector 0xf9
+[    0.081504] LVT offset 2 assigned for vector 0xf4
+[    0.081542] process: using mwait in idle threads
+[    0.081544] Last level iTLB entries: 4KB 512, 2MB 512, 4MB 256
+[    0.081545] Last level dTLB entries: 4KB 3072, 2MB 3072, 4MB 1536, 1GB 0
+[    0.081548] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.081550] Spectre V2 : Mitigation: Enhanced / Automatic IBRS
+[    0.081550] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.081551] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    0.081552] Spectre V2 : User space: Mitigation: STIBP always-on protection
+[    0.081553] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+[    0.081554] Speculative Return Stack Overflow: IBPB-extending microcode not applied!
+[    0.081555] Speculative Return Stack Overflow: WARNING: See https://kernel.org/doc/html/latest/admin-guide/hw-vuln/srso.html for mitigation options.
+[    0.081555] Speculative Return Stack Overflow: Mitigation: Safe RET
+[    0.081561] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.081562] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.081562] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.081563] x86/fpu: Supporting XSAVE feature 0x020: 'AVX-512 opmask'
+[    0.081563] x86/fpu: Supporting XSAVE feature 0x040: 'AVX-512 Hi256'
+[    0.081563] x86/fpu: Supporting XSAVE feature 0x080: 'AVX-512 ZMM_Hi256'
+[    0.081564] x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
+[    0.081565] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.081566] x86/fpu: xstate_offset[5]:  832, xstate_sizes[5]:   64
+[    0.081566] x86/fpu: xstate_offset[6]:  896, xstate_sizes[6]:  512
+[    0.081567] x86/fpu: xstate_offset[7]: 1408, xstate_sizes[7]: 1024
+[    0.081567] x86/fpu: xstate_offset[9]: 2432, xstate_sizes[9]:    8
+[    0.081568] x86/fpu: Enabled xstate features 0x2e7, context size is 2440 bytes, using 'compacted' format.
+[    0.101102] Freeing SMP alternatives memory: 44K
+[    0.101104] pid_max: default: 32768 minimum: 301
+[    0.102926] LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+[    0.102938] landlock: Up and running.
+[    0.102939] Yama: becoming mindful.
+[    0.102956] AppArmor: AppArmor initialized
+[    0.103000] Mount-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.103018] Mountpoint-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.211382] smpboot: CPU0: AMD Ryzen 7 8845HS w/ Radeon 780M Graphics (family: 0x19, model: 0x75, stepping: 0x2)
+[    0.211497] RCU Tasks: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1.
+[    0.211509] RCU Tasks Rude: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1.
+[    0.211524] RCU Tasks Trace: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1.
+[    0.211534] Performance Events: Fam17h+ 16-deep LBR, core perfctr, AMD PMU driver.
+[    0.211558] ... version:                2
+[    0.211559] ... bit width:              48
+[    0.211559] ... generic registers:      6
+[    0.211560] ... value mask:             0000ffffffffffff
+[    0.211561] ... max period:             00007fffffffffff
+[    0.211562] ... fixed-purpose events:   0
+[    0.211562] ... event mask:             000000000000003f
+[    0.211628] signal: max sigframe size: 3376
+[    0.211646] rcu: Hierarchical SRCU implementation.
+[    0.211647] rcu: 	Max phase no-delay instances is 1000.
+[    0.213014] NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
+[    0.213014] smp: Bringing up secondary CPUs ...
+[    0.213014] smpboot: x86: Booting SMP configuration:
+[    0.213014] .... node  #0, CPUs:        #1  #2  #3  #4  #5  #6  #7  #8  #9 #10 #11 #12 #13 #14 #15
+[    0.229086] Spectre V2 : Update user space SMT mitigation: STIBP always-on
+[    0.245035] smp: Brought up 1 node, 16 CPUs
+[    0.245035] smpboot: Max logical packages: 1
+[    0.245035] smpboot: Total of 16 processors activated (121379.71 BogoMIPS)
+[    0.247460] devtmpfs: initialized
+[    0.247460] x86/mm: Memory block size: 128MB
+[    0.249955] ACPI: PM: Registering ACPI NVS region [mem 0x0a200000-0x0a23bfff] (245760 bytes)
+[    0.249955] ACPI: PM: Registering ACPI NVS region [mem 0x96c15000-0x9740afff] (8347648 bytes)
+[    0.249955] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.249955] futex hash table entries: 4096 (order: 6, 262144 bytes, linear)
+[    0.249955] pinctrl core: initialized pinctrl subsystem
+[    0.249955] PM: RTC time: 14:13:50, date: 2024-08-01
+[    0.249955] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.249955] DMA: preallocated 4096 KiB GFP_KERNEL pool for atomic allocations
+[    0.249955] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.250057] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.250064] audit: initializing netlink subsys (disabled)
+[    0.250069] audit: type=2000 audit(1722521630.188:1): state=initialized audit_enabled=0 res=1
+[    0.250069] thermal_sys: Registered thermal governor 'fair_share'
+[    0.250069] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.250069] thermal_sys: Registered thermal governor 'step_wise'
+[    0.250069] thermal_sys: Registered thermal governor 'user_space'
+[    0.250069] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.250069] EISA bus registered
+[    0.250069] cpuidle: using governor ladder
+[    0.250069] cpuidle: using governor menu
+[    0.250069] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.250069] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xe0000000-0xefffffff] (base 0xe0000000)
+[    0.250069] PCI: not using MMCONFIG
+[    0.250069] PCI: Using configuration type 1 for base access
+[    0.250069] PCI: Using configuration type 1 for extended access
+[    0.250069] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.250069] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.250069] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.250069] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.250069] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.250069] ACPI: Added _OSI(Module Device)
+[    0.250069] ACPI: Added _OSI(Processor Device)
+[    0.250069] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.250069] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.273063] ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.GPP5.RTL8], AE_NOT_FOUND (20230331/dswload2-162)
+[    0.273071] fbcon: Taking over console
+[    0.273080] ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20230331/psobject-220)
+[    0.273085] ACPI: Skipping parse of AML opcode: Scope (0x0010)
+[    0.273813] ACPI: 19 ACPI AML tables successfully acquired and loaded
+[    0.276563] ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+[    0.293637] ACPI: USB4 _OSC: OS supports USB3+ DisplayPort+ PCIe+ XDomain+
+[    0.293638] ACPI: USB4 _OSC: OS controls USB3+ DisplayPort+ PCIe+ XDomain+
+[    0.293780] ACPI: Interpreter enabled
+[    0.293793] ACPI: PM: (supports S0 S4 S5)
+[    0.293794] ACPI: Using IOAPIC for interrupt routing
+[    0.295381] PCI: MMCONFIG for domain 0000 [bus 00-ff] at [mem 0xe0000000-0xefffffff] (base 0xe0000000)
+[    0.295426] PCI: MMCONFIG at [mem 0xe0000000-0xefffffff] reserved as ACPI motherboard resource
+[    0.295435] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.295436] PCI: Ignoring E820 reservations for host bridge windows
+[    0.296043] ACPI: Enabled 3 GPEs in block 00 to 1F
+[    0.297244] ACPI: \_SB_.PCI0.GPP2.P0WW: New power resource
+[    0.300172] ACPI: \_SB_.PCI0.GPP8.P0NV: New power resource
+[    0.302591] ACPI: \_SB_.PCI0.GP11.PWRS: New power resource
+[    0.304261] ACPI: \_SB_.PCI0.GP11.SWUS.PWRS: New power resource
+[    0.306033] ACPI: \_SB_.PCI0.GP12.PWRS: New power resource
+[    0.307680] ACPI: \_SB_.PCI0.GP12.SWUS.PWRS: New power resource
+[    0.307980] ACPI: \_SB_.PCI0.GP17.PWRS: New power resource
+[    0.308290] ACPI: \_SB_.PCI0.GP17.VGA_.PWRS: New power resource
+[    0.308670] ACPI: \_SB_.PCI0.GP17.HDAU.PWRS: New power resource
+[    0.308991] ACPI: \_SB_.PCI0.GP17.ACP_.PWRS: New power resource
+[    0.309501] ACPI: \_SB_.PCI0.GP17.AZAL.PWRS: New power resource
+[    0.309976] ACPI: \_SB_.PCI0.GP17.XHC0.PWRS: New power resource
+[    0.313484] ACPI: \_SB_.PCI0.GP17.XHC1.PWRS: New power resource
+[    0.316048] ACPI: \_SB_.PCI0.GP19.XHC2.PWRS: New power resource
+[    0.317838] ACPI: \_SB_.PCI0.GP19.XHC3.PWRS: New power resource
+[    0.319666] ACPI: \_SB_.PCI0.GP19.XHC4.PWRS: New power resource
+[    0.321497] ACPI: \_SB_.PCI0.GP19.NHI0.PWRS: New power resource
+[    0.322512] ACPI: \_SB_.PCI0.GP19.NHI1.PWRS: New power resource
+[    0.333306] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.333311] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.333507] acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug SHPCHotplug PME AER PCIeCapability LTR DPC]
+[    0.334214] PCI host bridge to bus 0000:00
+[    0.334215] pci_bus 0000:00: root bus resource [io  0x0000-0x03af window]
+[    0.334217] pci_bus 0000:00: root bus resource [io  0x03e0-0x0cf7 window]
+[    0.334219] pci_bus 0000:00: root bus resource [io  0x03b0-0x03df window]
+[    0.334220] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.334221] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000dffff window]
+[    0.334222] pci_bus 0000:00: root bus resource [mem 0xfa000000-0xfcffffff window]
+[    0.334223] pci_bus 0000:00: root bus resource [mem 0xf0000000-0xf9ffffff window]
+[    0.334225] pci_bus 0000:00: root bus resource [mem 0xa0000000-0xdfffffff window]
+[    0.334226] pci_bus 0000:00: root bus resource [mem 0x860000000-0x7fffffffff window]
+[    0.334227] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.334243] pci 0000:00:00.0: [1022:14e8] type 00 class 0x060000
+[    0.334352] pci 0000:00:00.2: [1022:14e9] type 00 class 0x080600
+[    0.334455] pci 0000:00:01.0: [1022:14ea] type 00 class 0x060000
+[    0.334522] pci 0000:00:01.4: [1022:14ee] type 01 class 0x060400
+[    0.334552] pci 0000:00:01.4: enabling Extended Tags
+[    0.334602] pci 0000:00:01.4: PME# supported from D0 D3hot D3cold
+[    0.334745] pci 0000:00:02.0: [1022:14ea] type 00 class 0x060000
+[    0.334810] pci 0000:00:02.2: [1022:14ee] type 01 class 0x060400
+[    0.334839] pci 0000:00:02.2: enabling Extended Tags
+[    0.334888] pci 0000:00:02.2: PME# supported from D0 D3hot D3cold
+[    0.335031] pci 0000:00:02.4: [1022:14ee] type 01 class 0x060400
+[    0.335106] pci 0000:00:02.4: PME# supported from D0 D3hot D3cold
+[    0.335243] pci 0000:00:03.0: [1022:14ea] type 00 class 0x060000
+[    0.335306] pci 0000:00:03.1: [1022:14ef] type 01 class 0x060400
+[    0.335470] pci 0000:00:03.1: enabling Extended Tags
+[    0.335797] pci 0000:00:03.1: PME# supported from D0 D3hot D3cold
+[    0.337111] pci 0000:00:04.0: [1022:14ea] type 00 class 0x060000
+[    0.337174] pci 0000:00:04.1: [1022:14ef] type 01 class 0x060400
+[    0.337338] pci 0000:00:04.1: enabling Extended Tags
+[    0.337660] pci 0000:00:04.1: PME# supported from D0 D3hot D3cold
+[    0.338970] pci 0000:00:08.0: [1022:14ea] type 00 class 0x060000
+[    0.339027] pci 0000:00:08.1: [1022:14eb] type 01 class 0x060400
+[    0.339050] pci 0000:00:08.1: enabling Extended Tags
+[    0.339087] pci 0000:00:08.1: PME# supported from D0 D3hot D3cold
+[    0.339223] pci 0000:00:08.2: [1022:14eb] type 01 class 0x060400
+[    0.339280] pci 0000:00:08.2: enabling Extended Tags
+[    0.339316] pci 0000:00:08.2: PME# supported from D0 D3hot D3cold
+[    0.339415] pci 0000:00:08.3: [1022:14eb] type 01 class 0x060400
+[    0.339439] pci 0000:00:08.3: enabling Extended Tags
+[    0.339475] pci 0000:00:08.3: PME# supported from D0 D3hot D3cold
+[    0.339786] pci 0000:00:14.0: [1022:790b] type 00 class 0x0c0500
+[    0.339920] pci 0000:00:14.3: [1022:790e] type 00 class 0x060100
+[    0.340067] pci 0000:00:18.0: [1022:14f0] type 00 class 0x060000
+[    0.340101] pci 0000:00:18.1: [1022:14f1] type 00 class 0x060000
+[    0.340135] pci 0000:00:18.2: [1022:14f2] type 00 class 0x060000
+[    0.340170] pci 0000:00:18.3: [1022:14f3] type 00 class 0x060000
+[    0.340203] pci 0000:00:18.4: [1022:14f4] type 00 class 0x060000
+[    0.340237] pci 0000:00:18.5: [1022:14f5] type 00 class 0x060000
+[    0.340272] pci 0000:00:18.6: [1022:14f6] type 00 class 0x060000
+[    0.340305] pci 0000:00:18.7: [1022:14f7] type 00 class 0x060000
+[    0.340421] pci 0000:01:00.0: [10ec:8125] type 00 class 0x020000
+[    0.340439] pci 0000:01:00.0: reg 0x10: [io  0xf000-0xf0ff]
+[    0.340462] pci 0000:01:00.0: reg 0x18: [mem 0xdcc00000-0xdcc0ffff 64bit]
+[    0.340477] pci 0000:01:00.0: reg 0x20: [mem 0xdcc10000-0xdcc13fff 64bit]
+[    0.340578] pci 0000:01:00.0: supports D1 D2
+[    0.340579] pci 0000:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    0.340792] pci 0000:00:01.4: PCI bridge to [bus 01]
+[    0.340796] pci 0000:00:01.4:   bridge window [io  0xf000-0xffff]
+[    0.340798] pci 0000:00:01.4:   bridge window [mem 0xdcc00000-0xdccfffff]
+[    0.340931] pci 0000:02:00.0: [8086:2723] type 00 class 0x028000
+[    0.340983] pci 0000:02:00.0: reg 0x10: [mem 0xdcb00000-0xdcb03fff 64bit]
+[    0.341186] pci 0000:02:00.0: PME# supported from D0 D3hot D3cold
+[    0.341558] pci 0000:00:02.2: PCI bridge to [bus 02]
+[    0.341563] pci 0000:00:02.2:   bridge window [mem 0xdcb00000-0xdcbfffff]
+[    0.341629] pci 0000:03:00.0: [144d:a80a] type 00 class 0x010802
+[    0.341648] pci 0000:03:00.0: reg 0x10: [mem 0xdca00000-0xdca03fff 64bit]
+[    0.341946] pci 0000:00:02.4: PCI bridge to [bus 03]
+[    0.341951] pci 0000:00:02.4:   bridge window [mem 0xdca00000-0xdcafffff]
+[    0.342028] pci 0000:00:03.1: PCI bridge to [bus 04-63]
+[    0.342033] pci 0000:00:03.1:   bridge window [io  0xa000-0xdfff]
+[    0.342036] pci 0000:00:03.1:   bridge window [mem 0xc4000000-0xdbffffff]
+[    0.342041] pci 0000:00:03.1:   bridge window [mem 0x6c00000000-0x7bffffffff 64bit pref]
+[    0.342122] pci 0000:00:04.1: PCI bridge to [bus 64-c3]
+[    0.342127] pci 0000:00:04.1:   bridge window [io  0x6000-0x9fff]
+[    0.342130] pci 0000:00:04.1:   bridge window [mem 0xac000000-0xc3ffffff]
+[    0.342135] pci 0000:00:04.1:   bridge window [mem 0x5c00000000-0x6bffffffff 64bit pref]
+[    0.342236] pci 0000:c4:00.0: [1002:1900] type 00 class 0x030000
+[    0.342249] pci 0000:c4:00.0: reg 0x10: [mem 0x7c00000000-0x7c0fffffff 64bit pref]
+[    0.342258] pci 0000:c4:00.0: reg 0x18: [mem 0xdc000000-0xdc1fffff 64bit pref]
+[    0.342265] pci 0000:c4:00.0: reg 0x20: [io  0xe000-0xe0ff]
+[    0.342271] pci 0000:c4:00.0: reg 0x24: [mem 0xdc500000-0xdc57ffff]
+[    0.342281] pci 0000:c4:00.0: enabling Extended Tags
+[    0.342339] pci 0000:c4:00.0: PME# supported from D1 D2 D3hot D3cold
+[    0.342477] pci 0000:c4:00.1: [1002:1640] type 00 class 0x040300
+[    0.342486] pci 0000:c4:00.1: reg 0x10: [mem 0xdc5c8000-0xdc5cbfff]
+[    0.342512] pci 0000:c4:00.1: enabling Extended Tags
+[    0.342549] pci 0000:c4:00.1: PME# supported from D1 D2 D3hot D3cold
+[    0.342637] pci 0000:c4:00.2: [1022:15c7] type 00 class 0x108000
+[    0.342653] pci 0000:c4:00.2: reg 0x18: [mem 0xdc400000-0xdc4fffff]
+[    0.342664] pci 0000:c4:00.2: reg 0x24: [mem 0xdc5cc000-0xdc5cdfff]
+[    0.342673] pci 0000:c4:00.2: enabling Extended Tags
+[    0.342799] pci 0000:c4:00.3: [1022:15b9] type 00 class 0x0c0330
+[    0.342811] pci 0000:c4:00.3: reg 0x10: [mem 0xdc300000-0xdc3fffff 64bit]
+[    0.342840] pci 0000:c4:00.3: enabling Extended Tags
+[    0.342880] pci 0000:c4:00.3: PME# supported from D0 D3hot D3cold
+[    0.342976] pci 0000:c4:00.4: [1022:15ba] type 00 class 0x0c0330
+[    0.342989] pci 0000:c4:00.4: reg 0x10: [mem 0xdc200000-0xdc2fffff 64bit]
+[    0.343018] pci 0000:c4:00.4: enabling Extended Tags
+[    0.343057] pci 0000:c4:00.4: PME# supported from D0 D3hot D3cold
+[    0.343151] pci 0000:c4:00.5: [1022:15e2] type 00 class 0x048000
+[    0.343159] pci 0000:c4:00.5: reg 0x10: [mem 0xdc580000-0xdc5bffff]
+[    0.343170] pci 0000:c4:00.5: reg 0x18: [mem 0x7c10000000-0x7c107fffff 64bit pref]
+[    0.343185] pci 0000:c4:00.5: enabling Extended Tags
+[    0.343222] pci 0000:c4:00.5: PME# supported from D0 D3hot D3cold
+[    0.343316] pci 0000:c4:00.6: [1022:15e3] type 00 class 0x040300
+[    0.343325] pci 0000:c4:00.6: reg 0x10: [mem 0xdc5c0000-0xdc5c7fff]
+[    0.343350] pci 0000:c4:00.6: enabling Extended Tags
+[    0.343387] pci 0000:c4:00.6: PME# supported from D0 D3hot D3cold
+[    0.343496] pci 0000:00:08.1: PCI bridge to [bus c4]
+[    0.343500] pci 0000:00:08.1:   bridge window [io  0xe000-0xefff]
+[    0.343502] pci 0000:00:08.1:   bridge window [mem 0xdc000000-0xdc5fffff]
+[    0.343505] pci 0000:00:08.1:   bridge window [mem 0x7c00000000-0x7c107fffff 64bit pref]
+[    0.343553] pci 0000:c5:00.0: [1022:14ec] type 00 class 0x130000
+[    0.343585] pci 0000:c5:00.0: enabling Extended Tags
+[    0.343632] pci 0000:c5:00.0: PME# supported from D3hot D3cold
+[    0.343725] pci 0000:c5:00.1: [1022:1502] type 00 class 0x118000
+[    0.343742] pci 0000:c5:00.1: reg 0x10: [mem 0xdc900000-0xdc97ffff]
+[    0.343746] pci 0000:c5:00.1: reg 0x14: [mem 0xdc9c0000-0xdc9c1fff]
+[    0.343754] pci 0000:c5:00.1: reg 0x18: [mem 0x7c10900000-0x7c1093ffff 64bit pref]
+[    0.343758] pci 0000:c5:00.1: reg 0x20: [mem 0xdc980000-0xdc9bffff]
+[    0.343770] pci 0000:c5:00.1: enabling Extended Tags
+[    0.343926] pci 0000:00:08.2: PCI bridge to [bus c5]
+[    0.343930] pci 0000:00:08.2:   bridge window [mem 0xdc900000-0xdc9fffff]
+[    0.343933] pci 0000:00:08.2:   bridge window [mem 0x7c10900000-0x7c109fffff 64bit pref]
+[    0.344010] pci 0000:c6:00.0: [1022:14ec] type 00 class 0x130000
+[    0.344043] pci 0000:c6:00.0: enabling Extended Tags
+[    0.344199] pci 0000:c6:00.3: [1022:15c0] type 00 class 0x0c0330
+[    0.344212] pci 0000:c6:00.3: reg 0x10: [mem 0xdc700000-0xdc7fffff 64bit]
+[    0.344241] pci 0000:c6:00.3: enabling Extended Tags
+[    0.344280] pci 0000:c6:00.3: PME# supported from D0 D3hot D3cold
+[    0.344373] pci 0000:c6:00.4: [1022:15c1] type 00 class 0x0c0330
+[    0.344386] pci 0000:c6:00.4: reg 0x10: [mem 0xdc600000-0xdc6fffff 64bit]
+[    0.344415] pci 0000:c6:00.4: enabling Extended Tags
+[    0.344454] pci 0000:c6:00.4: PME# supported from D0 D3hot D3cold
+[    0.344547] pci 0000:c6:00.5: [1022:1668] type 00 class 0x0c0340
+[    0.344564] pci 0000:c6:00.5: reg 0x10: [mem 0xdc880000-0xdc8fffff 64bit]
+[    0.344597] pci 0000:c6:00.5: enabling Extended Tags
+[    0.344637] pci 0000:c6:00.5: PME# supported from D0 D3hot D3cold
+[    0.344728] pci 0000:c6:00.6: [1022:1669] type 00 class 0x0c0340
+[    0.344744] pci 0000:c6:00.6: reg 0x10: [mem 0xdc800000-0xdc87ffff 64bit]
+[    0.344778] pci 0000:c6:00.6: enabling Extended Tags
+[    0.344817] pci 0000:c6:00.6: PME# supported from D0 D3hot D3cold
+[    0.344921] pci 0000:00:08.3: PCI bridge to [bus c6]
+[    0.344925] pci 0000:00:08.3:   bridge window [mem 0xdc600000-0xdc8fffff]
+[    0.354124] ACPI: PCI: Interrupt link LNKA configured for IRQ 0
+[    0.354188] ACPI: PCI: Interrupt link LNKB configured for IRQ 0
+[    0.354244] ACPI: PCI: Interrupt link LNKC configured for IRQ 0
+[    0.354312] ACPI: PCI: Interrupt link LNKD configured for IRQ 0
+[    0.354374] ACPI: PCI: Interrupt link LNKE configured for IRQ 0
+[    0.354425] ACPI: PCI: Interrupt link LNKF configured for IRQ 0
+[    0.354476] ACPI: PCI: Interrupt link LNKG configured for IRQ 0
+[    0.354527] ACPI: PCI: Interrupt link LNKH configured for IRQ 0
+[    0.360251] Low-power S0 idle used by default for system suspend
+[    0.361031] iommu: Default domain type: Translated
+[    0.361031] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.361162] SCSI subsystem initialized
+[    0.361167] libata version 3.00 loaded.
+[    0.361167] ACPI: bus type USB registered
+[    0.361167] usbcore: registered new interface driver usbfs
+[    0.361167] usbcore: registered new interface driver hub
+[    0.361167] usbcore: registered new device driver usb
+[    0.361167] pps_core: LinuxPPS API ver. 1 registered
+[    0.361167] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.361167] PTP clock support registered
+[    0.361167] EDAC MC: Ver: 3.0.0
+[    0.361167] efivars: Registered efivars operations
+[    0.361189] NetLabel: Initializing
+[    0.361190] NetLabel:  domain hash size = 128
+[    0.361190] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.361205] NetLabel:  unlabeled traffic allowed by default
+[    0.361219] mctp: management component transport protocol core
+[    0.361219] NET: Registered PF_MCTP protocol family
+[    0.361219] PCI: Using ACPI for IRQ routing
+[    0.370664] PCI: pci_cache_line_size set to 64 bytes
+[    0.370783] e820: reserve RAM buffer [mem 0x09a7f000-0x0bffffff]
+[    0.370785] e820: reserve RAM buffer [mem 0x0a200000-0x0bffffff]
+[    0.370786] e820: reserve RAM buffer [mem 0x90a78018-0x93ffffff]
+[    0.370787] e820: reserve RAM buffer [mem 0x92cfe000-0x93ffffff]
+[    0.370788] e820: reserve RAM buffer [mem 0x9404c000-0x97ffffff]
+[    0.370789] e820: reserve RAM buffer [mem 0x9bffb000-0x9bffffff]
+[    0.370790] e820: reserve RAM buffer [mem 0x75e300000-0x75fffffff]
+[    0.373033] pci 0000:c4:00.0: vgaarb: setting as boot VGA device
+[    0.373035] pci 0000:c4:00.0: vgaarb: bridge control possible
+[    0.373036] pci 0000:c4:00.0: vgaarb: VGA device added: decodes=io+mem,owns=none,locks=none
+[    0.373039] vgaarb: loaded
+[    0.373074] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    0.373078] hpet0: 3 comparators, 32-bit 14.318180 MHz counter
+[    0.375134] clocksource: Switched to clocksource tsc-early
+[    0.375138] VFS: Disk quotas dquot_6.6.0
+[    0.375138] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.375138] AppArmor: AppArmor Filesystem Enabled
+[    0.375138] pnp: PnP ACPI init
+[    0.375138] system 00:00: [mem 0xe0000000-0xefffffff] has been reserved
+[    0.378526] system 00:02: [io  0x0a00-0x0a0f] has been reserved
+[    0.378528] system 00:02: [io  0x0a10-0x0a1f] has been reserved
+[    0.378530] system 00:02: [io  0x0a20-0x0a2f] has been reserved
+[    0.378555] ACPI: IRQ 1 override to edge, low(!)
+[    0.378944] pnp 00:05: [dma 0 disabled]
+[    0.379228] system 00:06: [io  0x04d0-0x04d1] has been reserved
+[    0.379230] system 00:06: [io  0x040b] has been reserved
+[    0.379231] system 00:06: [io  0x04d6] has been reserved
+[    0.379232] system 00:06: [io  0x0c00-0x0c01] has been reserved
+[    0.379234] system 00:06: [io  0x0c14] has been reserved
+[    0.379235] system 00:06: [io  0x0c50-0x0c51] has been reserved
+[    0.379236] system 00:06: [io  0x0c52] has been reserved
+[    0.379237] system 00:06: [io  0x0c6c] has been reserved
+[    0.379238] system 00:06: [io  0x0c6f] has been reserved
+[    0.379240] system 00:06: [io  0x0cd0-0x0cd1] has been reserved
+[    0.379241] system 00:06: [io  0x0cd2-0x0cd3] has been reserved
+[    0.379242] system 00:06: [io  0x0cd4-0x0cd5] has been reserved
+[    0.379243] system 00:06: [io  0x0cd6-0x0cd7] has been reserved
+[    0.379244] system 00:06: [io  0x0cd8-0x0cdf] has been reserved
+[    0.379246] system 00:06: [io  0x0800-0x089f] has been reserved
+[    0.379247] system 00:06: [io  0x0b00-0x0b0f] has been reserved
+[    0.379248] system 00:06: [io  0x0b20-0x0b3f] has been reserved
+[    0.379249] system 00:06: [io  0x0900-0x090f] has been reserved
+[    0.379250] system 00:06: [io  0x0910-0x091f] has been reserved
+[    0.379252] system 00:06: [mem 0xfec00000-0xfec00fff] could not be reserved
+[    0.379253] system 00:06: [mem 0xfec01000-0xfec01fff] could not be reserved
+[    0.379255] system 00:06: [mem 0xfedc0000-0xfedc0fff] has been reserved
+[    0.379256] system 00:06: [mem 0xfee00000-0xfee00fff] has been reserved
+[    0.379257] system 00:06: [mem 0xfed80000-0xfed8ffff] could not be reserved
+[    0.379259] system 00:06: [mem 0xfec10000-0xfec10fff] has been reserved
+[    0.379260] system 00:06: [mem 0xff000000-0xffffffff] has been reserved
+[    0.380427] pnp: PnP ACPI: found 7 devices
+[    0.386436] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.386548] NET: Registered PF_INET protocol family
+[    0.386658] IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.389169] tcp_listen_portaddr_hash hash table entries: 16384 (order: 6, 262144 bytes, linear)
+[    0.389189] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.389260] TCP established hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.389434] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[    0.389491] TCP: Hash tables configured (established 262144 bind 65536)
+[    0.389568] MPTCP token hash table entries: 32768 (order: 7, 786432 bytes, linear)
+[    0.389610] UDP hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.389651] UDP-Lite hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.389701] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.389706] NET: Registered PF_XDP protocol family
+[    0.389715] pci 0000:00:01.4: PCI bridge to [bus 01]
+[    0.389722] pci 0000:00:01.4:   bridge window [io  0xf000-0xffff]
+[    0.389726] pci 0000:00:01.4:   bridge window [mem 0xdcc00000-0xdccfffff]
+[    0.389732] pci 0000:00:02.2: PCI bridge to [bus 02]
+[    0.389735] pci 0000:00:02.2:   bridge window [mem 0xdcb00000-0xdcbfffff]
+[    0.389740] pci 0000:00:02.4: PCI bridge to [bus 03]
+[    0.389743] pci 0000:00:02.4:   bridge window [mem 0xdca00000-0xdcafffff]
+[    0.389748] pci 0000:00:03.1: PCI bridge to [bus 04-63]
+[    0.389750] pci 0000:00:03.1:   bridge window [io  0xa000-0xdfff]
+[    0.389759] pci 0000:00:03.1:   bridge window [mem 0xc4000000-0xdbffffff]
+[    0.389771] pci 0000:00:03.1:   bridge window [mem 0x6c00000000-0x7bffffffff 64bit pref]
+[    0.389786] pci 0000:00:04.1: PCI bridge to [bus 64-c3]
+[    0.389788] pci 0000:00:04.1:   bridge window [io  0x6000-0x9fff]
+[    0.389797] pci 0000:00:04.1:   bridge window [mem 0xac000000-0xc3ffffff]
+[    0.389810] pci 0000:00:04.1:   bridge window [mem 0x5c00000000-0x6bffffffff 64bit pref]
+[    0.389825] pci 0000:00:08.1: PCI bridge to [bus c4]
+[    0.389827] pci 0000:00:08.1:   bridge window [io  0xe000-0xefff]
+[    0.389832] pci 0000:00:08.1:   bridge window [mem 0xdc000000-0xdc5fffff]
+[    0.389834] pci 0000:00:08.1:   bridge window [mem 0x7c00000000-0x7c107fffff 64bit pref]
+[    0.389838] pci 0000:00:08.2: PCI bridge to [bus c5]
+[    0.389840] pci 0000:00:08.2:   bridge window [mem 0xdc900000-0xdc9fffff]
+[    0.389842] pci 0000:00:08.2:   bridge window [mem 0x7c10900000-0x7c109fffff 64bit pref]
+[    0.389846] pci 0000:00:08.3: PCI bridge to [bus c6]
+[    0.389849] pci 0000:00:08.3:   bridge window [mem 0xdc600000-0xdc8fffff]
+[    0.389853] pci_bus 0000:00: resource 4 [io  0x0000-0x03af window]
+[    0.389855] pci_bus 0000:00: resource 5 [io  0x03e0-0x0cf7 window]
+[    0.389856] pci_bus 0000:00: resource 6 [io  0x03b0-0x03df window]
+[    0.389857] pci_bus 0000:00: resource 7 [io  0x0d00-0xffff window]
+[    0.389858] pci_bus 0000:00: resource 8 [mem 0x000a0000-0x000dffff window]
+[    0.389860] pci_bus 0000:00: resource 9 [mem 0xfa000000-0xfcffffff window]
+[    0.389861] pci_bus 0000:00: resource 10 [mem 0xf0000000-0xf9ffffff window]
+[    0.389862] pci_bus 0000:00: resource 11 [mem 0xa0000000-0xdfffffff window]
+[    0.389863] pci_bus 0000:00: resource 12 [mem 0x860000000-0x7fffffffff window]
+[    0.389864] pci_bus 0000:01: resource 0 [io  0xf000-0xffff]
+[    0.389865] pci_bus 0000:01: resource 1 [mem 0xdcc00000-0xdccfffff]
+[    0.389867] pci_bus 0000:02: resource 1 [mem 0xdcb00000-0xdcbfffff]
+[    0.389868] pci_bus 0000:03: resource 1 [mem 0xdca00000-0xdcafffff]
+[    0.389869] pci_bus 0000:04: resource 0 [io  0xa000-0xdfff]
+[    0.389870] pci_bus 0000:04: resource 1 [mem 0xc4000000-0xdbffffff]
+[    0.389871] pci_bus 0000:04: resource 2 [mem 0x6c00000000-0x7bffffffff 64bit pref]
+[    0.389872] pci_bus 0000:64: resource 0 [io  0x6000-0x9fff]
+[    0.389873] pci_bus 0000:64: resource 1 [mem 0xac000000-0xc3ffffff]
+[    0.389874] pci_bus 0000:64: resource 2 [mem 0x5c00000000-0x6bffffffff 64bit pref]
+[    0.389876] pci_bus 0000:c4: resource 0 [io  0xe000-0xefff]
+[    0.389877] pci_bus 0000:c4: resource 1 [mem 0xdc000000-0xdc5fffff]
+[    0.389878] pci_bus 0000:c4: resource 2 [mem 0x7c00000000-0x7c107fffff 64bit pref]
+[    0.389879] pci_bus 0000:c5: resource 1 [mem 0xdc900000-0xdc9fffff]
+[    0.389880] pci_bus 0000:c5: resource 2 [mem 0x7c10900000-0x7c109fffff 64bit pref]
+[    0.389881] pci_bus 0000:c6: resource 1 [mem 0xdc600000-0xdc8fffff]
+[    0.390044] pci 0000:c4:00.1: D0 power state depends on 0000:c4:00.0
+[    0.390103] pci 0000:00:08.1: can't derive routing for PCI INT A
+[    0.390105] pci 0000:00:08.1: PCI INT A: not connected
+[    0.390370] pci 0000:00:08.3: can't derive routing for PCI INT A
+[    0.390371] pci 0000:00:08.3: PCI INT A: not connected
+[    0.390546] PCI: CLS 64 bytes, default 64
+[    0.390555] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+[    0.390593] pci 0000:00:01.0: Adding to iommu group 0
+[    0.390608] pci 0000:00:01.4: Adding to iommu group 1
+[    0.390612] Trying to unpack rootfs image as initramfs...
+[    0.390630] pci 0000:00:02.0: Adding to iommu group 2
+[    0.390644] pci 0000:00:02.2: Adding to iommu group 3
+[    0.390658] pci 0000:00:02.4: Adding to iommu group 4
+[    0.390683] pci 0000:00:03.0: Adding to iommu group 5
+[    0.390695] pci 0000:00:03.1: Adding to iommu group 5
+[    0.390722] pci 0000:00:04.0: Adding to iommu group 6
+[    0.390735] pci 0000:00:04.1: Adding to iommu group 6
+[    0.390761] pci 0000:00:08.0: Adding to iommu group 7
+[    0.390774] pci 0000:00:08.1: Adding to iommu group 8
+[    0.390788] pci 0000:00:08.2: Adding to iommu group 9
+[    0.390802] pci 0000:00:08.3: Adding to iommu group 10
+[    0.390827] pci 0000:00:14.0: Adding to iommu group 11
+[    0.390840] pci 0000:00:14.3: Adding to iommu group 11
+[    0.390905] pci 0000:00:18.0: Adding to iommu group 12
+[    0.390919] pci 0000:00:18.1: Adding to iommu group 12
+[    0.390933] pci 0000:00:18.2: Adding to iommu group 12
+[    0.390946] pci 0000:00:18.3: Adding to iommu group 12
+[    0.390960] pci 0000:00:18.4: Adding to iommu group 12
+[    0.390973] pci 0000:00:18.5: Adding to iommu group 12
+[    0.390986] pci 0000:00:18.6: Adding to iommu group 12
+[    0.390999] pci 0000:00:18.7: Adding to iommu group 12
+[    0.391018] pci 0000:01:00.0: Adding to iommu group 13
+[    0.391032] pci 0000:02:00.0: Adding to iommu group 14
+[    0.391046] pci 0000:03:00.0: Adding to iommu group 15
+[    0.391077] pci 0000:c4:00.0: Adding to iommu group 16
+[    0.391092] pci 0000:c4:00.1: Adding to iommu group 17
+[    0.391109] pci 0000:c4:00.2: Adding to iommu group 18
+[    0.391123] pci 0000:c4:00.3: Adding to iommu group 19
+[    0.391138] pci 0000:c4:00.4: Adding to iommu group 20
+[    0.391153] pci 0000:c4:00.5: Adding to iommu group 21
+[    0.391167] pci 0000:c4:00.6: Adding to iommu group 22
+[    0.391182] pci 0000:c5:00.0: Adding to iommu group 23
+[    0.391197] pci 0000:c5:00.1: Adding to iommu group 24
+[    0.391212] pci 0000:c6:00.0: Adding to iommu group 25
+[    0.391228] pci 0000:c6:00.3: Adding to iommu group 26
+[    0.391243] pci 0000:c6:00.4: Adding to iommu group 27
+[    0.391257] pci 0000:c6:00.5: Adding to iommu group 28
+[    0.391272] pci 0000:c6:00.6: Adding to iommu group 29
+[    0.394113] pci 0000:00:00.2: can't derive routing for PCI INT A
+[    0.394116] pci 0000:00:00.2: PCI INT A: not connected
+[    0.394217] pci 0000:00:00.2: AMD-Vi: Found IOMMU cap 0x40
+[    0.394219] AMD-Vi: Extended features (0x246577efa2054ada, 0x0): PPR NX GT IA GA PC
+[    0.394224] AMD-Vi: Interrupt remapping enabled
+[    0.394359] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.394360] software IO TLB: mapped [mem 0x0000000087bea000-0x000000008bbea000] (64MB)
+[    0.394405] LVT offset 0 assigned for vector 0x400
+[    0.394510] perf: AMD IBS detected (0x00000bff)
+[    0.394525] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
+[    0.395019] Initialise system trusted keyrings
+[    0.395026] Key type blacklist registered
+[    0.395052] workingset: timestamp_bits=36 max_order=23 bucket_order=0
+[    0.395068] zbud: loaded
+[    0.395256] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.395319] fuse: init (API version 7.38)
+[    0.395418] integrity: Platform Keyring initialized
+[    0.395421] integrity: Machine keyring initialized
+[    0.400579] Key type asymmetric registered
+[    0.400580] Asymmetric key parser 'x509' registered
+[    0.400590] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.400622] io scheduler mq-deadline registered
+[    0.402267] pcieport 0000:00:01.4: PME: Signaling with IRQ 38
+[    0.402450] pcieport 0000:00:02.2: PME: Signaling with IRQ 39
+[    0.402631] pcieport 0000:00:02.4: PME: Signaling with IRQ 40
+[    0.402889] pcieport 0000:00:03.1: PME: Signaling with IRQ 41
+[    0.403000] pcieport 0000:00:03.1: AER: enabled with IRQ 41
+[    0.403026] pcieport 0000:00:03.1: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.403597] pcieport 0000:00:04.1: PME: Signaling with IRQ 42
+[    0.403707] pcieport 0000:00:04.1: AER: enabled with IRQ 42
+[    0.403728] pcieport 0000:00:04.1: pciehp: Slot #0 AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug+ Surprise+ Interlock- NoCompl+ IbPresDis- LLActRep+
+[    0.404197] pcieport 0000:00:08.1: PME: Signaling with IRQ 43
+[    0.404282] pcieport 0000:00:08.2: can't derive routing for PCI INT A
+[    0.404284] pcieport 0000:00:08.2: PCI INT A: not connected
+[    0.404415] pcieport 0000:00:08.2: PME: Signaling with IRQ 44
+[    0.404592] pcieport 0000:00:08.3: PME: Signaling with IRQ 45
+[    0.404677] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.404840] input: Power Button as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0
+[    0.404857] ACPI: button: Power Button [PWRB]
+[    0.404927] Estimated ratio of average max frequency by base frequency (times 1024): 1412
+[    0.404941] Monitor-Mwait will be used to enter C-1 state
+[    0.404947] ACPI: \_SB_.PLTF.C000: Found 3 idle states
+[    0.405096] ACPI: \_SB_.PLTF.C002: Found 3 idle states
+[    0.405224] ACPI: \_SB_.PLTF.C004: Found 3 idle states
+[    0.405357] ACPI: \_SB_.PLTF.C006: Found 3 idle states
+[    0.405490] ACPI: \_SB_.PLTF.C008: Found 3 idle states
+[    0.405622] ACPI: \_SB_.PLTF.C00A: Found 3 idle states
+[    0.405761] ACPI: \_SB_.PLTF.C00C: Found 3 idle states
+[    0.405846] ACPI: \_SB_.PLTF.C00E: Found 3 idle states
+[    0.405942] ACPI: \_SB_.PLTF.C001: Found 3 idle states
+[    0.406070] ACPI: \_SB_.PLTF.C003: Found 3 idle states
+[    0.406196] ACPI: \_SB_.PLTF.C005: Found 3 idle states
+[    0.406320] ACPI: \_SB_.PLTF.C007: Found 3 idle states
+[    0.406434] ACPI: \_SB_.PLTF.C009: Found 3 idle states
+[    0.406563] ACPI: \_SB_.PLTF.C00B: Found 3 idle states
+[    0.406696] ACPI: \_SB_.PLTF.C00D: Found 3 idle states
+[    0.406816] ACPI: \_SB_.PLTF.C00F: Found 3 idle states
+[    0.407072] thermal LNXTHERM:00: registered as thermal_zone0
+[    0.407074] ACPI: thermal: Thermal Zone [TZ01] (20 C)
+[    0.407229] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.428245] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    0.432450] Linux agpgart interface v0.103
+[    0.481199] tpm_crb MSFT0101:00: Disabling hwrng
+[    0.486084] loop: module loaded
+[    0.486356] tun: Universal TUN/TAP device driver, 1.6
+[    0.486391] PPP generic driver version 2.4.2
+[    0.486498] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    0.487188] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.487192] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.487299] mousedev: PS/2 mouse device common for all mice
+[    0.487369] rtc_cmos 00:01: RTC can wake from S4
+[    0.487633] rtc_cmos 00:01: registered as rtc0
+[    0.487663] rtc_cmos 00:01: setting system clock to 2024-08-01T14:13:50 UTC (1722521630)
+[    0.487689] rtc_cmos 00:01: alarms up to one month, y3k, 114 bytes nvram
+[    0.487695] i2c_dev: i2c /dev entries driver
+[    0.487713] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    0.487721] device-mapper: uevent: version 1.0.3
+[    0.487756] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[    0.487772] platform eisa.0: Probing EISA bus 0
+[    0.487773] platform eisa.0: EISA: Cannot allocate resource for mainboard
+[    0.487775] platform eisa.0: Cannot allocate resource for EISA slot 1
+[    0.487776] platform eisa.0: Cannot allocate resource for EISA slot 2
+[    0.487777] platform eisa.0: Cannot allocate resource for EISA slot 3
+[    0.487778] platform eisa.0: Cannot allocate resource for EISA slot 4
+[    0.487779] platform eisa.0: Cannot allocate resource for EISA slot 5
+[    0.487780] platform eisa.0: Cannot allocate resource for EISA slot 6
+[    0.487781] platform eisa.0: Cannot allocate resource for EISA slot 7
+[    0.487782] platform eisa.0: Cannot allocate resource for EISA slot 8
+[    0.487783] platform eisa.0: EISA: Detected 0 cards
+[    0.487785] amd_pstate: driver load is disabled, boot with specific mode to enable this
+[    0.488154] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.488264] drop_monitor: Initializing network drop monitor service
+[    0.497076] NET: Registered PF_INET6 protocol family
+[    0.591238] Freeing initrd memory: 73700K
+[    0.598623] Segment Routing with IPv6
+[    0.598645] In-situ OAM (IOAM) with IPv6
+[    0.598696] NET: Registered PF_PACKET protocol family
+[    0.598839] Key type dns_resolver registered
+[    0.601531] microcode: CPU7: patch_level=0x0a705203
+[    0.601533] microcode: CPU15: patch_level=0x0a705203
+[    0.601543] microcode: CPU8: patch_level=0x0a705203
+[    0.601543] microcode: CPU0: patch_level=0x0a705203
+[    0.601562] microcode: CPU9: patch_level=0x0a705203
+[    0.601562] microcode: CPU1: patch_level=0x0a705203
+[    0.601564] microcode: CPU10: patch_level=0x0a705203
+[    0.601564] microcode: CPU2: patch_level=0x0a705203
+[    0.601565] microcode: CPU3: patch_level=0x0a705203
+[    0.601565] microcode: CPU11: patch_level=0x0a705203
+[    0.601567] microcode: CPU12: patch_level=0x0a705203
+[    0.601567] microcode: CPU4: patch_level=0x0a705203
+[    0.601567] microcode: CPU5: patch_level=0x0a705203
+[    0.601567] microcode: CPU13: patch_level=0x0a705203
+[    0.601567] microcode: CPU14: patch_level=0x0a705203
+[    0.601567] microcode: CPU6: patch_level=0x0a705203
+[    0.601629] microcode: Microcode Update Driver: v2.2.
+[    0.602385] resctrl: L3 allocation detected
+[    0.602388] resctrl: MB allocation detected
+[    0.602389] resctrl: SMBA allocation detected
+[    0.602391] resctrl: L3 monitoring detected
+[    0.602396] IPI shorthand broadcast: enabled
+[    0.604100] sched_clock: Marking stable (602081325, 278847)->(607116509, -4756337)
+[    0.604283] registered taskstats version 1
+[    0.605333] Loading compiled-in X.509 certificates
+[    0.605684] Loaded X.509 cert 'Build time autogenerated kernel key: afdbb594a21a396fe00cde6e33df7195eef36e59'
+[    0.605947] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    0.606204] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    0.606206] blacklist: Loading compiled-in revocation X.509 certificates
+[    0.606216] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    0.606225] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    0.606234] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    0.606244] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    0.606253] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    0.606262] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    0.606271] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    0.606281] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    0.608074] Key type .fscrypt registered
+[    0.608076] Key type fscrypt-provisioning registered
+[    0.608103] Key type trusted registered
+[    0.610935] Key type encrypted registered
+[    0.610939] AppArmor: AppArmor sha1 policy hashing enabled
+[    0.611851] Loading compiled-in module X.509 certificates
+[    0.612359] Loaded X.509 cert 'Build time autogenerated kernel key: afdbb594a21a396fe00cde6e33df7195eef36e59'
+[    0.612361] ima: Allocated hash algorithm: sha1
+[    0.745352] ima: No architecture policies found
+[    0.745394] evm: Initialising EVM extended attributes:
+[    0.745397] evm: security.selinux
+[    0.745401] evm: security.SMACK64
+[    0.745404] evm: security.SMACK64EXEC
+[    0.745407] evm: security.SMACK64TRANSMUTE
+[    0.745409] evm: security.SMACK64MMAP
+[    0.745411] evm: security.apparmor
+[    0.745413] evm: security.ima
+[    0.745416] evm: security.capability
+[    0.745418] evm: HMAC attrs: 0x1
+[    0.746187] PM:   Magic number: 4:738:231
+[    0.746274] acpi STK00024:00: hash matches
+[    0.746294] acpi device:4b: hash matches
+[    0.753873] RAS: Correctable Errors collector initialized.
+[    0.756539] clk: Disabling unused clocks
+[    0.759052] Freeing unused decrypted memory: 2036K
+[    0.760137] Freeing unused kernel image (initmem) memory: 4824K
+[    0.765084] Write protecting the kernel read-only data: 34816k
+[    0.766194] Freeing unused kernel image (rodata/data gap) memory: 1136K
+[    0.811678] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.811682] Run /init as init process
+[    0.811683]   with arguments:
+[    0.811684]     /init
+[    0.811684]     splash
+[    0.811685]   with environment:
+[    0.811686]     HOME=/
+[    0.811686]     TERM=linux
+[    0.811687]     BOOT_IMAGE=/boot/vmlinuz-6.5.0-44-generic
+[    0.892788] ACPI: video: Video Device [VGA] (multi-head: yes  rom: no  post: no)
+[    0.893152] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:26/LNXVIDEO:00/input/input3
+[    0.896763] piix4_smbus 0000:00:14.0: SMBus Host Controller at 0xb00, revision 0
+[    0.896766] piix4_smbus 0000:00:14.0: Using register 0x02 for SMBus port selection
+[    0.896844] xhci_hcd 0000:c4:00.3: xHCI Host Controller
+[    0.896849] xhci_hcd 0000:c4:00.3: new USB bus registered, assigned bus number 1
+[    0.896882] piix4_smbus 0000:00:14.0: Auxiliary SMBus Host Controller at 0xb20
+[    0.897305] xhci_hcd 0000:c4:00.3: hcc params 0x0128ffc5 hci version 0x120 quirks 0x0000000200000410
+[    0.897627] xhci_hcd 0000:c4:00.3: xHCI Host Controller
+[    0.897631] xhci_hcd 0000:c4:00.3: new USB bus registered, assigned bus number 2
+[    0.897633] xhci_hcd 0000:c4:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[    0.897666] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.05
+[    0.897668] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.897670] usb usb1: Product: xHCI Host Controller
+[    0.897671] usb usb1: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.897672] usb usb1: SerialNumber: 0000:c4:00.3
+[    0.897766] hub 1-0:1.0: USB hub found
+[    0.897788] hub 1-0:1.0: 5 ports detected
+[    0.902673] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.902694] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.05
+[    0.902696] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.902697] usb usb2: Product: xHCI Host Controller
+[    0.902698] usb usb2: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.902700] usb usb2: SerialNumber: 0000:c4:00.3
+[    0.902818] hub 2-0:1.0: USB hub found
+[    0.902828] hub 2-0:1.0: 2 ports detected
+[    0.905161] xhci_hcd 0000:c4:00.4: xHCI Host Controller
+[    0.905168] xhci_hcd 0000:c4:00.4: new USB bus registered, assigned bus number 3
+[    0.905447] nvme 0000:03:00.0: platform quirk: setting simple suspend
+[    0.905510] nvme nvme0: pci function 0000:03:00.0
+[    0.905514] ACPI: bus type thunderbolt registered
+[    0.905621] xhci_hcd 0000:c4:00.4: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000410
+[    0.905953] xhci_hcd 0000:c4:00.4: xHCI Host Controller
+[    0.905956] xhci_hcd 0000:c4:00.4: new USB bus registered, assigned bus number 4
+[    0.905958] xhci_hcd 0000:c4:00.4: Host supports USB 3.1 Enhanced SuperSpeed
+[    0.905986] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.05
+[    0.905988] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.905989] usb usb3: Product: xHCI Host Controller
+[    0.905990] usb usb3: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.905991] usb usb3: SerialNumber: 0000:c4:00.4
+[    0.906091] hub 3-0:1.0: USB hub found
+[    0.906095] hub 3-0:1.0: 1 port detected
+[    0.907120] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.907138] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.05
+[    0.907140] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.907141] usb usb4: Product: xHCI Host Controller
+[    0.907142] usb usb4: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.907143] usb usb4: SerialNumber: 0000:c4:00.4
+[    0.907414] hub 4-0:1.0: USB hub found
+[    0.907429] hub 4-0:1.0: 1 port detected
+[    0.909513] xhci_hcd 0000:c6:00.3: xHCI Host Controller
+[    0.909518] xhci_hcd 0000:c6:00.3: new USB bus registered, assigned bus number 5
+[    0.909888] xhci_hcd 0000:c6:00.3: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000410
+[    0.910406] xhci_hcd 0000:c6:00.3: xHCI Host Controller
+[    0.910410] xhci_hcd 0000:c6:00.3: new USB bus registered, assigned bus number 6
+[    0.910413] xhci_hcd 0000:c6:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[    0.910448] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.05
+[    0.910451] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.910452] usb usb5: Product: xHCI Host Controller
+[    0.910454] usb usb5: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.910455] usb usb5: SerialNumber: 0000:c6:00.3
+[    0.910553] hub 5-0:1.0: USB hub found
+[    0.910563] hub 5-0:1.0: 1 port detected
+[    0.911728] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.911747] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.05
+[    0.911749] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.911750] usb usb6: Product: xHCI Host Controller
+[    0.911751] usb usb6: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.911752] usb usb6: SerialNumber: 0000:c6:00.3
+[    0.911854] hub 6-0:1.0: USB hub found
+[    0.911868] hub 6-0:1.0: 1 port detected
+[    0.913406] xhci_hcd 0000:c6:00.4: xHCI Host Controller
+[    0.913412] xhci_hcd 0000:c6:00.4: new USB bus registered, assigned bus number 7
+[    0.913755] xhci_hcd 0000:c6:00.4: hcc params 0x0110ffc5 hci version 0x120 quirks 0x0000000200000410
+[    0.914221] xhci_hcd 0000:c6:00.4: xHCI Host Controller
+[    0.914223] xhci_hcd 0000:c6:00.4: new USB bus registered, assigned bus number 8
+[    0.914225] xhci_hcd 0000:c6:00.4: Host supports USB 3.1 Enhanced SuperSpeed
+[    0.914254] usb usb7: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.05
+[    0.914256] usb usb7: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.914257] usb usb7: Product: xHCI Host Controller
+[    0.914258] usb usb7: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.914259] usb usb7: SerialNumber: 0000:c6:00.4
+[    0.914346] hub 7-0:1.0: USB hub found
+[    0.914356] hub 7-0:1.0: 1 port detected
+[    0.915343] usb usb8: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.915362] usb usb8: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.05
+[    0.915364] usb usb8: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.915365] usb usb8: Product: xHCI Host Controller
+[    0.915366] usb usb8: Manufacturer: Linux 6.5.0-44-generic xhci-hcd
+[    0.915367] usb usb8: SerialNumber: 0000:c6:00.4
+[    0.915439] hub 8-0:1.0: USB hub found
+[    0.915455] hub 8-0:1.0: 1 port detected
+[    0.916600] r8169 0000:01:00.0 eth0: RTL8125B, 70:70:fc:06:d2:f9, XID 641, IRQ 74
+[    0.916604] r8169 0000:01:00.0 eth0: jumbo features [frames: 9194 bytes, tx checksumming: ko]
+[    0.921622] nvme nvme0: Shutdown timeout set to 10 seconds
+[    0.926887] nvme nvme0: 16/0/0 default/read/poll queues
+[    0.929207]  nvme0n1: p1 p2
+[    0.942915] r8169 0000:01:00.0 enp1s0: renamed from eth0
+[    1.160634] usb 1-3: new full-speed USB device number 2 using xhci_hcd
+[    1.333213] usb 1-3: New USB device found, idVendor=046d, idProduct=c548, bcdDevice= 5.03
+[    1.333232] usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.333239] usb 1-3: Product: USB Receiver
+[    1.333244] usb 1-3: Manufacturer: Logitech
+[    1.404400] tsc: Refined TSC clocksource calibration: 3792.875 MHz
+[    1.404418] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x6d581b92771, max_idle_ns: 881590605997 ns
+[    1.404476] clocksource: Switched to clocksource tsc
+[    1.480333] usb 1-5: new full-speed USB device number 3 using xhci_hcd
+[    1.655673] usb 1-5: New USB device found, idVendor=8087, idProduct=0029, bcdDevice= 0.01
+[    1.655682] usb 1-5: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    1.668604] hid: raw HID events driver (C) Jiri Kosina
+[    1.688776] usbcore: registered new interface driver usbhid
+[    1.688780] usbhid: USB HID core driver
+[    1.690565] input: Logitech USB Receiver as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.0/0003:046D:C548.0001/input/input5
+[    1.711405] EXT4-fs (dm-0): mounted filesystem 7772b5d1-e54d-49c2-a42a-fe9db15b824e ro with ordered data mode. Quota mode: none.
+[    1.753278] hid-generic 0003:046D:C548.0001: input,hidraw0: USB HID v1.11 Keyboard [Logitech USB Receiver] on usb-0000:c4:00.3-3/input0
+[    1.753694] input: Logitech USB Receiver Mouse as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.1/0003:046D:C548.0002/input/input6
+[    1.753927] input: Logitech USB Receiver Consumer Control as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.1/0003:046D:C548.0002/input/input7
+[    1.813019] input: Logitech USB Receiver System Control as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.1/0003:046D:C548.0002/input/input8
+[    1.813406] input: Logitech USB Receiver as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.1/0003:046D:C548.0002/input/input9
+[    1.813852] hid-generic 0003:046D:C548.0002: input,hiddev0,hidraw1: USB HID v1.11 Mouse [Logitech USB Receiver] on usb-0000:c4:00.3-3/input1
+[    1.814064] hid-generic 0003:046D:C548.0003: hiddev1,hidraw2: USB HID v1.11 Device [Logitech USB Receiver] on usb-0000:c4:00.3-3/input2
+[    1.814173] input: Logitech USB Receiver as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.3/0003:046D:C548.0004/input/input10
+[    1.814342] hid-generic 0003:046D:C548.0004: input,hidraw3: USB HID v1.11 Device [Logitech USB Receiver] on usb-0000:c4:00.3-3/input3
+[    1.902129] systemd[1]: Inserted module 'autofs4'
+[    1.917238] systemd[1]: systemd 249.11-0ubuntu3.12 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY -P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    1.917319] systemd[1]: Detected architecture x86-64.
+[    1.917543] systemd[1]: Hostname set to <castor-SER8>.
+[    1.964252] systemd[1]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+[    1.975865] block nvme0n1: the capability attribute has been deprecated.
+[    1.999274] systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+[    2.036328] systemd[1]: Queued start job for default target Graphical Interface.
+[    2.082129] systemd[1]: Created slice Slice /system/modprobe.
+[    2.082631] systemd[1]: Created slice Slice /system/systemd-fsck.
+[    2.082871] systemd[1]: Created slice User and Session Slice.
+[    2.082942] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    2.083130] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    2.083195] systemd[1]: Reached target User and Group Name Lookups.
+[    2.083207] systemd[1]: Reached target Remote File Systems.
+[    2.083214] systemd[1]: Reached target Slice Units.
+[    2.083226] systemd[1]: Reached target Mounting snaps.
+[    2.083244] systemd[1]: Reached target Local Verity Protected Volumes.
+[    2.083305] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[    2.083413] systemd[1]: Listening on LVM2 poll daemon socket.
+[    2.083478] systemd[1]: Listening on Syslog Socket.
+[    2.083540] systemd[1]: Listening on fsck to fsckd communication Socket.
+[    2.083577] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    2.083716] systemd[1]: Listening on Journal Audit Socket.
+[    2.083776] systemd[1]: Listening on Journal Socket (/dev/log).
+[    2.083860] systemd[1]: Listening on Journal Socket.
+[    2.084104] systemd[1]: Listening on udev Control Socket.
+[    2.084166] systemd[1]: Listening on udev Kernel Socket.
+[    2.084992] systemd[1]: Mounting Huge Pages File System...
+[    2.085708] systemd[1]: Mounting POSIX Message Queue File System...
+[    2.086395] systemd[1]: Mounting Kernel Debug File System...
+[    2.086987] systemd[1]: Mounting Kernel Trace File System...
+[    2.088094] systemd[1]: Starting Journal Service...
+[    2.088184] systemd[1]: Finished Availability of block devices.
+[    2.088865] systemd[1]: Starting Set the console keyboard layout...
+[    2.089489] systemd[1]: Starting Create List of Static Device Nodes...
+[    2.090086] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[    2.090649] systemd[1]: Starting Load Kernel Module configfs...
+[    2.091205] systemd[1]: Starting Load Kernel Module drm...
+[    2.091765] systemd[1]: Starting Load Kernel Module efi_pstore...
+[    2.092327] systemd[1]: Starting Load Kernel Module fuse...
+[    2.092412] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    2.093309] systemd[1]: Starting Load Kernel Modules...
+[    2.093914] pstore: Using crash dump compression: deflate
+[    2.093972] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    2.094613] systemd[1]: Starting Coldplug All udev Devices...
+[    2.094753] pstore: Registered efi_pstore as persistent store backend
+[    2.095402] systemd[1]: Mounted Huge Pages File System.
+[    2.095462] systemd[1]: Mounted POSIX Message Queue File System.
+[    2.095512] systemd[1]: Mounted Kernel Debug File System.
+[    2.095565] systemd[1]: Mounted Kernel Trace File System.
+[    2.095850] systemd[1]: Finished Create List of Static Device Nodes.
+[    2.096028] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[    2.096214] systemd[1]: Finished Load Kernel Module configfs.
+[    2.096432] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[    2.096614] systemd[1]: Finished Load Kernel Module efi_pstore.
+[    2.096786] systemd[1]: modprobe@fuse.service: Deactivated successfully.
+[    2.096970] systemd[1]: Finished Load Kernel Module fuse.
+[    2.097768] systemd[1]: Mounting FUSE Control File System...
+[    2.098421] systemd[1]: Mounting Kernel Configuration File System...
+[    2.099071] systemd[1]: Mounted FUSE Control File System.
+[    2.099517] systemd[1]: Mounted Kernel Configuration File System.
+[    2.107042] ACPI: bus type drm_connector registered
+[    2.108384] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[    2.108609] lp: driver loaded but no devices found
+[    2.108748] systemd[1]: Finished Load Kernel Module drm.
+[    2.111439] ppdev: user-space parallel port driver
+[    2.115977] systemd[1]: Finished Load Kernel Modules.
+[    2.116672] systemd[1]: Starting Apply Kernel Variables...
+[    2.119303] systemd[1]: Finished Set the console keyboard layout.
+[    2.125526] systemd[1]: Finished Apply Kernel Variables.
+[    2.129550] EXT4-fs (dm-0): re-mounted 7772b5d1-e54d-49c2-a42a-fe9db15b824e r/w. Quota mode: none.
+[    2.130520] systemd[1]: Finished Remount Root and Kernel File Systems.
+[    2.130586] systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+[    2.131228] systemd[1]: Starting Load/Save Random Seed...
+[    2.131862] systemd[1]: Starting Create System Users...
+[    2.134227] systemd[1]: Started Journal Service.
+[    2.138042] systemd-journald[383]: Received client request to flush runtime journal.
+[    2.150443] systemd-journald[383]: File /var/log/journal/1b0707d0c1f8434796bb47c5097952b1/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    2.156659] loop0: detected capacity change from 0 to 8
+[    2.157304] loop1: detected capacity change from 0 to 151992
+[    2.158529] loop2: detected capacity change from 0 to 152040
+[    2.158693] loop3: detected capacity change from 0 to 550664
+[    2.159712] loop4: detected capacity change from 0 to 549752
+[    2.160571] loop5: detected capacity change from 0 to 1017816
+[    2.160601] loop6: detected capacity change from 0 to 1034424
+[    2.161403] loop7: detected capacity change from 0 to 187776
+[    2.163302] loop8: detected capacity change from 0 to 26472
+[    2.163577] loop9: detected capacity change from 0 to 25240
+[    2.165044] loop10: detected capacity change from 0 to 82800
+[    2.166104] loop11: detected capacity change from 0 to 79520
+[    2.166258] loop12: detected capacity change from 0 to 952
+[    2.166996] loop13: detected capacity change from 0 to 904
+[    2.225543] ccp 0000:c4:00.2: enabling device (0000 -> 0002)
+[    2.238255] ccp 0000:c4:00.2: tee enabled
+[    2.238261] ccp 0000:c4:00.2: psp enabled
+[    2.266080] RAPL PMU: API unit is 2^-32 Joules, 1 fixed counters, 163840 ms ovfl timer
+[    2.266085] RAPL PMU: hw unit of domain package 2^-16 Joules
+[    2.267154] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    2.267859] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    2.267986] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[    2.288844] Adding 2002940k swap on /dev/mapper/vgubuntu-swap_1.  Priority:-2 extents:1 across:2002940k SSFS
+[    2.329910] Bluetooth: Core ver 2.22
+[    2.330109] NET: Registered PF_BLUETOOTH protocol family
+[    2.330112] Bluetooth: HCI device and connection manager initialized
+[    2.330115] Bluetooth: HCI socket layer initialized
+[    2.330118] Bluetooth: L2CAP socket layer initialized
+[    2.330122] Bluetooth: SCO socket layer initialized
+[    2.332387] cryptd: max_cpu_qlen set to 1000
+[    2.335689] input: Logitech USB Receiver as /devices/pci0000:00/0000:00:08.1/0000:c4:00.3/usb1/1-3/1-3:1.3/0003:046D:C548.0004/input/input11
+[    2.335808] hid-multitouch 0003:046D:C548.0004: input,hidraw3: USB HID v1.11 Device [Logitech USB Receiver] on usb-0000:c4:00.3-3/input3
+[    2.337475] Intel(R) Wireless WiFi driver for Linux
+[    2.337584] iwlwifi 0000:02:00.0: enabling device (0000 -> 0002)
+[    2.344058] iwlwifi 0000:02:00.0: Detected crf-id 0x3617, cnv-id 0x100530 wfpm id 0x80000000
+[    2.344097] iwlwifi 0000:02:00.0: PCI dev 2723/0084, rev=0x340, rfid=0x10a100
+[    2.344873] AVX2 version of gcm_enc/dec engaged.
+[    2.344913] AES CTR mode by8 optimization enabled
+[    2.346947] usbcore: registered new interface driver btusb
+[    2.348853] snd_pci_ps 0000:c4:00.5: enabling device (0000 -> 0002)
+[    2.349926] iwlwifi 0000:02:00.0: api flags index 2 larger than supported by driver
+[    2.349942] iwlwifi 0000:02:00.0: TLV_FW_FSEQ_VERSION: FSEQ Version: 89.3.35.37
+[    2.350319] iwlwifi 0000:02:00.0: loaded firmware version 77.2df8986f.0 cc-a0-77.ucode op_mode iwlmvm
+[    2.351343] AMD-Vi: AMD IOMMUv2 loaded and initialized
+[    2.362975] Bluetooth: hci0: Found device firmware: intel/ibt-20-1-3.sfi
+[    2.362990] Bluetooth: hci0: Boot Address: 0x24800
+[    2.362992] Bluetooth: hci0: Firmware Version: 126-5.22
+[    2.362994] Bluetooth: hci0: Firmware already loaded
+[    2.370649] Bluetooth: hci0: HCI LE Coded PHY feature bit is set, but its usage is not supported.
+[    2.396638] audit: type=1400 audit(1722521632.404:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="nvidia_modprobe" pid=603 comm="apparmor_parser"
+[    2.396862] audit: type=1400 audit(1722521632.404:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lsb_release" pid=602 comm="apparmor_parser"
+[    2.397061] audit: type=1400 audit(1722521632.404:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="nvidia_modprobe//kmod" pid=603 comm="apparmor_parser"
+[    2.402080] audit: type=1400 audit(1722521632.408:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/sbin/cups-browsed" pid=610 comm="apparmor_parser"
+[    2.414961] audit: type=1400 audit(1722521632.420:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/man" pid=606 comm="apparmor_parser"
+[    2.415410] audit: type=1400 audit(1722521632.420:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="man_filter" pid=606 comm="apparmor_parser"
+[    2.415996] audit: type=1400 audit(1722521632.420:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="man_groff" pid=606 comm="apparmor_parser"
+[    2.422996] audit: type=1400 audit(1722521632.428:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="tcpdump" pid=607 comm="apparmor_parser"
+[    2.470126] audit: type=1400 audit(1722521632.476:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=604 comm="apparmor_parser"
+[    3.354077] snd_hda_intel 0000:c4:00.1: enabling device (0000 -> 0002)
+[    3.354134] snd_hda_intel 0000:c4:00.1: Handle vga_switcheroo audio client
+[    3.354357] snd_hda_intel 0000:c4:00.6: enabling device (0000 -> 0002)
+[    3.355145] kvm_amd: TSC scaling supported
+[    3.355147] kvm_amd: Nested Virtualization enabled
+[    3.355148] kvm_amd: Nested Paging enabled
+[    3.355160] kvm_amd: Virtual VMLOAD VMSAVE supported
+[    3.355161] kvm_amd: Virtual GIF supported
+[    3.355162] kvm_amd: Virtual NMI enabled
+[    3.355163] kvm_amd: LBR virtualization supported
+[    3.355835] iwlwifi 0000:02:00.0: Detected Intel(R) Wi-Fi 6 AX200 160MHz, REV=0x340
+[    3.355926] thermal thermal_zone1: failed to read out thermal zone (-61)
+[    3.359156] [drm] amdgpu kernel modesetting enabled.
+[    3.364874] MCE: In-kernel MCE decoding enabled.
+[    3.367005] input: HD-Audio Generic HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:08.1/0000:c4:00.1/sound/card0/input12
+[    3.367068] input: HD-Audio Generic HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:08.1/0000:c4:00.1/sound/card0/input13
+[    3.367111] input: HD-Audio Generic HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:08.1/0000:c4:00.1/sound/card0/input14
+[    3.367152] input: HD-Audio Generic HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:08.1/0000:c4:00.1/sound/card0/input15
+[    3.371225] amdgpu: CRAT table disabled by module option
+[    3.371229] amdgpu: Virtual CRAT table created for CPU
+[    3.371248] amdgpu: Topology: Add CPU node
+[    3.371350] amdgpu 0000:c4:00.0: enabling device (0006 -> 0007)
+[    3.371387] [drm] initializing kernel modesetting (IP DISCOVERY 0x1002:0x1900 0x1F66:0x0031 0xC5).
+[    3.371395] [drm] register mmio base: 0xDC500000
+[    3.371396] [drm] register mmio size: 524288
+[    3.374311] [drm] add ip block number 0 <soc21_common>
+[    3.374313] [drm] add ip block number 1 <gmc_v11_0>
+[    3.374314] [drm] add ip block number 2 <ih_v6_0>
+[    3.374316] [drm] add ip block number 3 <psp>
+[    3.374317] [drm] add ip block number 4 <smu>
+[    3.374318] [drm] add ip block number 5 <dm>
+[    3.374320] [drm] add ip block number 6 <gfx_v11_0>
+[    3.374321] [drm] add ip block number 7 <sdma_v6_0>
+[    3.374322] [drm] add ip block number 8 <vcn_v4_0>
+[    3.374324] [drm] add ip block number 9 <jpeg_v4_0>
+[    3.374325] [drm] add ip block number 10 <mes_v11_0>
+[    3.374339] amdgpu 0000:c4:00.0: amdgpu: Fetched VBIOS from VFCT
+[    3.374341] amdgpu: ATOM BIOS: 113-PHXGENERIC-001
+[    3.375913] snd_hda_codec_realtek hdaudioC1D0: autoconfig for ALC897: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:line
+[    3.375917] snd_hda_codec_realtek hdaudioC1D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[    3.375919] snd_hda_codec_realtek hdaudioC1D0:    hp_outs=1 (0x1b/0x0/0x0/0x0/0x0)
+[    3.375921] snd_hda_codec_realtek hdaudioC1D0:    mono: mono_out=0x0
+[    3.375922] snd_hda_codec_realtek hdaudioC1D0:    inputs:
+[    3.375923] snd_hda_codec_realtek hdaudioC1D0:      Front Mic=0x19
+[    3.375925] snd_hda_codec_realtek hdaudioC1D0:      Rear Mic=0x18
+[    3.377645] [drm] VCN(0) encode/decode are enabled in VM mode
+[    3.378360] amdgpu 0000:c4:00.0: [drm:jpeg_v4_0_early_init [amdgpu]] JPEG decode is enabled in VM mode
+[    3.379747] amdgpu 0000:c4:00.0: vgaarb: deactivate vga console
+[    3.379752] amdgpu 0000:c4:00.0: amdgpu: Trusted Memory Zone (TMZ) feature enabled
+[    3.379817] [drm] vm size is 262144 GB, 4 levels, block size is 9-bit, fragment size is 9-bit
+[    3.379841] amdgpu 0000:c4:00.0: amdgpu: VRAM: 4096M 0x0000008000000000 - 0x00000080FFFFFFFF (4096M used)
+[    3.379843] amdgpu 0000:c4:00.0: amdgpu: GART: 512M 0x0000000000000000 - 0x000000001FFFFFFF
+[    3.379845] amdgpu 0000:c4:00.0: amdgpu: AGP: 267894784M 0x0000008400000000 - 0x0000FFFFFFFFFFFF
+[    3.379860] [drm] Detected VRAM RAM=4096M, BAR=4096M
+[    3.379862] [drm] RAM width 128bits DDR5
+[    3.379991] [drm] amdgpu: 4096M of VRAM memory ready
+[    3.379993] [drm] amdgpu: 13921M of GTT memory ready.
+[    3.380005] [drm] GART: num cpu pages 131072, num gpu pages 131072
+[    3.380587] [drm] PCIE GART of 512M enabled (table at 0x00000080FFD00000).
+[    3.381003] [drm] Loading DMUB firmware via PSP: version=0x08001E00
+[    3.381849] [drm] Found VCN firmware Version ENC: 1.10 DEC: 5 VEP: 0 Revision: 0
+[    3.381856] amdgpu 0000:c4:00.0: amdgpu: Will use PSP to load VCN firmware
+[    3.381958] [drm] max_doorbell_slices=255
+[    3.389213] input: HD-Audio Generic Front Mic as /devices/pci0000:00/0000:00:08.1/0000:c4:00.6/sound/card1/input16
+[    3.389321] input: HD-Audio Generic Rear Mic as /devices/pci0000:00/0000:00:08.1/0000:c4:00.6/sound/card1/input17
+[    3.389380] input: HD-Audio Generic Line Out as /devices/pci0000:00/0000:00:08.1/0000:c4:00.6/sound/card1/input18
+[    3.389436] input: HD-Audio Generic Front Headphone as /devices/pci0000:00/0000:00:08.1/0000:c4:00.6/sound/card1/input19
+[    3.406498] [drm] reserve 0x4000000 from 0x80f8000000 for PSP TMR
+[    3.472405] intel_rapl_common: Found RAPL domain package
+[    3.472410] intel_rapl_common: Found RAPL domain core
+[    3.480432] iwlwifi 0000:02:00.0: Detected RF HR B3, rfid=0x10a100
+[    3.545228] iwlwifi 0000:02:00.0: base HW address: e8:c8:29:be:05:a0
+[    3.644414] iwlwifi 0000:02:00.0 wlp2s0: renamed from wlan0
+[    3.923129] amdgpu 0000:c4:00.0: amdgpu: RAS: optional ras ta ucode is not available
+[    3.930375] amdgpu 0000:c4:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[    3.930380] amdgpu 0000:c4:00.0: amdgpu: SECUREDISPLAY: securedisplay ta ucode is not available
+[    3.951413] amdgpu 0000:c4:00.0: amdgpu: SMU is initialized successfully!
+[    3.952445] [drm] Display Core v3.2.241 initialized on DCN 3.1.4
+[    3.952447] [drm] DP-HDMI FRL PCON supported
+[    3.954025] [drm] DMUB hardware initialized: version=0x08001E00
+[    3.955387] snd_hda_intel 0000:c4:00.1: bound 0000:c4:00.0 (ops amdgpu_dm_audio_component_bind_ops [amdgpu])
+[    3.957542] [drm] kiq ring mec 3 pipe 1 q 0
+[    3.959644] [drm] VCN decode and encode initialized successfully(under DPG Mode).
+[    3.959668] amdgpu 0000:c4:00.0: [drm:jpeg_v4_0_hw_init [amdgpu]] JPEG decode initialized successfully.
+[    4.013057] amdgpu: HMM registered 4096MB device memory
+[    4.013975] kfd kfd: amdgpu: Allocated 3969056 bytes on gart
+[    4.013979] kfd kfd: amdgpu: Total number of KFD nodes to be created: 1
+[    4.014085] amdgpu: Virtual CRAT table created for GPU
+[    4.014619] amdgpu: Topology: Add dGPU node [0x1900:0x1002]
+[    4.014621] kfd kfd: amdgpu: added device 1002:1900
+[    4.014633] amdgpu 0000:c4:00.0: amdgpu: SE 1, SH per SE 2, CU per SH 6, active_cu_number 12
+[    4.014738] amdgpu 0000:c4:00.0: amdgpu: ring gfx_0.0.0 uses VM inv eng 0 on hub 0
+[    4.014740] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.0.0 uses VM inv eng 1 on hub 0
+[    4.014741] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.1.0 uses VM inv eng 4 on hub 0
+[    4.014743] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.2.0 uses VM inv eng 6 on hub 0
+[    4.014744] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.3.0 uses VM inv eng 7 on hub 0
+[    4.014745] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.0.1 uses VM inv eng 8 on hub 0
+[    4.014746] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.1.1 uses VM inv eng 9 on hub 0
+[    4.014747] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.2.1 uses VM inv eng 10 on hub 0
+[    4.014748] amdgpu 0000:c4:00.0: amdgpu: ring comp_1.3.1 uses VM inv eng 11 on hub 0
+[    4.014750] amdgpu 0000:c4:00.0: amdgpu: ring sdma0 uses VM inv eng 12 on hub 0
+[    4.014751] amdgpu 0000:c4:00.0: amdgpu: ring vcn_unified_0 uses VM inv eng 0 on hub 8
+[    4.014752] amdgpu 0000:c4:00.0: amdgpu: ring jpeg_dec uses VM inv eng 1 on hub 8
+[    4.014753] amdgpu 0000:c4:00.0: amdgpu: ring mes_kiq_3.1.0 uses VM inv eng 13 on hub 0
+[    4.015949] [drm] ring gfx_32768.1.1 was added
+[    4.016638] [drm] ring compute_32768.2.2 was added
+[    4.017318] [drm] ring sdma_32768.3.3 was added
+[    4.017355] [drm] ring gfx_32768.1.1 ib test pass
+[    4.017390] [drm] ring compute_32768.2.2 ib test pass
+[    4.017512] [drm] ring sdma_32768.3.3 ib test pass
+[    4.019760] [drm] Initialized amdgpu 3.54.0 20150101 for 0000:c4:00.0 on minor 0
+[    4.020893] amdgpu 0000:c4:00.0: [drm] Cannot find any crtc or sizes
+[    4.020909] [drm] DSC precompute is not needed.
+[    4.318984] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    4.318988] Bluetooth: BNEP filters: protocol multicast
+[    4.318993] Bluetooth: BNEP socket layer initialized
+[    4.319774] Bluetooth: MGMT ver 1.22
+[    4.322375] NET: Registered PF_ALG protocol family
+[    4.408318] RTL8226B_RTL8221B 2.5Gbps PHY r8169-0-100:00: attached PHY driver (mii_bus:phy_addr=r8169-0-100:00, irq=MAC)
+[    4.616479] r8169 0000:01:00.0 enp1s0: Link is Down
+[    4.818499] iwlwifi 0000:02:00.0: Registered PHC clock: iwlwifi-PTP, with index: 0
+[    4.996352] loop14: detected capacity change from 0 to 8
+[    5.977785] rfkill: input handler disabled
+[    7.970287] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[    7.985530] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[    8.013303] wlp2s0: authenticated
+[    8.016637] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[    8.017987] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[    8.031880] wlp2s0: associated
+[   10.786686] kauditd_printk_skb: 36 callbacks suppressed
+[   10.786690] audit: type=1400 audit(1722521640.792:47): apparmor="STATUS" operation="profile_load" profile="unconfined" name="docker-default" pid=1629 comm="apparmor_parser"
+[   10.849628] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[   10.850530] Bridge firewalling registered
+[   11.050491] Initializing XFRM netlink socket
+[   55.235025] audit: type=1400 audit(1722521685.379:48): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=1938 comm="snap-confine" capability=12  capname="net_admin"
+[   55.235037] audit: type=1400 audit(1722521685.379:49): apparmor="DENIED" operation="capable" class="cap" profile="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=1938 comm="snap-confine" capability=38  capname="perfmon"
+[   55.330403] Bluetooth: RFCOMM TTY layer initialized
+[   55.330415] Bluetooth: RFCOMM socket layer initialized
+[   55.330420] Bluetooth: RFCOMM ver 1.11
+[ 2795.160978] audit: type=1400 audit(1722524425.266:50): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=3944 comm="cupsd" capability=12  capname="net_admin"
+[26678.703331] audit: type=1400 audit(1722548308.169:51): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=12069 comm="apparmor_parser"
+[26678.740441] audit: type=1400 audit(1722548308.205:52): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=12069 comm="apparmor_parser"
+[26682.657387] loop14: detected capacity change from 0 to 8
+[26682.771834] audit: type=1400 audit(1722548312.237:53): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=12217 comm="apparmor_parser"
+[26682.812752] audit: type=1400 audit(1722548312.277:54): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=12217 comm="apparmor_parser"
+[26683.525678] audit: type=1400 audit(1722548312.989:55): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=12317 comm="apparmor_parser"
+[26683.525960] audit: type=1400 audit(1722548312.989:56): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=12317 comm="apparmor_parser"
+[26683.756970] audit: type=1400 audit(1722548313.221:57): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=12327 comm="apparmor_parser"
+[26683.845751] audit: type=1400 audit(1722548313.309:58): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=12326 comm="apparmor_parser"
+[26683.850012] audit: type=1400 audit(1722548313.313:59): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.connect-plug-host-hunspell" pid=12325 comm="apparmor_parser"
+[26683.953137] audit: type=1400 audit(1722548313.417:60): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.firefox.hook.configure" pid=12324 comm="apparmor_parser"
+[26683.955103] audit: type=1400 audit(1722548313.417:61): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snapd-desktop-integration.hook.configure" pid=12334 comm="apparmor_parser"
+[26683.983489] audit: type=1400 audit(1722548313.449:62): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snap-store.hook.configure" pid=12329 comm="apparmor_parser"
+[26684.217373] audit: type=1400 audit(1722548313.681:63): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="snap.snapd-desktop-integration.snapd-desktop-integration" pid=12335 comm="apparmor_parser"
+[26684.248482] audit: type=1400 audit(1722548313.713:64): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.ubuntu-software-local-file" pid=12332 comm="apparmor_parser"
+[26684.289782] audit: type=1400 audit(1722548313.753:65): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.snap-store" pid=12330 comm="apparmor_parser"
+[26684.347459] audit: type=1400 audit(1722548313.813:66): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.ubuntu-software" pid=12331 comm="apparmor_parser"
+[26688.131179] loop14: detected capacity change from 0 to 8
+[89197.230977] kauditd_printk_skb: 26 callbacks suppressed
+[89197.230980] audit: type=1400 audit(1722610825.266:93): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=13717 comm="cupsd" capability=12  capname="net_admin"
+[175588.635590] audit: type=1400 audit(1722697214.562:94): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=15425 comm="cupsd" capability=12  capname="net_admin"
+[261991.385578] audit: type=1400 audit(1722783615.283:95): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=17116 comm="cupsd" capability=12  capname="net_admin"
+[349433.219071] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349436.412534] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349436.416509] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349436.450146] wlp2s0: authenticated
+[349436.452818] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349436.454208] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349436.470834] wlp2s0: associated
+[349454.211794] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349457.517043] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349457.532582] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349457.566501] wlp2s0: authenticated
+[349457.569372] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349457.570792] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349457.590283] wlp2s0: associated
+[349463.120416] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349466.289869] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349466.304543] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349466.332273] wlp2s0: authenticated
+[349466.333370] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349466.334906] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349466.351248] wlp2s0: associated
+[349472.029546] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349474.970036] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349474.975883] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349475.003624] wlp2s0: authenticated
+[349475.006200] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349475.007604] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349475.019777] wlp2s0: associated
+[349479.402272] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349482.245683] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349482.251523] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349482.280932] wlp2s0: authenticated
+[349482.282141] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349482.283826] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349482.298465] wlp2s0: associated
+[349484.215585] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349486.838085] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349486.852579] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349486.879962] wlp2s0: authenticated
+[349486.886497] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349486.887905] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349486.903532] wlp2s0: associated
+[349489.130685] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349491.914077] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349491.929148] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349491.956555] wlp2s0: authenticated
+[349491.958720] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349491.960107] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349491.975175] wlp2s0: associated
+[349496.708825] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349499.442277] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349499.456516] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349499.486828] wlp2s0: authenticated
+[349499.494771] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349499.496173] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349499.512607] wlp2s0: associated
+[349501.828976] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349504.354768] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349504.360653] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349504.389148] wlp2s0: authenticated
+[349504.390950] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349504.392347] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349504.407693] wlp2s0: associated
+[349506.539533] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349509.139207] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349509.154849] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349509.182241] wlp2s0: authenticated
+[349509.183203] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349509.185225] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349509.200323] wlp2s0: associated
+[349511.454888] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349513.966814] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349513.972722] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349514.000401] wlp2s0: authenticated
+[349514.003329] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349514.004578] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349514.019519] wlp2s0: associated
+[349516.370266] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349518.763288] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349518.769006] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349518.796682] wlp2s0: authenticated
+[349518.799511] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349518.800806] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349518.818118] wlp2s0: associated
+[349527.532697] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349530.260130] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349530.267965] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349530.295722] wlp2s0: authenticated
+[349530.304325] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349530.305671] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349530.320497] wlp2s0: associated
+[349534.495719] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349537.235533] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349537.243152] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349537.270839] wlp2s0: authenticated
+[349537.272265] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349537.273593] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349537.285306] wlp2s0: associated
+[349540.537530] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349543.151923] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349543.157858] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349543.185734] wlp2s0: authenticated
+[349543.188809] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349543.190186] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349543.206979] wlp2s0: associated
+[349545.760117] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349548.284293] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349548.291719] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349548.319454] wlp2s0: authenticated
+[349548.325012] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349548.326297] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349548.342046] wlp2s0: associated
+[349552.211509] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349554.928677] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349554.942262] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349554.969738] wlp2s0: authenticated
+[349554.973215] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349554.975078] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349554.991804] wlp2s0: associated
+[349562.451849] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349565.160278] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349565.174031] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349565.201572] wlp2s0: authenticated
+[349565.205625] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349565.206893] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349565.221576] wlp2s0: associated
+[349569.722535] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349572.441377] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349572.450919] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349572.493669] wlp2s0: authenticated
+[349572.497903] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349572.499199] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349572.515883] wlp2s0: associated
+[349575.866459] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[349578.609111] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[349578.616555] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[349578.644191] wlp2s0: authenticated
+[349578.650197] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[349578.651472] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[349578.665602] wlp2s0: associated
+[353645.896316] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[353648.977711] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[353648.984081] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[353649.011726] wlp2s0: authenticated
+[353649.012093] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[353649.013547] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[353649.032234] wlp2s0: associated
+[379609.791068] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379613.098128] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379613.106591] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379613.134249] wlp2s0: authenticated
+[379613.138511] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379613.139869] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379613.156454] wlp2s0: associated
+[379623.615551] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379626.919755] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379626.925382] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379626.953071] wlp2s0: authenticated
+[379626.953994] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379626.955380] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379626.969933] wlp2s0: associated
+[379629.555135] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379632.625812] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379632.638386] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379632.665796] wlp2s0: authenticated
+[379632.670307] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379632.671746] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379632.685395] wlp2s0: associated
+[379635.801293] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379638.677988] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379638.691970] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379638.721372] wlp2s0: authenticated
+[379638.726274] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379638.727763] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379638.742756] wlp2s0: associated
+[379641.126078] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379643.778010] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379643.791859] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379643.819217] wlp2s0: authenticated
+[379643.824288] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379643.825568] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379643.842177] wlp2s0: associated
+[379646.348713] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379648.854359] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379648.863039] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379648.890700] wlp2s0: authenticated
+[379648.893962] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379648.895348] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379648.905909] wlp2s0: associated
+[379651.264038] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379653.565705] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379653.572970] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379653.613616] wlp2s0: authenticated
+[379653.618303] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379653.619590] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379653.633928] wlp2s0: associated
+[379658.125110] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379660.873716] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379660.886091] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379660.943669] wlp2s0: authenticated
+[379660.945978] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379660.947455] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379660.960291] wlp2s0: associated
+[379662.835686] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379665.349949] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379665.356094] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379665.383816] wlp2s0: authenticated
+[379665.386727] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379665.388136] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379665.406291] wlp2s0: associated
+[379667.443852] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379669.937426] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379669.951169] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379669.978612] wlp2s0: authenticated
+[379669.982214] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379669.983470] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379670.000782] wlp2s0: associated
+[379672.359286] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[379675.088908] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[379675.096414] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[379675.124083] wlp2s0: authenticated
+[379675.126007] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[379675.127257] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[379675.142966] wlp2s0: associated
+[428329.921105] audit: type=1400 audit(1722949949.946:96): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=20779 comm="snap-confine" capability=12  capname="net_admin"
+[428329.921111] audit: type=1400 audit(1722949949.946:97): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=20779 comm="snap-confine" capability=38  capname="perfmon"
+[454509.135370] loop14: detected capacity change from 0 to 152048
+[459426.798371] wlp2s0: deauthenticating from 00:23:aa:62:5d:cc by local choice (Reason: 3=DEAUTH_LEAVING)
+[459426.991747] warning: `iwconfig' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+[459439.931385] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[459439.947127] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[459439.974770] wlp2s0: authenticated
+[459439.978233] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[459439.980033] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[459439.994805] wlp2s0: associated
+[495038.724594] loop1: detected capacity change from 0 to 552480
+[495039.271910] audit: type=1400 audit(1723016657.687:98): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=25169 comm="apparmor_parser"
+[495039.271920] audit: type=1400 audit(1723016657.687:99): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=25169 comm="apparmor_parser"
+[495039.414738] audit: type=1400 audit(1723016657.831:100): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=25176 comm="apparmor_parser"
+[495039.420994] audit: type=1400 audit(1723016657.835:101): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=25175 comm="apparmor_parser"
+[495039.475517] audit: type=1400 audit(1723016657.891:102): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=25174 comm="apparmor_parser"
+[495040.014990] audit: type=1400 audit(1723016658.431:103): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=25172 comm="apparmor_parser"
+[495040.034833] audit: type=1400 audit(1723016658.451:104): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=25173 comm="apparmor_parser"
+[495040.116038] audit: type=1400 audit(1723016658.531:105): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=25171 comm="apparmor_parser"
+[495040.555626] audit: type=1400 audit(1723016658.971:106): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=25186 comm="apparmor_parser"
+[495040.555637] audit: type=1400 audit(1723016658.971:107): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=25186 comm="apparmor_parser"
+[521189.328243] kauditd_printk_skb: 7 callbacks suppressed
+[521189.328247] audit: type=1400 audit(1723042807.185:115): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=25674 comm="cupsd" capability=12  capname="net_admin"
+[530390.645964] audit: type=1400 audit(1723052008.223:116): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=25827 comm="snap-confine" capability=12  capname="net_admin"
+[607592.491091] audit: type=1400 audit(1723129208.305:117): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=29623 comm="cupsd" capability=12  capname="net_admin"
+[607680.222042] audit: type=1400 audit(1723129296.039:118): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=29651 comm="snap-confine" capability=12  capname="net_admin"
+[607680.222062] audit: type=1400 audit(1723129296.039:119): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=29651 comm="snap-confine" capability=38  capname="perfmon"
+[627968.083214] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[627971.378099] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[627971.384004] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[627971.413855] wlp2s0: authenticated
+[627971.418257] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[627971.419660] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[627971.434207] wlp2s0: associated
+[627973.919711] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[627976.993662] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[627977.008793] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[627977.036133] wlp2s0: authenticated
+[627977.038630] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[627977.039974] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[627977.056585] wlp2s0: associated
+[627979.756721] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[627983.050616] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[627983.065384] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[627983.092787] wlp2s0: authenticated
+[627983.094152] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[627983.095894] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[627983.110575] wlp2s0: associated
+[627985.696098] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[627988.698165] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[627988.713192] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[627988.740717] wlp2s0: authenticated
+[627988.742237] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[627988.743764] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[627988.760885] wlp2s0: associated
+[627998.292233] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[628001.134752] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[628001.149020] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[628001.176548] wlp2s0: authenticated
+[628001.182806] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[628001.184238] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[628001.201240] wlp2s0: associated
+[628005.869627] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[628008.698450] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[628008.707633] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[628008.735811] wlp2s0: authenticated
+[628008.738661] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[628008.740044] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[628008.751021] wlp2s0: associated
+[628013.242719] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[628015.750322] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[628015.761977] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[628015.789960] wlp2s0: authenticated
+[628015.795115] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[628015.796416] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[628015.811002] wlp2s0: associated
+[628019.898887] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[628022.614676] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[628022.623723] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[628022.651326] wlp2s0: authenticated
+[628022.655161] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[628022.656995] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[628022.669499] wlp2s0: associated
+[685341.611169] audit: type=1400 audit(1723206955.566:120): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=33336 comm="snap-confine" capability=12  capname="net_admin"
+[685341.611180] audit: type=1400 audit(1723206955.566:121): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=33336 comm="snap-confine" capability=38  capname="perfmon"
+[780391.589242] audit: type=1400 audit(1723302003.275:122): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=44245 comm="cupsd" capability=12  capname="net_admin"
+[866795.636673] audit: type=1400 audit(1723388405.288:123): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=45963 comm="cupsd" capability=12  capname="net_admin"
+[953197.954277] audit: type=1400 audit(1723474805.582:124): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=47576 comm="cupsd" capability=12  capname="net_admin"
+[1002365.447573] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1002368.626931] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1002368.632155] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1002368.661386] wlp2s0: authenticated
+[1002368.667450] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1002368.692789] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1002368.709247] wlp2s0: associated
+[1117351.455556] audit: type=1400 audit(1723638955.223:125): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=50873 comm="snap-confine" capability=12  capname="net_admin"
+[1126003.789598] audit: type=1400 audit(1723647607.302:126): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=52860 comm="cupsd" capability=12  capname="net_admin"
+[1156763.389395] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1156766.675767] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1156766.681346] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1156766.709337] wlp2s0: authenticated
+[1156766.713276] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1156766.714785] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1156766.731631] wlp2s0: associated
+[1184011.946740] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1184015.220361] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1184015.231097] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1184015.258872] wlp2s0: authenticated
+[1184015.265438] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1184015.275701] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1184015.291737] wlp2s0: associated
+[1251033.202047] loop3: detected capacity change from 0 to 551568
+[1251033.835541] audit: type=1400 audit(1723772634.475:127): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=73859 comm="apparmor_parser"
+[1251033.835553] audit: type=1400 audit(1723772634.475:128): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=73859 comm="apparmor_parser"
+[1251033.983223] audit: type=1400 audit(1723772634.623:129): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=73866 comm="apparmor_parser"
+[1251033.984634] audit: type=1400 audit(1723772634.623:130): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=73865 comm="apparmor_parser"
+[1251034.032874] audit: type=1400 audit(1723772634.671:131): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=73864 comm="apparmor_parser"
+[1251034.579249] audit: type=1400 audit(1723772635.219:132): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=73862 comm="apparmor_parser"
+[1251034.590847] audit: type=1400 audit(1723772635.231:133): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=73863 comm="apparmor_parser"
+[1251034.680863] audit: type=1400 audit(1723772635.319:134): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=73861 comm="apparmor_parser"
+[1289174.163380] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1289177.449745] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1289177.455570] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1289177.483348] wlp2s0: authenticated
+[1289177.486192] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1289177.487577] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1289177.500895] wlp2s0: associated
+[1316623.253646] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1316626.556814] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1316626.561654] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1316626.589401] wlp2s0: authenticated
+[1316626.597995] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1316626.599318] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1316626.615779] wlp2s0: associated
+[1347520.658485] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1347523.880643] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1347523.887396] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1347523.915167] wlp2s0: authenticated
+[1347523.917086] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1347523.919072] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1347523.936439] wlp2s0: associated
+[1347532.639662] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1347535.941616] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1347535.950351] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1347535.977976] wlp2s0: authenticated
+[1347535.981530] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1347535.982771] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1347535.997556] wlp2s0: associated
+[1402829.055342] loop4: detected capacity change from 0 to 1000
+[1402829.793915] audit: type=1400 audit(1723924426.802:135): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=79180 comm="apparmor_parser"
+[1402829.793926] audit: type=1400 audit(1723924426.802:136): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=79180 comm="apparmor_parser"
+[1402830.009677] audit: type=1400 audit(1723924427.018:137): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snapd-desktop-integration.hook.configure" pid=79183 comm="apparmor_parser"
+[1402830.174502] audit: type=1400 audit(1723924427.182:138): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snapd-desktop-integration.snapd-desktop-integration" pid=79184 comm="apparmor_parser"
+[1402830.815052] audit: type=1400 audit(1723924427.822:139): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.snapd-desktop-integration" pid=79182 comm="apparmor_parser"
+[1464212.870213] audit: type=1400 audit(1723985808.438:140): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=80486 comm="snap-confine" capability=12  capname="net_admin"
+[1464212.870227] audit: type=1400 audit(1723985808.438:141): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=80486 comm="snap-confine" capability=38  capname="perfmon"
+[1489757.265779] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1489760.522580] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1489760.528915] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1489760.556738] wlp2s0: authenticated
+[1489760.557991] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1489760.559262] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1489760.573937] wlp2s0: associated
+[1489763.716706] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1489766.806651] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1489766.813918] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1489766.841594] wlp2s0: authenticated
+[1489766.842511] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1489766.843758] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1489766.859653] wlp2s0: associated
+[1489769.144084] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1489772.002758] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1489772.017866] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1489772.045343] wlp2s0: authenticated
+[1489772.046900] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1489772.048398] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1489772.064299] wlp2s0: associated
+[1489774.673930] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1489777.531186] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1489777.545930] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1489777.575766] wlp2s0: authenticated
+[1489777.579591] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1489777.580879] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1489777.598128] wlp2s0: associated
+[1558014.934354] audit: type=1400 audit(1724079608.282:142): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=85668 comm="cupsd" capability=12  capname="net_admin"
+[1591964.223251] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1591967.530341] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1591967.536134] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1591967.563960] wlp2s0: authenticated
+[1591967.569911] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1591967.571284] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1591967.585093] wlp2s0: associated
+[1591969.445304] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1591972.522921] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1591972.530220] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1591972.557927] wlp2s0: authenticated
+[1591972.562169] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1591972.563682] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1591972.576556] wlp2s0: associated
+[1644417.970983] audit: type=1400 audit(1724166009.283:143): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=94357 comm="cupsd" capability=12  capname="net_admin"
+[1647704.105958] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1647707.366488] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1647707.374295] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1647707.401984] wlp2s0: authenticated
+[1647707.405701] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1647707.406959] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1647707.421826] wlp2s0: associated
+[1647739.332756] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1647742.640109] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1647742.645984] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1647742.673945] wlp2s0: authenticated
+[1647742.678657] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1647742.680272] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1647742.695772] wlp2s0: associated
+[1647799.955670] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1647803.027612] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1647803.033425] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1647803.061556] wlp2s0: authenticated
+[1647803.068377] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1647803.069790] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1647803.085665] wlp2s0: associated
+[1665657.819445] loop13: detected capacity change from 0 to 552488
+[1665658.500804] audit: type=1400 audit(1724187249.383:144): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=94824 comm="apparmor_parser"
+[1665658.500815] audit: type=1400 audit(1724187249.383:145): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=94824 comm="apparmor_parser"
+[1665658.644033] audit: type=1400 audit(1724187249.527:146): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=94831 comm="apparmor_parser"
+[1665658.645678] audit: type=1400 audit(1724187249.531:147): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=94830 comm="apparmor_parser"
+[1665658.698039] audit: type=1400 audit(1724187249.583:148): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=94829 comm="apparmor_parser"
+[1665659.225775] audit: type=1400 audit(1724187250.111:149): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=94827 comm="apparmor_parser"
+[1665659.254885] audit: type=1400 audit(1724187250.139:150): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=94828 comm="apparmor_parser"
+[1665659.338478] audit: type=1400 audit(1724187250.223:151): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=94826 comm="apparmor_parser"
+[1713289.980221] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1713293.279522] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1713293.285216] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1713293.312933] wlp2s0: authenticated
+[1713293.314732] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1713293.316019] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1713293.331777] wlp2s0: associated
+[1721453.183294] audit: type=1400 audit(1724243042.694:152): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=96296 comm="snap-confine" capability=12  capname="net_admin"
+[1721453.183307] audit: type=1400 audit(1724243042.694:153): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=96296 comm="snap-confine" capability=38  capname="perfmon"
+[1722858.463093] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1722861.756770] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1722861.762912] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1722861.795573] wlp2s0: authenticated
+[1722861.800076] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1722861.801361] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1722861.815195] wlp2s0: associated
+[1746712.687974] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1746712.694281] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1746712.722109] wlp2s0: authenticated
+[1746712.722954] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1746712.724303] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1746712.740213] wlp2s0: associated
+[1761534.454992] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1761537.503053] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1761537.509929] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1761537.537649] wlp2s0: authenticated
+[1761537.538226] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1761537.539498] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1761537.555252] wlp2s0: associated
+[1770413.055382] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1770416.210878] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1770416.218519] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1770416.246204] wlp2s0: authenticated
+[1770416.250161] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1770416.251679] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1770416.266118] wlp2s0: associated
+[1770418.872741] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1770422.117502] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1770422.127872] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1770422.155287] wlp2s0: authenticated
+[1770422.158264] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1770422.159584] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1770422.174032] wlp2s0: associated
+[1779629.582175] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1779632.488769] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1779632.497574] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1779632.525464] wlp2s0: authenticated
+[1779632.528476] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1779632.529907] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1779632.544590] wlp2s0: associated
+[1789132.322444] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1789135.625654] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1789135.629172] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1789135.664896] wlp2s0: authenticated
+[1789135.671214] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1789135.672625] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1789135.687974] wlp2s0: associated
+[1803056.098638] audit: type=1400 audit(1724324643.719:154): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=99752 comm="snap-confine" capability=12  capname="net_admin"
+[1803056.098650] audit: type=1400 audit(1724324643.719:155): apparmor="DENIED" operation="capable" class="cap" profile="/usr/lib/snapd/snap-confine" pid=99752 comm="snap-confine" capability=38  capname="perfmon"
+[1810607.162191] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1810610.419889] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1810610.423449] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1810610.458324] wlp2s0: authenticated
+[1810610.461395] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1810610.462624] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1810610.476508] wlp2s0: associated
+[1817217.049174] audit: type=1400 audit(1724338804.296:156): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=111940 comm="cupsd" capability=12  capname="net_admin"
+[1828148.885712] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1828152.167321] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1828152.173374] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1828152.201256] wlp2s0: authenticated
+[1828152.204292] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1828152.206436] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1828152.221836] wlp2s0: associated
+[1830942.234113] loop1: detected capacity change from 0 to 152112
+[1846612.027742] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1846615.328899] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1846615.334668] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1846615.362421] wlp2s0: authenticated
+[1846615.364206] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1846615.365460] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1846615.380787] wlp2s0: associated
+[1846617.557051] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1846620.851708] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1846620.855670] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1846620.883299] wlp2s0: authenticated
+[1846620.884491] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1846620.885690] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1846620.897707] wlp2s0: associated
+[1846626.978232] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1846630.377517] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1846630.381625] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1846630.421108] wlp2s0: authenticated
+[1846630.425320] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1846630.427838] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1846630.442311] wlp2s0: associated
+[1848974.271470] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1848977.353541] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1848977.359224] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1848977.386933] wlp2s0: authenticated
+[1848977.389984] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1848977.391244] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1848977.407252] wlp2s0: associated
+[1858072.111194] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1858075.181878] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1858075.187674] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1858075.221756] wlp2s0: authenticated
+[1858075.225332] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1858075.227409] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1858075.242374] wlp2s0: associated
+[1876540.684080] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1876543.960099] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1876543.967973] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1876543.995900] wlp2s0: authenticated
+[1876543.998373] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1876543.999710] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1876544.012463] wlp2s0: associated
+[1876550.309988] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1876553.439203] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1876553.444498] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1876553.472367] wlp2s0: authenticated
+[1876553.475099] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1876553.476490] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1876553.492350] wlp2s0: associated
+[1876559.833067] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1876563.127246] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1876563.135801] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1876563.169685] wlp2s0: authenticated
+[1876563.170697] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1876563.172647] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1876563.190805] wlp2s0: associated
+[1877617.661489] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1877620.755131] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1877620.762430] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1877620.790213] wlp2s0: authenticated
+[1877620.794637] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1877620.795978] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1877620.810736] wlp2s0: associated
+[1892775.732053] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1892779.003776] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1892779.012050] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1892779.040340] wlp2s0: authenticated
+[1892779.043290] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1892779.045062] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1892779.061608] wlp2s0: associated
+[1892820.687169] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1892823.028289] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1892823.034078] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1892823.061930] wlp2s0: authenticated
+[1892823.064499] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1892823.066015] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1892823.082323] wlp2s0: associated
+[1892837.890980] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1892841.153434] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1892841.159311] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1892841.187061] wlp2s0: authenticated
+[1892841.193047] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1892841.194317] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1892841.209264] wlp2s0: associated
+[1892853.251493] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1892856.245367] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1892856.259754] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1892856.287253] wlp2s0: authenticated
+[1892856.289375] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1892856.290757] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1892856.304156] wlp2s0: associated
+[1897590.953762] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1897593.554635] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1897593.563451] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1897593.591182] wlp2s0: authenticated
+[1897593.593741] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1897593.594967] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1897593.609455] wlp2s0: associated
+[1897598.633560] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1897601.406112] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1897601.414201] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1897601.442010] wlp2s0: authenticated
+[1897601.445670] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1897601.447217] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1897601.462112] wlp2s0: associated
+[1897609.590803] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1897612.209201] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1897612.223325] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1897612.251087] wlp2s0: authenticated
+[1897612.254296] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1897612.255876] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1897612.271786] wlp2s0: associated
+[1897621.367627] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[1897624.122966] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[1897624.139300] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[1897624.167042] wlp2s0: authenticated
+[1897624.170631] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[1897624.172049] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[1897624.188347] wlp2s0: associated
+[1903619.951186] audit: type=1400 audit(1724425205.253:157): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=114347 comm="cupsd" capability=12  capname="net_admin"
+[2056297.697094] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2056300.771538] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2056300.778461] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2056300.806195] wlp2s0: authenticated
+[2056300.811822] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2056300.813279] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2056300.830576] wlp2s0: associated
+[2056308.654278] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2056311.720289] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2056311.735917] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2056311.769635] wlp2s0: authenticated
+[2056311.772455] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2056311.774244] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2056311.786736] wlp2s0: associated
+[2162828.021498] audit: type=1400 audit(1724684407.274:158): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=129119 comm="cupsd" capability=12  capname="net_admin"
+[2167577.482183] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167580.774489] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167580.780467] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167580.811072] wlp2s0: authenticated
+[2167580.813294] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167580.814571] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167580.830501] wlp2s0: associated
+[2167585.264419] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167588.578940] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167588.585500] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167588.613213] wlp2s0: authenticated
+[2167588.618008] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167588.619526] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167588.636261] wlp2s0: associated
+[2167590.691764] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167593.766977] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167593.779763] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167593.807775] wlp2s0: authenticated
+[2167593.810615] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167593.812482] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167593.827517] wlp2s0: associated
+[2167596.221532] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167599.322464] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167599.336508] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167599.363900] wlp2s0: authenticated
+[2167599.366620] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167599.367849] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167599.385956] wlp2s0: associated
+[2167602.161060] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167605.030335] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167605.046105] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167605.073486] wlp2s0: authenticated
+[2167605.074617] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167605.076499] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167605.093047] wlp2s0: associated
+[2167607.178738] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2167609.758988] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2167609.773836] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2167609.801241] wlp2s0: authenticated
+[2167609.807194] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2167609.808519] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2167609.823094] wlp2s0: associated
+[2253011.311996] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2253014.629743] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2253014.638879] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2253014.666992] wlp2s0: authenticated
+[2253014.669629] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2253014.671611] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2253014.683929] wlp2s0: associated
+[2346068.667723] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346071.925229] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346071.930705] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346071.958489] wlp2s0: authenticated
+[2346071.962287] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346071.963896] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346071.979594] wlp2s0: associated
+[2346080.238573] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346083.506633] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346083.511683] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346083.539403] wlp2s0: authenticated
+[2346083.541911] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346083.543158] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346083.558545] wlp2s0: associated
+[2346087.714277] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346091.013629] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346091.026852] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346091.054272] wlp2s0: authenticated
+[2346091.058209] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346091.059764] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346091.076012] wlp2s0: associated
+[2346101.846574] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346104.882185] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346104.896373] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346104.924127] wlp2s0: authenticated
+[2346104.930238] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346104.931588] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346104.946368] wlp2s0: associated
+[2346117.616559] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346120.293509] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346120.299695] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346120.335771] wlp2s0: authenticated
+[2346120.338573] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346120.355518] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346120.370848] wlp2s0: associated
+[2346124.067547] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346126.829841] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346126.835915] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346126.864110] wlp2s0: authenticated
+[2346126.865912] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346126.867273] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346126.880265] wlp2s0: associated
+[2346132.362221] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346135.121590] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346135.130906] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346135.165756] wlp2s0: authenticated
+[2346135.170270] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346135.171762] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346135.188339] wlp2s0: associated
+[2346162.264532] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346165.101506] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346165.105917] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346165.146992] wlp2s0: authenticated
+[2346165.150236] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346165.151660] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346165.167440] wlp2s0: associated
+[2346168.715456] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346171.385390] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346171.390028] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346171.417939] wlp2s0: authenticated
+[2346171.426308] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346171.427584] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346171.442517] wlp2s0: associated
+[2346214.183093] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2346216.725784] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2346216.731724] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2346216.759647] wlp2s0: authenticated
+[2346216.762465] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2346216.763794] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2346216.776165] wlp2s0: associated
+[2362575.498734] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362578.791191] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362578.797447] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362578.825235] wlp2s0: authenticated
+[2362578.826398] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362578.828393] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362578.843869] wlp2s0: associated
+[2362616.767303] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362620.072396] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362620.078538] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362620.106259] wlp2s0: authenticated
+[2362620.107452] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362620.109404] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362620.125043] wlp2s0: associated
+[2362623.013476] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362626.295534] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362626.301302] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362626.329823] wlp2s0: authenticated
+[2362626.335895] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362626.337262] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362626.352614] wlp2s0: associated
+[2362636.633540] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362639.577236] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362639.583293] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362639.610973] wlp2s0: authenticated
+[2362639.611961] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362639.613162] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362639.624057] wlp2s0: associated
+[2362645.747008] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362648.403912] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362648.418687] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362648.446085] wlp2s0: authenticated
+[2362648.452472] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362648.453973] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362648.469549] wlp2s0: associated
+[2362651.174427] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362653.860599] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362653.865901] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362653.893803] wlp2s0: authenticated
+[2362653.896636] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362653.898063] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362653.913154] wlp2s0: associated
+[2362669.709895] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362672.456048] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362672.467986] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362672.526371] wlp2s0: authenticated
+[2362672.533143] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362672.534548] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362672.551714] wlp2s0: associated
+[2362688.654539] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362691.368715] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362691.372345] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362691.401416] wlp2s0: authenticated
+[2362691.409348] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362691.411081] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362691.426495] wlp2s0: associated
+[2362697.972789] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2362700.697357] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2362700.702879] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2362700.730831] wlp2s0: authenticated
+[2362700.734008] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2362700.735449] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2362700.751368] wlp2s0: associated
+[2366454.577318] loop2: detected capacity change from 0 to 152112
+[2531586.375409] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2531589.650665] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2531589.656618] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2531589.684261] wlp2s0: authenticated
+[2531589.686030] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2531589.687892] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2531589.702094] wlp2s0: associated
+[2594837.164788] audit: type=1400 audit(1725116406.327:159): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=145796 comm="cupsd" capability=12  capname="net_admin"
+[2637020.836084] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2637024.127004] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2637024.132929] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2637024.160485] wlp2s0: authenticated
+[2637024.161725] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2637024.162927] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2637024.173158] wlp2s0: associated
+[2637042.136025] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2637045.447233] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2637045.453511] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2637045.481294] wlp2s0: authenticated
+[2637045.485806] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2637045.487207] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2637045.501695] wlp2s0: associated
+[2637061.387852] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2637064.446006] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2637064.461031] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2637064.488458] wlp2s0: authenticated
+[2637064.493318] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2637064.494578] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2637064.509876] wlp2s0: associated
+[2637071.730176] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2637074.757275] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2637074.762948] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2637074.795659] wlp2s0: authenticated
+[2637074.797224] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2637074.799211] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2637074.818049] wlp2s0: associated
+[2655500.367610] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2655503.540334] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2655503.546241] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2655503.573989] wlp2s0: authenticated
+[2655503.580085] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2655503.581349] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2655503.596768] wlp2s0: associated
+[2655507.023380] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2655510.328956] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2655510.337624] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2655510.365286] wlp2s0: authenticated
+[2655510.367985] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2655510.369245] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2655510.384765] wlp2s0: associated
+[2655513.782091] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2655517.088054] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2655517.101750] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2655517.128976] wlp2s0: authenticated
+[2655517.131709] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2655517.132999] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2655517.147914] wlp2s0: associated
+[2655522.895921] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2655525.603393] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2655525.616811] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2655525.644155] wlp2s0: authenticated
+[2655525.647636] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2655525.649355] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2655525.661687] wlp2s0: associated
+[2655527.401674] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2655530.172020] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2655530.186548] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2655530.214063] wlp2s0: authenticated
+[2655530.215588] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2655530.216909] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2655530.232951] wlp2s0: associated
+[2682067.435329] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2682070.715367] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2682070.722495] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2682070.750176] wlp2s0: authenticated
+[2682070.754381] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2682070.755616] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2682070.768920] wlp2s0: associated
+[2682070.810231] iwlwifi 0000:02:00.0: Unhandled alg: 0x707
+[2682075.524998] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2682078.826328] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2682078.833845] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2682078.861500] wlp2s0: authenticated
+[2682078.862434] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2682078.863651] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2682078.878646] wlp2s0: associated
+[2767643.121445] audit: type=1400 audit(1725289208.202:160): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=151150 comm="cupsd" capability=12  capname="net_admin"
+[2768220.041249] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[2768223.334002] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[2768223.340173] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[2768223.371463] wlp2s0: authenticated
+[2768223.372927] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[2768223.374881] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[2768223.389052] wlp2s0: associated
+[2893286.237191] loop15: detected capacity change from 0 to 555496
+[2893286.818573] audit: type=1400 audit(1725414848.997:161): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=154447 comm="apparmor_parser"
+[2893286.818584] audit: type=1400 audit(1725414848.997:162): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=154447 comm="apparmor_parser"
+[2893286.964437] audit: type=1400 audit(1725414849.141:163): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=154454 comm="apparmor_parser"
+[2893286.964545] audit: type=1400 audit(1725414849.141:164): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=154453 comm="apparmor_parser"
+[2893287.012594] audit: type=1400 audit(1725414849.189:165): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=154452 comm="apparmor_parser"
+[2893287.567181] audit: type=1400 audit(1725414849.745:166): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=154450 comm="apparmor_parser"
+[2893287.575091] audit: type=1400 audit(1725414849.753:167): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=154451 comm="apparmor_parser"
+[2893287.661858] audit: type=1400 audit(1725414849.841:168): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=154449 comm="apparmor_parser"
+[2893288.127892] audit: type=1400 audit(1725414850.305:169): apparmor="DENIED" operation="open" class="file" profile="snap-update-ns.firefox" name="/usr/local/share/" pid=154490 comm="6" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+[2964158.154553] audit: type=1400 audit(1725485718.724:170): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="lsb_release" pid=157512 comm="apparmor_parser"
+[2964158.182515] audit: type=1400 audit(1725485718.752:171): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="nvidia_modprobe" pid=157515 comm="apparmor_parser"
+[2964158.182747] audit: type=1400 audit(1725485718.752:172): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="nvidia_modprobe//kmod" pid=157515 comm="apparmor_parser"
+[2964158.464164] audit: type=1400 audit(1725485719.036:173): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="lsb_release" pid=157568 comm="apparmor_parser"
+[2964158.464257] audit: type=1400 audit(1725485719.036:174): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="nvidia_modprobe" pid=157569 comm="apparmor_parser"
+[2964158.503434] audit: type=1400 audit(1725485719.076:175): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="nvidia_modprobe//kmod" pid=157569 comm="apparmor_parser"
+[2964158.520443] audit: type=1400 audit(1725485719.092:176): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/bin/man" pid=157572 comm="apparmor_parser"
+[2964158.520808] audit: type=1400 audit(1725485719.092:177): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="man_filter" pid=157572 comm="apparmor_parser"
+[2964158.521271] audit: type=1400 audit(1725485719.092:178): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="man_groff" pid=157572 comm="apparmor_parser"
+[2964158.530093] audit: type=1400 audit(1725485719.100:179): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/sbin/cups-browsed" pid=157575 comm="apparmor_parser"
+[3009921.151089] perf: interrupt took too long (2503 > 2500), lowering kernel.perf_event_max_sample_rate to 79750
+[3036367.280884] loop3: detected capacity change from 0 to 152112
+[3066143.563888] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3066146.862658] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3066146.868100] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3066146.895939] wlp2s0: authenticated
+[3066146.899338] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3066146.900576] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3066146.912946] wlp2s0: associated
+[3066148.785987] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3066151.858898] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3066151.870033] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3066151.897511] wlp2s0: authenticated
+[3066151.899159] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3066151.900465] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3066151.913265] wlp2s0: associated
+[3066154.520595] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3066157.595748] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3066157.605064] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3066157.632592] wlp2s0: authenticated
+[3066157.635717] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3066157.637737] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3066157.655544] wlp2s0: associated
+[3066168.345534] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3066171.109695] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3066171.124562] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3066171.151899] wlp2s0: authenticated
+[3066171.155519] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3066171.156794] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3066171.167635] wlp2s0: associated
+[3066173.977250] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3066176.741685] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3066176.757670] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3066176.785134] wlp2s0: authenticated
+[3066176.791946] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3066176.793256] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3066176.808812] wlp2s0: associated
+[3073145.202145] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073148.267372] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073148.275685] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073148.303304] wlp2s0: authenticated
+[3073148.306964] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073148.308229] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073148.323269] wlp2s0: associated
+[3073157.080927] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073160.372981] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073160.381801] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073160.409476] wlp2s0: authenticated
+[3073160.412241] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073160.413717] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073160.428369] wlp2s0: associated
+[3073169.983749] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073173.057143] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073173.064985] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073173.092646] wlp2s0: authenticated
+[3073173.096952] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073173.098204] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073173.113065] wlp2s0: associated
+[3073177.458813] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073180.245333] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073180.258838] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073180.286611] wlp2s0: authenticated
+[3073180.290041] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073180.291313] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073180.306299] wlp2s0: associated
+[3073182.579016] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073184.961916] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073184.968961] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073184.996639] wlp2s0: authenticated
+[3073184.997943] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073184.999187] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073185.010179] wlp2s0: associated
+[3073188.006344] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073190.734331] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073190.747901] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073190.775401] wlp2s0: authenticated
+[3073190.778719] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073190.780050] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073190.792750] wlp2s0: associated
+[3073192.614464] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073195.109661] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073195.113445] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073195.146882] wlp2s0: authenticated
+[3073195.150861] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073195.152178] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073195.168844] wlp2s0: associated
+[3073196.915200] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073199.399014] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073199.412874] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073199.440477] wlp2s0: authenticated
+[3073199.447368] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073199.448722] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073199.463417] wlp2s0: associated
+[3073201.216399] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073203.911091] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073203.925296] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073203.952671] wlp2s0: authenticated
+[3073203.955857] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073203.957270] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073203.971603] wlp2s0: associated
+[3073207.258214] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073209.955657] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073209.967819] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073209.995144] wlp2s0: authenticated
+[3073209.996098] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073209.997300] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073210.007415] wlp2s0: associated
+[3073211.866372] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073214.328170] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073214.335305] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073214.362946] wlp2s0: authenticated
+[3073214.364467] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073214.365748] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073214.380110] wlp2s0: associated
+[3073216.986543] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073219.680227] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073219.688911] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073219.716592] wlp2s0: authenticated
+[3073219.721240] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073219.722756] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073219.740706] wlp2s0: associated
+[3073223.028340] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073225.497164] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073225.505476] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073225.533211] wlp2s0: authenticated
+[3073225.537700] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073225.539142] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073225.552997] wlp2s0: associated
+[3073228.148466] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073230.829430] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073230.843623] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073230.871121] wlp2s0: authenticated
+[3073230.874122] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073230.875551] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073230.891292] wlp2s0: associated
+[3073233.473450] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073236.157829] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073236.171415] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073236.198698] wlp2s0: authenticated
+[3073236.206619] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073236.208045] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073236.224759] wlp2s0: associated
+[3073243.304223] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073245.863093] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073245.876430] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073245.903922] wlp2s0: authenticated
+[3073245.907364] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073245.909472] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073245.924044] wlp2s0: associated
+[3073248.731593] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3073251.431089] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3073251.439704] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3073251.467500] wlp2s0: authenticated
+[3073251.471780] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3073251.473312] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3073251.485870] wlp2s0: associated
+[3110247.030143] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3110250.118253] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3110250.122428] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3110250.155204] wlp2s0: authenticated
+[3110250.157998] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3110250.159267] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3110250.173638] wlp2s0: associated
+[3298016.838033] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298020.004177] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298020.010397] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298020.038098] wlp2s0: authenticated
+[3298020.039885] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298020.041191] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298020.055412] wlp2s0: associated
+[3298044.998984] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298048.303500] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298048.308265] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298048.336195] wlp2s0: authenticated
+[3298048.340630] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298048.341963] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298048.356882] wlp2s0: associated
+[3298051.962142] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298055.033480] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298055.039498] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298055.067223] wlp2s0: authenticated
+[3298055.068506] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298055.070035] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298055.081120] wlp2s0: associated
+[3298072.955136] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298075.977761] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298075.992809] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298076.021081] wlp2s0: authenticated
+[3298076.025151] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298076.027092] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298076.043940] wlp2s0: associated
+[3298080.327736] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298083.184689] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298083.190499] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298083.224381] wlp2s0: authenticated
+[3298083.225007] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298083.226868] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298083.245855] wlp2s0: associated
+[3298086.062348] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298088.745625] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298088.751541] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298088.779294] wlp2s0: authenticated
+[3298088.781124] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298088.783008] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298088.795833] wlp2s0: associated
+[3298097.429141] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298099.853120] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298099.867115] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298099.894964] wlp2s0: authenticated
+[3298099.901748] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298099.903223] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298099.919788] wlp2s0: associated
+[3298111.766068] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298114.305332] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298114.319277] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298114.346577] wlp2s0: authenticated
+[3298114.349577] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298114.350831] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298114.362927] wlp2s0: associated
+[3298129.584285] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298132.337897] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298132.345253] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298132.372920] wlp2s0: authenticated
+[3298132.373892] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298132.375141] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298132.388599] wlp2s0: associated
+[3298169.009624] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3298171.778181] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3298171.784356] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3298171.814486] wlp2s0: authenticated
+[3298171.818909] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3298171.820289] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3298171.834979] wlp2s0: associated
+[3316274.768141] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3316278.070714] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3316278.076929] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3316278.104732] wlp2s0: authenticated
+[3316278.105935] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3316278.107898] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3316278.123453] wlp2s0: associated
+[3316289.719043] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3316292.743530] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3316292.749668] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3316292.781341] wlp2s0: authenticated
+[3316292.782495] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3316292.784423] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3316292.801628] wlp2s0: associated
+[3316338.565499] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3316341.644060] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3316341.650031] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3316341.677900] wlp2s0: authenticated
+[3316341.684663] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3316341.686114] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3316341.701435] wlp2s0: associated
+[3316344.504475] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3316347.465200] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3316347.471060] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3316347.499125] wlp2s0: authenticated
+[3316347.500516] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3316347.502582] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3316347.517283] wlp2s0: associated
+[3379829.370523] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3379832.654743] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3379832.660671] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3379832.688562] wlp2s0: authenticated
+[3379832.691309] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3379832.693175] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3379832.709498] wlp2s0: associated
+[3409196.033317] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3409199.051944] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3409199.057497] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3409199.085774] wlp2s0: authenticated
+[3409199.087463] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3409199.088683] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3409199.104560] wlp2s0: associated
+[3439042.459304] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3439045.756641] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3439045.765369] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3439045.793417] wlp2s0: authenticated
+[3439045.796567] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3439045.798013] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3439045.811232] wlp2s0: associated
+[3439048.193206] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3439051.280694] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3439051.287946] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3439051.315662] wlp2s0: authenticated
+[3439051.320966] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3439051.322194] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3439051.337790] wlp2s0: associated
+[3439059.662627] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3439062.952808] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3439062.967587] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3439062.994921] wlp2s0: authenticated
+[3439062.996961] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3439062.999058] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3439063.014075] wlp2s0: associated
+[3464729.772977] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3464733.048850] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3464733.057101] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3464733.085195] wlp2s0: authenticated
+[3464733.088156] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3464733.090264] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3464733.104302] wlp2s0: associated
+[3464735.664559] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3464738.964068] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3464738.977868] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3464739.005688] wlp2s0: authenticated
+[3464739.008422] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3464739.010484] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3464739.026455] wlp2s0: associated
+[3464740.832108] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3464743.892922] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3464743.901420] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3464743.928966] wlp2s0: authenticated
+[3464743.932504] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3464743.933942] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3464743.946343] wlp2s0: associated
+[3464747.181111] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3464749.976987] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3464749.992205] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3464750.019690] wlp2s0: authenticated
+[3464750.020471] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3464750.021828] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3464750.037440] wlp2s0: associated
+[3497230.583642] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3497233.873937] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3497233.880559] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3497233.908261] wlp2s0: authenticated
+[3497233.912558] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3497233.913808] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3497233.924222] wlp2s0: associated
+[3523433.687545] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3523436.880993] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3523436.889316] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3523436.916967] wlp2s0: authenticated
+[3523436.920573] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3523436.921965] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3523436.937785] wlp2s0: associated
+[3523439.012057] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3523442.197735] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3523442.206648] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3523442.234324] wlp2s0: authenticated
+[3523442.240715] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3523442.242011] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3523442.257507] wlp2s0: associated
+[3523450.788425] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3523453.832105] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3523453.846405] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3523453.873931] wlp2s0: authenticated
+[3523453.876795] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3523453.878056] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3523453.893373] wlp2s0: associated
+[3551334.350048] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3551337.428560] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3551337.434595] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3551337.462308] wlp2s0: authenticated
+[3551337.462951] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3551337.464678] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3551337.481320] wlp2s0: associated
+[3551340.249873] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3551343.563624] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3551343.571817] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3551343.599580] wlp2s0: authenticated
+[3551343.603873] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3551343.605453] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3551343.622979] wlp2s0: associated
+[3551346.740888] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3551350.024511] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3551350.032787] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3551350.060906] wlp2s0: authenticated
+[3551350.064386] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3551350.066206] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3551350.081986] wlp2s0: associated
+[3551352.679799] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3551355.623929] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3551355.638984] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3551355.666295] wlp2s0: authenticated
+[3551355.668646] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3551355.669909] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3551355.687140] wlp2s0: associated
+[3656115.902998] wlp2s0: Connection to AP 00:23:aa:62:5d:cc lost
+[3656118.966769] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[3656118.974003] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[3656119.001652] wlp2s0: authenticated
+[3656119.005523] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[3656119.007038] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=1)
+[3656119.021073] wlp2s0: associated
+[3718063.220762] kauditd_printk_skb: 16 callbacks suppressed
+[3718063.220766] audit: type=1400 audit(1726239606.258:196): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=177546 comm="cupsd" capability=12  capname="net_admin"
+[4063670.156492] audit: type=1400 audit(1726585205.259:197): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=185249 comm="cupsd" capability=12  capname="net_admin"
+[4084002.172316] loop14: detected capacity change from 0 to 555776
+[4084002.908081] audit: type=1400 audit(1726605537.530:198): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine" pid=185665 comm="apparmor_parser"
+[4084002.943266] audit: type=1400 audit(1726605537.566:199): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/snap/snapd/21759/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=185665 comm="apparmor_parser"
+[4084003.089919] audit: type=1400 audit(1726605537.714:200): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.disconnect-plug-host-hunspell" pid=185671 comm="apparmor_parser"
+[4084003.090572] audit: type=1400 audit(1726605537.714:201): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.post-refresh" pid=185672 comm="apparmor_parser"
+[4084003.142368] audit: type=1400 audit(1726605537.766:202): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.hook.configure" pid=185670 comm="apparmor_parser"
+[4084003.669286] audit: type=1400 audit(1726605538.290:203): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.geckodriver" pid=185669 comm="apparmor_parser"
+[4084003.700739] audit: type=1400 audit(1726605538.322:204): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.firefox.firefox" pid=185668 comm="apparmor_parser"
+[4084003.781312] audit: type=1400 audit(1726605538.402:205): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap-update-ns.firefox" pid=185667 comm="apparmor_parser"
+[4084004.253191] audit: type=1400 audit(1726605538.874:206): apparmor="DENIED" operation="open" class="file" profile="snap-update-ns.firefox" name="/usr/local/share/" pid=185708 comm="6" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+[4166216.827614] wlp2s0: authenticate with 00:23:aa:62:5d:cc
+[4166216.842836] wlp2s0: send auth to 00:23:aa:62:5d:cc (try 1/3)
+[4166216.870421] wlp2s0: authenticated
+[4166216.873815] wlp2s0: associate with 00:23:aa:62:5d:cc (try 1/3)
+[4166216.875762] wlp2s0: RX AssocResp from 00:23:aa:62:5d:cc (capab=0x411 status=0 aid=2)
+[4166216.892757] wlp2s0: associated
+[4369582.705694] usb 1-1: new full-speed USB device number 4 using xhci_hcd
+[4369582.879503] usb 1-1: New USB device found, idVendor=1d50, idProduct=606f, bcdDevice= 0.00
+[4369582.879517] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[4369582.879523] usb 1-1: Product: canable gs_usb
+[4369582.879528] usb 1-1: Manufacturer: canable.io
+[4369582.879532] usb 1-1: SerialNumber: 0022003B5043570520353339
+[4369582.905358] CAN device driver interface
+[4369582.911110] gs_usb 1-1:1.0: Configuring for 1 interfaces
+[4369582.914401] usbcore: registered new interface driver gs_usb

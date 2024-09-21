@@ -21,11 +21,14 @@
 ```bash
     DOCKERPID=$(docker inspect -f '{{ .State.Pid }}' cantest)
     sudo ip link set can0 netns $DOCKERPID
-    sudo nsenter -t $DOCKERPID -n ip link set can0 type can bitrate 125000
+    sudo nsenter -t $DOCKERPID -n ip link set can0 type can bitrate 500000
     sudo nsenter -t $DOCKERPID -n ip link set can0 up
 ```
 
-can0 가 없는 경우 낭패?
+- can0 가 없는 경우 낭패?
+
+- 호스트 머신에 실제 canable 장비를 장착하여 slcan을 can0로 로드한뒤
+- 로드된 can0 네트워크를 컨테이너로 설정해준다.
 
 #### 2.2 방법 2) vxcan
 
