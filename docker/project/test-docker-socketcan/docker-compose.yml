@@ -1,0 +1,11 @@
+
+services:
+  test-img:
+    image: test-img:0.1
+    container_name: test-img
+    build:
+      context: ./app
+    privileged: true
+    user: root
+    
+  
