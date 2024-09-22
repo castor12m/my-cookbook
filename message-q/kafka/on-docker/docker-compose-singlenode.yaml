@@ -19,6 +19,9 @@ services:
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
       CLUSTER_ID: ${KAFKA_CLUSTER_ID:-MkU3OEVBNTcwNTJENDM2Qk}
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1           # 토픽 복제에 대한 설정 값
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1              # 트랜잭션 최소 ISR(InSyncReplicas 설정) 수
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1   # 트랜잭션 상태에서 복제 수
 
   kafka-ui:
     image: provectuslabs/kafka-ui
