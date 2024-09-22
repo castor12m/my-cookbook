@@ -7,5 +7,7 @@ services:
       context: ./app
     privileged: true
     user: root
+    # devices:
+    #   - /dev/cu.usbmodem11301
     
   

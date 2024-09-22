@@ -21,8 +21,13 @@
 ```bash
     DOCKERPID=$(docker inspect -f '{{ .State.Pid }}' cantest)
     sudo ip link set can0 netns $DOCKERPID
+
     sudo nsenter -t $DOCKERPID -n ip link set can0 type can bitrate 500000
     sudo nsenter -t $DOCKERPID -n ip link set can0 up
+
+    (or)
+
+    sudo nsenter -t $DOCKERPID -n ip link set can0 up type can bitrate 500000
 ```
 
 - can0 가 없는 경우 낭패?

@@ -72,6 +72,9 @@ ex) 아래 방법 위의 rules 파일에 작성할 갖가지 예시임
 
     # 시도 2024.09.21 
     SUBSYSTEMS=="usb", MODE="0666", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="606f", SYMLINK+="ttyCAN%n"
+
+    # 펌웨어 업데이트 한 이후, 정보 바뀜
+    SUBSYSTEMS=="usb", MODE="0666", ATTRS{idVendor}=="ad50", ATTRS{idProduct}=="60c4", SYMLINK+="ttyCAN%n"
 ```
 
 - SUBSYSTEM은 디바이스의 서브 시스템으로, 위 예에서는tty로 한다. ls 명령 등으로 장치에 부여되어 있는 이름을 보면 ttyUSB*, ttyACM* 등의 식으로 그 시스템이 tty임을 확인할 수 있었다.
@@ -172,6 +175,59 @@ UCAN을 컴퓨터에 연결
 - [Cangaroo (Beta, CANable 2.0 support) for Windows (1/22/2023 ccdcb64)](https://canable.io/utilities/cangaroo-win32-ccdcb64.zip) 바로 윈도우용 설치 해보니 잘 연결됨.
 - 사용한 데스크톱의 OS는 Windows 11 Pro 23H2
 
+
+## C. macOS, 연결
+
+macOS : 15.0(24A335) Sequoia
+
+```bash
+    brew install libusb
+    # ==> Auto-updating Homebrew...
+    # Adjust how often this is run with HOMEBREW_AUTO_UPDATE_SECS or disable with
+    # HOMEBREW_NO_AUTO_UPDATE. Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+    # ==> Auto-updated Homebrew!
+    # Updated 2 taps (homebrew/core and homebrew/cask).
+    # ==> New Formulae
+    # erlang@26                          kamal-proxy                        sidekick                           veryfasttree
+    # ==> New Casks
+    # font-new-computer-modern
+    # Error: Unexpected method 'appcast' called on Cask adoptopenjdk14.
+    # Follow the instructions here:
+    # https://github.com/Homebrew/homebrew-cask#reporting-bugs
+    #
+    # You have 41 outdated formulae and 2 outdated casks installed.
+    # Error: Unexpected method 'appcast' called on Cask adoptopenjdk14.
+    # Follow the instructions here:
+    # https://github.com/Homebrew/homebrew-cask#reporting-bugs
+    # Error: Unexpected method 'appcast' called on Cask adoptopenjdk14.
+    # Follow the instructions here:
+    # https://github.com/Homebrew/homebrew-cask#reporting-bugs
+    #
+    # Warning: libusb 1.0.27 is already installed and up-to-date.
+    # To reinstall 1.0.27, run:
+    # brew reinstall libusb    
+
+    # 위 명령어 하자마자 reinstall 하라고하네..
+
+    brew reinstall libusb
+    # 다시 설치하니 뭐 따로 에러는 안뜸
+
+```
+
+```bash
+    # 시도 1) - 안됨
+    git clone https://github.com/linux-can/can-utils.git
+
+    cd can-utils
+
+    make
+    #빌드 에러남.. 안됨..
+
+    # 시도 2) - 안됨
+    git clon https://github.com/carloop/can-utils-osx.git
+
+    # 이놈도 안됨
+```
 
 ## 00? 참조
 
