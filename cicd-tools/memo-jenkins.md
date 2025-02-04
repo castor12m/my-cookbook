@@ -14,6 +14,26 @@ https://5equal0.tistory.com/entry/Container-Jenkins-1-Docker-Container%EB%A1%9C-
 
     docker run -itd --name jenkins -p 8151:8080 -p 50000:50000 jenkins/jenkins:lts
 
+
+    # 2025.02.03
+    # https://velog.io/@ayoung0073/ec2-jenkins-docker
+    ex)
+    $ /stb/temp/jenkins
+    $ mkdir jenkins_home
+    $ sudo chown 1000 jenkins_home
+    $ sudo docker run -itd --restart always --name jenkins -p 8151:8080 -p 50000:50000 -v $PWD/jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
+    # 다음과 같이 jenkins_home 폴더 권한 오류 발생할 수 있으므로
+    # 미리 폴더 생성후 chown으로 권한 미리 설정 필수
+    >>>
+    # docker logs jenkins-container
+    # 명령어를 실행할 때
+    # Can not write to /var/jenkins_home/copy_reference_file.log. 
+    # Wrong volume permissions?
+    # touch: cannot touch '/var/jenkins_home/copy_reference_file.log': 
+    # Permission denied
+    # ... 반복
+
 ```
 
 *lts 버전 말고 latest 버전하면 오작동이 많을 수 있음. lts 권장*
