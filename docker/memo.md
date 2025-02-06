@@ -44,8 +44,8 @@ https://docs.docker.com/engine/install/ubuntu/
     #https://hahahoho5915.tistory.com/48
 
     #필요 패키지 설치
-    sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
-    sudo apt-get update
+    sudo apt-get -y install apt-transport-https ca-certificates curl gnupg lsb-release
+    sudo apt-get -y update
     
     #docker 공식 GPG 키
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
