@@ -175,3 +175,150 @@ http {
     }
 }
 ```
+
+### 1.4 https 로 3200 포트로 서비스 되는 앱이 존재 할때, ngix로 http://{host}:3200 요청시 https://{host}:3200 리다이렉트 
+
+- 기존 컴포즈 파일
+```yml
+services:
+  gen-email-signature:
+    image: naraspace/gen-email-signature:1.0
+    container_name: gen-email-signature
+    restart: always
+    build:
+      context: ./gen-email-signature
+    ports:
+      - "3200:3200"
+    volumes:
+      - ./gen-email-signature/public/data.csv:/app/public/data.csv
+
+```
+
+- 도커컴포즈 파일 및 nginx.conf 작성하고 pem 키 다음과 같이 마운트
+  - 주의!
+    - gen-email-signature 에서 사용하는 pem 키를 복사하여 
+    - nginx 에 마운트하는 ./certs 에 사용할것.
+    - 결론 : gen-email-signature와 nginx 에서 연결되는 pem 키가 동일하지 않으면 동작 안됨!
+
+- nginx 추가한 컴포즈 파일
+```yml
+services:
+  gen-email-signature:
+    image: naraspace/gen-email-signature:1.0
+    container_name: gen-email-signature
+    restart: always
+    build:
+      context: ./gen-email-signature
+    ports:
+      - "3200:3200"
+    volumes:
+      - ./gen-email-signature/public/data.csv:/app/public/data.csv
+    networks:
+      - app_network  # Nginx와 통신할 내부 네트워크
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "443:443"  # HTTPS 트래픽 처리
+      - "80:80"    # HTTP 트래픽 처리 (HTTPS 리디렉트 가능)
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - gen-email-signature
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+```
+
+- nginx.conf
+```conf
+events {
+    worker_connections 1024;
+}
+
+http {
+    server {
+        listen 80;
+        server_name 192.168.2.84;
+
+        location / {
+            return 301 https://$host$request_uri;
+        }
+    }
+
+    server {
+        listen 443 ssl;
+        server_name 192.168.2.84;
+
+        ssl_certificate /etc/nginx/certs/localhost.pem;
+        ssl_certificate_key /etc/nginx/certs/localhost-key.pem;
+
+        location / {
+            proxy_pass https://gen-email-signature:3200;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto https;
+        }
+    }
+}
+
+```
+
+- 잘못됫 이슈...
+  - 신기한데...위 와 같이 적용하기 전에 다음먼저 적용한다음
+  - 위 설정으로 복구하면 http://192.168.2.84:3200 도 redirect 되나?
+  - 아래와 같이 설정할떄는 3200으로 서비스 되는거 expose :3200 으로 수정하고
+  - nginx도 port 3200:3200 으로 열어줘야하긴함.
+  - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  - 알고 보니 개발하는 과정에서 쿠키 이슈 떄문이였음,
+  - 다른 pc에서는 결국 !!! http://192.168.2.84:3200 는 접속 안됨
+
+  ```conf
+  events {
+      worker_connections 1024;
+  }
+
+  http {
+      server {
+          listen 80;
+          server_name 192.168.2.84;
+
+          location / {
+              return 301 https://$host$request_uri;
+          }
+      }
+
+      server {
+          listen 443 ssl;
+          server_name 192.168.2.84;
+          
+          ssl_certificate /etc/nginx/certs/localhost.pem;
+          ssl_certificate_key /etc/nginx/certs/localhost-key.pem;
+
+          location / {
+              proxy_pass https://gen-email-signature:3200;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto https;
+          }
+      }
+
+      server {
+          listen 3200;
+          server_name 192.168.2.84;
+
+          location / {
+              return 301 https://$host:3200$request_uri;
+          }
+      }
+
+  }
+  ```
