@@ -56,3 +56,9 @@ You can also use expansion flags:
     % echo ${(U)name}
     JOHN DOE
 ```
+
+## A. 와우...bash cheat sheet
+
+- link
+    - https://github.com/RehanSaeed/Bash-Cheat-Sheet
+
