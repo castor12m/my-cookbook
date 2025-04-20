@@ -43,6 +43,18 @@ S3 호환 API 제공: S3 API를 지원하여, 기존 S3 기반 애플리케이�
 
 각 솔루션은 사용하려는 환경, 요구되는 성능, 관리의 복잡도 및 확장성 등의 조건에 따라 선택하시면 됩니다. 단순하고 빠른 배포 및 운영이 필요하다면 MinIO나 SeaweedFS가 적합할 수 있으며, 대규모 데이터 환경이나 엔터프라이즈급 기능이 필요한 경우 Ceph Object Gateway가 더 나은 선택일 수 있습니다.
 
+
+4. Zenko (by Scality)
+💡 MinIO보다 더 고성능의 S3-compatible storage router
+✅ Apache-2.0 (100%)
+🎯 다양한 S3 backend (Ceph, Azure Blob, GCP 등)로 라우팅 가능
+🧠 오브젝트 metadata 저장 포함
+UI 및 정책 관리도 잘됨
+다소 무거움 → 고기능 목적에 적합
+👉 https://github.com/scality/Zenko
+
+
+
 ### 0.2 개인 스터디용으로 추천
 
 개인적으로 스터디하시기에는 MinIO를 추천드립니다. MinIO는 경량화되어 있어 설치 및 사용이 간단하며, GitHub 및 공식 포럼 등에서 활발한 커뮤니티 지원을 받고 있습니다. 이를 통해 다양한 사례와 문제 해결 방법을 쉽게 접할 수 있으므로 개인 학습용으로 적합합니다. 반면, Ceph Object Gateway는 강력한 기능을 제공하지만 클러스터 구성과 관리가 복잡해 학습 난이도가 높을 수 있고, SeaweedFS는 상대적으로 커뮤니티 규모가 작아 자료 확보에 다소 어려움이 있을 수 있습니다.
